@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<head>
+	<title>Links Portal</title>
+	<link href="open-sans/stylesheet.css" rel="stylesheet">
+	<style>
+
+		body {}
+
+		.login {
+		background-color: blue;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 10px;
+		color: yellow;
+		padding: 15px 32px;
+		text-align: center;
+		display: inline-block;
+		font-size: 22px;
+		text-shadow: 5px 5px 5px #1e68d8;
+		margin: 4px 2px;
+		cursor: pointer;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+		-webkit-font-family: 'open_sansbold', Arial, Helvetica, sans-serif; /*Fix display issues on iOS*/
+		transition: background-color 1s, color 0.5s;
+		-webkit-transition: background-color 1s, color 0.5s;
+		}
+
+		.textbox {
+		background-color: #1e68d8;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 5px;
+		color: yellow;
+		padding: 15px 12px;
+		text-align: left;
+		display: inline-block;
+		font-size: 16px;
+		margin: 1px 1px;
+		cursor: text;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+
+		.searchButton:hover {
+		background-color:black;
+		color:#33ff00;}
+
+		.login:hover {
+		background-color:aqua;
+		color:#1e68d8;
+		text-shadow: 2px 2px 2px #e0d9ff;}
+
+		h2 {
+		font-size: 28px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+
+		p {
+		font-size: 14px;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+		}
+
+		strong {
+		text-decoration: underline;
+		padding: 2px 5px;
+		}
+
+		legend {
+		font-size: 18px;
+		text-shadow: 2px 2px 2px #aaa;
+		text-align:left;
+		color: yellow;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+
+		.warning {
+		font-size: 23px;
+		color: #3300ff;
+		text-decoration: underline;}
+	</style>
+</head>
+<html>
+  
+<body style="background-color:red" onLoad="clear();">
+
+<h2>Welcome to the Links Portal!</h2>
+<p id=loginwarning class=warning></p>
+<p><strong>For a guest login, please double click the password field or use the username 'guest'</strong></p><br>
+
+<form>
+<legend>Username:</legend>
+<input class=textbox type="text" id="username" autofocus autocomplete='off' onKeyDown="if(event.keyCode==13) login();" required><br><br>
+<legend>Password:</legend>
+<input ondblclick="localStorage.setItem('username', 'guest');location='portal.html';" class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
+<input class="login" type="button" onclick="login();" value='Submit'>
+</form>
+
+<script>
+	function gSearch(){
+		q = prompt("Search terms? ... ", "");
+		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
+//		void 0
+/*		var t = prompt("Enter text...");
+		var newUrl = "https://google.com/search?q=" + t;
+		window.open(newUrl, '_blank');*/}
+
+	function login(){
+/*
+Logins
+homemadesteam - admin
+admin - control
+guest - 
+
+Userpass is a combination of the username and passwords
+Passwords have been base64 encrypted twice
+
+*/
+		var pass = document.getElementById("password");
+		encryptpass = btoa(pass.value);
+		pas = btoa(encryptpass);
+		var s = document.getElementById("username");
+		var users = ['Homemadesteam58', 'admin', 'guest', 'Sean Collins', 'Collins'];
+		var passwords = ['U0RCdE0yMWhaRE56ZEROaGJUVTQ=', 'WTI5dWRISnZiQT09' , '', 'WkdGaw==', 'WTI5c2JHbHVjdz09'];
+		var userpass = ['Homemadesteam58U0RCdE0yMWhaRE56ZEROaGJUVTQ=' , 'adminWTI5dWRISnZiQT09' , 'guest',  'Sean CollinsWkdGaw==', 'CollinsWTI5c2JHbHVjdz09'];
+		if (users.includes(s.value) && passwords.includes(pas) && userpass.includes(s.value + pas)) {
+				localStorage.setItem("username", s.value);
+//				location='portal.html' + '?username=' + s.value + '&password=' + pas;
+				location='portal.html';
+				console.log('Logged in successfully');
+				
+			} else {
+				console.log('Login incorrect');
+				window.alert('Login incorrect');}
+		}
+
+	function clear() {
+		var warn = localStorage.getItem("warn");
+		localStorage.setItem("username" , null);
+		if (warn == 'true') {
+			document.getElementById("loginwarning").innerHTML = "Please login before accessing the Links Portal";
+			localStorage.setItem("warn" , null);}
+	}
+</script>
