@@ -117,9 +117,9 @@
 		encryptpass = btoa(pass.value);
 		pas = btoa(encryptpass);
 		var s = document.getElementById("username");
-		var users = ['Homemadesteam58', 'admin', 'guest', 'Sean Collins', 'Collins'];
-		var passwords = ['U0RCdE0yMWhaRE56ZEROaGJUVTQ=', 'WTI5dWRISnZiQT09' , '', 'WkdGaw==', 'WTI5c2JHbHVjdz09'];
-		var userpass = ['Homemadesteam58U0RCdE0yMWhaRE56ZEROaGJUVTQ=' , 'adminWTI5dWRISnZiQT09' , 'guest',  'Sean CollinsWkdGaw==', 'CollinsWTI5c2JHbHVjdz09'];
+		var users = ['Homemadesteam58', 'admin', 'guest', 'Sean Collins', 'Collins', 'Miss Quinn'];
+		var passwords = ['U0RCdE0yMWhaRE56ZEROaGJUVTQ=', 'WTI5dWRISnZiQT09' , '', 'WkdGaw==', 'WTI5c2JHbHVjdz09', 'YldsemMzRjFhVzV1'];
+		var userpass = ['Homemadesteam58U0RCdE0yMWhaRE56ZEROaGJUVTQ=' , 'adminWTI5dWRISnZiQT09' , 'guest',  'Sean CollinsWkdGaw==', 'CollinsWTI5c2JHbHVjdz09', 'Miss QuinnYldsemMzRjFhVzV1'];
 		if (users.includes(s.value) && passwords.includes(pas) && userpass.includes(s.value + pas)) {
 				localStorage.setItem("username", s.value);
 //				location='portal.html' + '?username=' + s.value + '&password=' + pas;
