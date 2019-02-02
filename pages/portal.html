@@ -100,7 +100,7 @@
 		if (usern == null || usern == '' || usern == 'null') {
 			localStorage.setItem("username" , null);
 			localStorage.setItem("warn" , "true");
-			location = "index.html";
+			location = "../index.html";
 		} else {
 			if (usern == 'admin') {usertext.innerHTML = 'Welcome back!,  Conor';document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
 				} else { usertext.innerHTML = 'Welcome back ' + usern ;document.getElementById("title").innerHTML = usern + "\'s Links Portal";} 
@@ -125,7 +125,7 @@
 
 
 <h2>Smart Buttons</h2>
-<input class=button type="button" value="Reload Web Page" onclick="location='https://homemadestea58.github.io/portal.html'" />
+<input class=button type="button" value="Reload Web Page" onclick="location='https://homemadestea58.github.io/Links-Portal/pages/portal.html'" />
 
 <input class=button type="button" value="Search Google" onclick="gSearch();" />
 
@@ -212,7 +212,7 @@
 
 	function logoff() {
 		localStorage.setItem("username" , null);
-		location = "index.html";
+		location = "../index.html";
 	}
 	function ySearch(){
 		y = prompt("Video to Look for ...", "");

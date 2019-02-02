@@ -98,7 +98,7 @@
 <legend>Username:</legend>
 <input class=textbox type="text" id="username" autofocus autocomplete='off' onKeyDown="if(event.keyCode==13) login();" required><br><br>
 <legend>Password:</legend>
-<input ondblclick="localStorage.setItem('username', 'guest');location='portal.html';" class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
+<input ondblclick="localStorage.setItem('username', 'guest');location='pages/portal.html';" class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
 <input class="login" type="button" onclick="login();" value='Submit'>
 </form>
 
@@ -122,8 +122,7 @@
 		var userpass = ['Homemadesteam58U0RCdE0yMWhaRE56ZEROaGJUVTQ=' , 'adminWTI5dWRISnZiQT09' , 'guest',  'Sean CollinsWkdGaw==', 'CollinsWTI5c2JHbHVjdz09', 'Miss QuinnYldsemMzRjFhVzV1'];
 		if (users.includes(s.value) && passwords.includes(pas) && userpass.includes(s.value + pas)) {
 				localStorage.setItem("username", s.value);
-//				location='repair.html' + '?username=' + s.value + '&password=' + pas;
-				location='repair.html';
+				location='pages/repair.html';
 				console.log('Logged in successfully');
 				
 			} else {
