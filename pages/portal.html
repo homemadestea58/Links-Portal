@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <head>
 	<title id=title>Links Portal</title>
-	<link href="open-sans/stylesheet.css" rel="stylesheet">
+	<link href="../open-sans/stylesheet.css" rel="stylesheet">
 	<style>
 		.button {
 		background-color: #1e68d8;
@@ -108,9 +108,9 @@
 		if (usern == null || usern == '' || usern == 'null') {
 			localStorage.setItem("username" , null);
 			localStorage.setItem("warn" , "true");
-			location = "index.html";
+			location = "../index.html";
 		} else {
-			if (usern == 'admin') {usertext.innerHTML = 'Welcome back!,  Conor';document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
+			if (usern == 'admin') {usertext.innerHTML = 'Welcome back!,  Administrator';document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
 				} else { usertext.innerHTML = 'Welcome back ' + usern ;document.getElementById("title").innerHTML = usern + "\'s Links Portal";} 
 				}
 		}
@@ -135,20 +135,29 @@
 <br>
 </br>
 
-<input class=button type="button" value="Links Portal Tools" onclick="window.open('http://10.1.1.62/lportaltools.html','_blank')" />
 <p>Smart Buttons</p>
-<input class=button type="button" value="Reload Web Page" onclick="location='http://10.1.1.62/portal.html'" />
+<input class=button type="button" value="Reload Web Page" onclick="location='./portal.html'" />
+	
+<button style="display:inline-block" class=button onclick="gSearch();" />
+<img src="../images/search.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google
+</button>
 
-<input class=button type="button" value="Search Google" onclick="gSearch();" />
+<button style="display:inline-block" class=button onclick="ySearch();" />
+<img src="../images/video.png" style="float:left;margin-right:1px" height="28" width="28"> Search YouTube
+</button>
 
-<input class=button type="button" value="Search Youtube" onclick="ySearch();" />
-
-<input class=button type="button" value="Search Google Images" onclick="iSearch();" />
+<button style="display:inline-block" class=button onclick="iSearch();" />
+<img src="../images/image.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google Images
+</button>
 
 <input class=button type="button" value="Go Wayback!" onclick="GoWayback();" />
 
 
 <h2>Normal Web Links</h2>
+
+<button style="display:inline-block" class=button onclick="location='bit.ly'" />
+Bit.ly
+</button>
 
 <input class=button type="button" value="Bit.ly" onclick="window.open('https://bitly.com', '_blank')" />
 
@@ -225,7 +234,7 @@
 
 	function logoff() {
 		localStorage.setItem("username" , null);
-		location = "index.html";
+		location = "../index.html";
 	}
 	function ySearch(){
 		y = prompt("Video to Look for ...", "");
