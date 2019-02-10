@@ -110,7 +110,7 @@
 			localStorage.setItem("warn" , "true");
 			location = "index.html";
 		} else {
-			if (usern == 'admin') {usertext.innerHTML = 'Welcome back!,  Conor';document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
+			if (usern == 'admin') {usertext.innerHTML = 'Welcome back!,  Administrator';document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
 				} else { usertext.innerHTML = 'Welcome back ' + usern ;document.getElementById("title").innerHTML = usern + "\'s Links Portal";} 
 				}
 		}
@@ -143,9 +143,13 @@
 <img src="../images/search.png" style="float:left;margin-right:1px" height="22" width="22"> Search Google
 </button>
 
-<input class=button type="button" value="Search Youtube" onclick="ySearch();" />
+<button style="display:inline-block" class=button onclick="ySearch();" />
+<img src="../images/video.png" style="float:left;margin-right:1px" height="22" width="22"> Search YouTube
+</button>
 
-<input class=button type="button" value="Search Google Images" onclick="iSearch();" />
+<button style="display:inline-block" class=button onclick="iSearch();" />
+<img src="../images/image.png" style="float:left;margin-right:1px" height="22" width="22"> Search Google Images
+</button>
 
 <input class=button type="button" value="Go Wayback!" onclick="GoWayback();" />
 
