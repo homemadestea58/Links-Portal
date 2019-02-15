@@ -139,7 +139,7 @@
 <p>Smart Buttons</p>
 <input class=button type="button" value="Reload Web Page" onclick="location='./portal.html'" />
 	
-<button style="display:inline-block" class=button onclick="gSearch();return false;" />
+<button id="smartgoogle" style="display:inline-block" class=button onclick="gSearch;" />
 <img src="../images/search.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google
 </button>
 
@@ -217,6 +217,8 @@ Bit.ly
 
 
 <script>
+	document.getElementById("smartgoogle").addEventListener("click", gSearch(););
+	
 	function gSearch(){
 		q = prompt("Search Question? ... ", "");
 		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
@@ -241,15 +243,15 @@ Bit.ly
 	}
 	function ySearch(){
 		y = prompt("Video to Look for ...", "");
-		window.open("https://youtube.com/search?q=" + y;
+		location = "https://youtube.com/search?q=" + y;
 		}
 	function iSearch(){
 		i = prompt("Image to Look For...", "");
-		window.open("https://images.google.com/search?q=" + i;
+		location = "https://images.google.com/search?q=" + i;
 		}
 	 function GoWayback() {
 		url = prompt("Please enter a url to Go Wayback!", "");
 		alert("Searching Wayback Machine for: " + url);
-		window.open("https://web.archive.org/")+ url;
+		location = "https://web.archive.org/"+ url;
 		}
 </script>
