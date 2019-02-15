@@ -244,15 +244,14 @@ Bit.ly
 	}
 	function ySearch(){
 		y = prompt("Video to Look for ...", "");
-		location = "https://youtube.com/search?q=" + y;
+		if (y!=null) location = "https://youtube.com/search?q=" + y;
 		}
 	function iSearch(){
 		i = prompt("Image to Look For...", "");
-		location = "https://images.google.com/search?q=" + i;
+		if (i!=null) location = "https://images.google.com/search?q=" + i;
 		}
 	 function GoWayback() {
 		url = prompt("Please enter a url to Go Wayback!", "");
-		alert("Searching Wayback Machine for: " + url);
-		location = "https://web.archive.org/"+ url;
+		if (url!=null) location = "https://web.archive.org/"+ url;
 		}
 </script>
