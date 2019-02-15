@@ -139,7 +139,7 @@
 <p>Smart Buttons</p>
 <input class=button type="button" value="Reload Web Page" onclick="location='./portal.html'" />
 	
-<button id="smartgoogle" style="display:inline-block" class=button onclick="gSearch;" />
+<button id="smartgoogle" style="display:inline-block" class=button onclick="gSearch();" />
 <img src="../images/search.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google
 </button>
 
@@ -217,7 +217,7 @@ Bit.ly
 
 
 <script>
-	document.getElementById("smartgoogle").addEventListener("click", gSearch(););
+	document.getElementById("smartgoogle").addEventListener("click", gSearch());
 	
 	function gSearch(){
 		q = prompt("Search Question? ... ", "");
