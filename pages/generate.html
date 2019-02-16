@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
 	<title id=title>Links Portal</title>
@@ -112,6 +113,11 @@ function login(){
 		var pass = document.getElementById("password");
 		var openintab = document.getElementById("tabopen");
 		encryptpass = btoa(pass.value);
-		pas = btoa(encryptpass);
-		}
+		pasword = hashcode(encryptpass);
+		alert(pasword)
+		} 
+function hashCode(str) {
+	  return str.split('').reduce((prevHash, currVal) =>
+   		 (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+}
 </script>
