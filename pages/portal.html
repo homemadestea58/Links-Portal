@@ -14,7 +14,6 @@
 		text-align: center;
 		display: inline-block;
 		font-size: 19px;
-		font-weight: bold;
 		margin: 4px 2px;
 		cursor: pointer;
 		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
@@ -36,7 +35,6 @@
 		text-align: center;
 		display: inline-block;
 		font-size: 19px;
-		font-weight: bold;
 		margin: 8px 6px;
 		cursor: pointer;
 		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
@@ -51,7 +49,7 @@
 		}
 
 		.button:hover {
-		background-color:aqua;
+		background-color: yellow;
 		color:#1e68d8;
 		text-shadow: 2px 2px 2px #e0d9ff;}
 
@@ -121,7 +119,7 @@
 </head>
 <html>
   
-<body style="background-color:red" onLoad="getUser()">
+<body style="background-color:red" onLoad="getUser();tabNew();">
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
 <div style="position:relative;min-width:960px" >
 
@@ -134,12 +132,11 @@
 <h3>Links Portal Add-ons</h3>
 <br>
 </br>
-<input class=button type="button" value="Links Portal Tools" onclick="./lptools.html" />
+<input class=button type="button" value="Links Portal Tools" onclick="lptools.html" />
 
 <p>Smart Buttons</p>
-<input class=button type="button" value="Reload Web Page" onclick="location='./portal.html'" />
-	
-<button id="smartgoogle" style="display:inline-block" class=button onclick="gSearch();" />
+
+<button id="searchgoogle" style="display:inline-block" class=button onclick="gSearch();" />
 <img src="../images/search.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google
 </button>
 
@@ -158,63 +155,109 @@
 
 <h2>Normal Web Links</h2>
 
-<button style="display:inline-block" class=button onclick="location='bit.ly'" />
+<button id="bitly" style="display:inline-block" class=button onclick="location='https://bit.ly'" />
 Bit.ly
 </button>
 
-<input class=button type="button" value="Bit.ly" onclick="window.open('https://bitly.com', '_blank')" />
+<button id="newgmail" style="display:inline-block" class=button onclick="location='https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1'" />
+Compose GMail
+</button>
 
-<input class=button type="button" value="Compose GMail" onclick="window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1', '_blank')" />
+<button id="gdrive" style="display:inline-block" class=button onclick="location='https://drive.google.com'" />
+Google Drive
+</button>
 
-<input class=button type="button" value="Google Drive" onclick="window.open('https://drive.google.com', '_blank')" />
+<button id="gcalendar" style="display:inline-block" class=button onclick="location='https://calendar.google.com'" />
+Google Calendar
+</button>
 
-<input class=button type="button" value="Google Calender" onclick="window.open('https://calendar.google.com', '_blank')" />
+<button id="gdocs" style="display:inline-block" class=button onclick="location='https://docs.google.com'" />
+Google Docs
+</button>
 
-<input class=button type="button" value="Google Docs" onclick="window.open('https://docs.google.com', '_blank')" />
+<button id="gsheets" style="display:inline-block" class=button onclick="location='https://sheets.google.com'" />
+Google Sheets
+</button>
 
-<input class=button type="button" value="Google Sheets" onclick="window.open('https://sheets.google.com', '_blank')" />
+<button id="gslides" style="display:inline-block" class=button onclick="location='https://slides.google.com'" />
+Google Slides
+</button>
 
-<input class=button type="button" value="Google Slides" onclick="window.open('https://slides.google.com', '_blank')" />
+<button id="gforms" style="display:inline-block" class=button onclick="location='https://forms.google.com'" />
+Google Forms
+</button>
 
-<input class=button type="button" value="Google Forms" onclick="window.open('https://forms.google.com', '_blank')" />
+<button id="gclassroom" style="display:inline-block" class=button onclick="location='https://classroom.google.com'" />
+Google Classroom
+</button>
 
-<input class=button type="button" value="Google Classroom" onclick="window.open('https://classroom.google.com', '_blank')" />
+<button id="gsites" style="display:inline-block" class=button onclick="location='https://sites.google.com'" />
+Google Sites
+</button>
 
-<input class=button type="button" value="Google Sites" onclick="window.open('https://sites.google.com', '_blank')" />
+<button id="ghangouts" style="display:inline-block" class=button onclick="location='https://hangouts.google.com'" />
+Google Hangouts
+</button>
 
-<input class=button type="button" value="Google Hangouts" onclick="window.open('https://hangouts.google.com', '_blank')" />
+<button id="onedrive" style="display:inline-block" class=button onclick="location='https://onedrive.com'" />
+OneDrive
+</button>
 
-<input class=button type="button" value="OneDrive" onclick="window.open('https://onedrive.com', '_blank')" />
+<button id="office365" style="display:inline-block" class=button onclick="location='home.office.com'" />
+Office 365
+</button>
 
-<input class=button type="button" value="Office 365" onclick="window.open('https://home.office.com', '_blank')" />
+<button id="jotform" style="display:inline-block" class=button onclick="location='https://jotform.com'" />
+JotForm
+</button>
 
-<input class=button type="button" value="JotForm" onclick="window.open('https://jotform.com', '_blank')" />
+<button id="yammer" style="display:inline-block" class=button onclick="location='https://yammer.com'" />
+Yammer
+</button>
 
-<input class=button type="button" value="Yammer" onclick="window.open('https://yammer.com', '_blank')" />
+<button id="btn" style="display:inline-block" class=button onclick="location='https://abc.net.au/btn'" />
+BTN
+</button>
 
-<input class=button type="button" value="BTN" onclick="window.open('http://abc.net.au/btn', '_blank')" />
+<button id="ifttt" style="display:inline-block" class=button onclick="location='https://ift.tt'" />
+IFTTT
+</button>
 
-<input class=button type="button" value="IFTTT" onclick="window.open('https://ift.tt', '_blank')" />
+<button id="smh" style="display:inline-block" class=button onclick="location='https://smh.com.au'" />
+SMH
+</button>
 
-<input class=button type="button" value="SMH" onclick="window.open('https://smh.com.au', '_blank')" />
+<button id="snap" style="display:inline-block" class=button onclick="location='https://snap-berkeley.edu'" />
+Snap BYOB
+</button>
 
-<input class=button type="button" value="Snap BYOB" onclick="window.open('https://snap.berkeley.edu/', '_blank')" />
+<button id="github" style="display:inline-block" class=button onclick="location='https://github.com'" />
+GitHub
+</button>
 
-<input class=button type="button" value="GitHub" onclick="window.open('https://github.com/', '_blank')" />
+<button id="p-prodigy" style="display:inline-block" class=button onclick="location='https://play.prodigygame.com'" />
+Play Prodigy
+</button>
 
-<input class=button type="button" value="Play Prodigy" onclick="window.open('https://play.prodigygame.com', '_blank')" />
+<button id="prodigy" style="display:inline-block" class=button onclick="location='https://prodigygame.com'" />
+Prodigy Home
+</button>
 
-<input class=button type="button" value="Prodigy Home" onclick="window.open('https://prodigygame.com', '_blank')" />
+<button id="l-mathletics" style="display:inline-block" class=button onclick="location='http://student.mathletics.com/primary'" />
+Mathletics Login
+</button>
 
-<input class=button type="button" value="Mathletics Login" onclick="window.open('https://community.mathletics.com', '_blank')" />
+<button id="mathletics" style="display:inline-block" class=button onclick="location='http://au.mathletics.com'" />
+Mathletics Home
+</button>
 
-<input class=button type="button" value="Mathletics Home" onclick="window.open('https://au.mathletics.com', '_blank')" />
+<button id="l-eggs" style="display:inline-block" class=button onclick="location='https://app.readingeggs.com/login'" />
+Reading Eggs Login
+</button>
 
-<input class=button type="button" value="Reading Eggs Login" onclick="window.open('https://app.redingeggs.com/login', '_blank')" />
-
-<input class=button type="button" value="Reading Eggs Home" onclick="window.open('https://readingeggs.com' ,'_blank')" />
-
-
+<button id="eggs" style="display:inline-block" class=button onclick="location='https://readingeggs.com'" />
+Reading Eggs Home
+</button>
 
 <script>
 	
@@ -224,9 +267,7 @@ Bit.ly
 		q = prompt("Search Question? ... ", "");
 		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
 //		void 0
-/*		var t = prompt("Enter text...");
-//		var newUrl = "https://google.com/search?q=" + t;
-//		window.open(newUrl, '_blank');*/}
+}
 
 	function getParameterByName(name, url) {
 		if (!url) url = window.location.href;
@@ -254,4 +295,20 @@ Bit.ly
 		url = prompt("Please enter a url to Go Wayback!", "");
 		if (url!=null) location = "https://web.archive.org/"+ url;
 		}
+
+	function tabNew() {
+		var newtb = getParameterByName('open');
+		if (newtb == 'newtab') {
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+
+		}
+	}
 </script>
