@@ -123,9 +123,6 @@
 <body style="background-color:red" onLoad="getUser();tabNew();">
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
 <div style="position:relative;min-width:960px" >
-<button id="tools" style="display:inline-block" class=button onclick="location='lptools.html'" />
-<img src="../images/tools.png" style="float:left;margin-right:1px" height="32" width="32">
-</button>
 </div>
 
 <h2>Welcome to the Links Portal!</h2>
@@ -135,6 +132,10 @@
 </br>
 	
 <p>Smart Buttons</p>
+	
+<button id="tools" style="display:inline-block" class=button onclick="location='lptools.html'" />
+<img src="../images/tools.png" style="float:left;margin-right:1px" height="32" width="32">
+</button>
 
 <button id="searchgoogle" style="display:inline-block" class=button onclick="gSearch();" />
 <img src="../images/search.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google
@@ -325,6 +326,7 @@ Reading Eggs Home
 		document.getElementById("mathletics").setAttribute( "onClick", "window.open('http://au.mathletics.com', '_blank')" );
 		document.getElementById("l-eggs").setAttribute( "onClick", "window.open('https://app.readingeggs.com/login', '_blank')" );
 		document.getElementById("eggs").setAttribute( "onClick", "window.open('https://readingeggs.com', '_blank')" );
+		document.getElementById("tools").setAttribute( "onClick", "window.open('pages/lptools.html', '_blank')" );
 		}
 	}
 </script>
