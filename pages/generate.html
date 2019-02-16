@@ -24,6 +24,24 @@
 		-webkit-appearance: none; /*Fix display issues on iOS*/
 		-moz-appearance: none; /*Fix display issues on iOS*/
 		}
+		
+		.textbox {
+		background-color: #1e68d8;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 5px;
+		color: yellow;
+		padding: 15px 12px;
+		text-align: left;
+		display: inline-block;
+		font-size: 16px;
+		margin: 1px 1px;
+		cursor: text;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+		
+		.textbox:focus {
+		border-color: yellow;}
  
 		.logoff {
 		background-color: yellow;
@@ -105,9 +123,9 @@
  
 <h2>Welcome to the Links Portal!</h2>
  
-<input type="text" id="password" onKeyDown="if(event.keyCode==13) login();"/>
+<input class=textbox type="text" id="password" onKeyDown="if(event.keyCode==13) login();"/>
 
-<input type="button" onclick="login();" value='Submit/Update'>
+<input class=button type="button" onclick="login();" value='Submit/Update'>
 	
 <p>Your code is :<p><br>
 	
