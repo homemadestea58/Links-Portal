@@ -108,6 +108,10 @@
 <input type="text" id="password" onKeyDown="if(event.keyCode==13) login();"/>
 
 <input type="button" onclick="login();" value='Submit'>
+	
+<p>Your code is :<p><br>
+	
+<p id=result></p>
 
 <script>
 function login(){
@@ -116,7 +120,8 @@ function login(){
 		var openintab = document.getElementById("tabopen");
 		encryptpass = btoa(pass.value);
 		pasword = hashCode(encryptpass);
-		alert(pasword);
+//		alert(pasword);
+		document.getElementById("result").innerHTML = pasword
 		} 
 function hashCode(str) {
 	  return str.split('').reduce((prevHash, currVal) =>
