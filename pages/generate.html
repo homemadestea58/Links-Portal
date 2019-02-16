@@ -1,4 +1,116 @@
-function hashCode(str) {
-  		return str.split('').reduce((prevHash, currVal) =>
-   	 	(((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
-	}
+<!DOCTYPE html>
+<head>
+	<title id=title>Links Portal</title>
+	<link href="../open-sans/stylesheet.css" rel="stylesheet">
+	<style>
+		.button {
+		background-color: #1e68d8;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 10px;
+		color: yellow;
+		padding: 15px 32px;
+		text-align: center;
+		display: inline-block;
+		font-size: 19px;
+		margin: 4px 2px;
+		cursor: pointer;
+		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
+		text-shadow: 0.1px 0.1px 0.1px #edd400;
+		transition: background-color 0.5s, color 0.5s;
+		-webkit-transition: background-color 0.5s, color 0.5s;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+		}
+ 
+		.logoff {
+		background-color: yellow;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 10px;
+		color: #1e68d8;
+		padding: 15px 32px;
+		text-align: center;
+		display: inline-block;
+		font-size: 19px;
+		margin: 8px 6px;
+		cursor: pointer;
+		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
+		text-shadow: 0.1px 0.1px 0.1px #edd400;
+		transition: background-color 0.5s, color 0.5s;
+		-webkit-transition: background-color 0.5s, color 0.5s;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+		position: absolute;
+		right: 0;
+		top:0;
+		}
+ 
+		.button:hover {
+		background-color: yellow;
+		color:#1e68d8;
+		text-shadow: 2px 2px 2px #e0d9ff;}
+ 
+		.logoff:hover {
+		background-color: #1e68d8;
+		color: yellow;
+		text-shadow: 2px 2px 2px #e0d9ff;}
+ 
+		h2 {
+		font-size: 28px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+		
+		h3 {
+		font-size: 20px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+		
+		p {
+		font-size: 22px;
+		text-shadow: 3px 3px 3px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 7px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+ 
+		body {
+		animation-name: polychrome;
+		animation-duration: 7s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;}
+ 
+		@keyframes polychrome{
+			0% {background-color: red;}
+			12% {background-color: red;}
+			25% {background-color: gray;}
+			50% {background-color: orange;}
+			75% {background-color: blue;}
+			100% {background-color: red;}
+		}
+ 
+	</style>
+ 
+</head>
+<html>
+  
+<body style="background-color:red" onLoad="getUser();tabNew();">
+<input class=logoff type="button" value="Logout" onclick="logoff();" />
+<div style="position:relative;min-width:960px" >
+ 
+</div>
+ 
+<h2>Welcome to the Links Portal!</h2>
+ 
+
+
+<script>
+</script>
