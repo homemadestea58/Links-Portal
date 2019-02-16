@@ -133,7 +133,8 @@
 <p>Your code is :<p><br>
 	
 <p id=result></p>
-
+	
+<script src="../scripts/md5.js"></script>
 <script>
 function login(){
  
@@ -141,8 +142,7 @@ function login(){
 //		encryptpass = btoa(pass.value);
 //		pasword = hashCode(encryptpass);
 //		alert(pasword);
-		pasword = md5(pass.value);
+		pasword = tomd5(pass.value);
 		document.getElementById("result").innerHTML = pasword
 		} 
 </script>
-<script src="../scripts/md5.js"></script>
