@@ -1,4 +1,4 @@
-function tomd5(x, k) {
+function md5cycle(x, k) {
 var a = x[0], b = x[1], c = x[2], d = x[3];
 
 a = ff(a, b, c, d, k[0], 7, -680876936);
