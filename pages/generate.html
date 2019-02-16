@@ -82,11 +82,6 @@
 		padding: 2px 7px;
 		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
  
-		body {
-		animation-name: polychrome;
-		animation-duration: 7s;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;}
  
 		@keyframes polychrome{
 			0% {background-color: red;}
@@ -102,8 +97,7 @@
 </head>
 <html>
   
-<body style="background-color:red" onLoad="getUser();tabNew();">
-<input class=logoff type="button" value="Logout" onclick="logoff();" />
+<body style="background-color:red">
 <div style="position:relative;min-width:960px" >
  
 </div>
@@ -113,4 +107,11 @@
 
 
 <script>
+function login(){
+ 
+		var pass = document.getElementById("password");
+		var openintab = document.getElementById("tabopen");
+		encryptpass = btoa(pass.value);
+		pas = btoa(encryptpass);
+		}
 </script>
