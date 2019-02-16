@@ -138,10 +138,10 @@
 function login(){
  
 		var pass = document.getElementById("password");
-		var openintab = document.getElementById("tabopen");
-		encryptpass = btoa(pass.value);
-		pasword = hashCode(encryptpass);
+//		encryptpass = btoa(pass.value);
+//		pasword = hashCode(encryptpass);
 //		alert(pasword);
+		pasword = md5(pass.value);
 		document.getElementById("result").innerHTML = pasword
 		} 
 function hashCode(str) {
