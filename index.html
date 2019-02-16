@@ -203,6 +203,7 @@
 		var openintab = document.getElementById("tabopen");
 		encryptpass = btoa(pass.value);
 		pas = btoa(encryptpass);
+//		pas = hashCode(encryptpass);
 		var s = document.getElementById("username");
 		var users = ['Homemadesteam58', 'admin', 'guest', 'Sean Collins', 'Collins', 'Miss Quinn', 'HSAK5G'];
 		var passwords = ['U0RCdE0yMWhaRE56ZEROaGJUVTQ=', 'WTI5dWRISnZiQT09' , '', 'WkdGaw==', 'WTI5c2JHbHVjdz09', 'YldsemMzRjFhVzV1', 'U0ZOQlN5QT0='];
@@ -227,5 +228,10 @@
 		if (warn == 'true') {
 			document.getElementById("loginwarning").innerHTML = "Please login before accessing the Links Portal";
 			localStorage.setItem("warn" , null);}
+	}
+
+	function hashCode(str) {
+  		return str.split('').reduce((prevHash, currVal) =>
+   	 	(((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
 	}
 </script>
