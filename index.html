@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <head>
 	<title>Links Portal</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="open-sans/stylesheet.css" rel="stylesheet">
 	<style>
 
@@ -188,26 +189,23 @@
 <input class="login" type="button" onclick="login();" value='Submit'>
 </form>
 
+<script src="scripts/md5.js"></script>
 <script>
 	function gSearch(){
 		q = prompt("Search terms? ... ", "");
 		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
-//		void 0
-/*		var t = prompt("Enter text...");
-		var newUrl = "https://google.com/search?q=" + t;
-		window.open(newUrl, '_blank');*/}
+}
 
 	function login(){
 
 		var pass = document.getElementById("password");
 		var openintab = document.getElementById("tabopen");
-		encryptpass = btoa(pass.value);
-		pas = btoa(encryptpass);
+		encryptpass = md5(pass.value);
 		var s = document.getElementById("username");
-		var users = ['Homemadesteam58', 'admin', 'guest', 'Sean Collins', 'Collins', 'Miss Quinn', 'HSAK5G'];
-		var passwords = ['U0RCdE0yMWhaRE56ZEROaGJUVTQ=', 'WTI5dWRISnZiQT09' , '', 'WkdGaw==', 'WTI5c2JHbHVjdz09', 'YldsemMzRjFhVzV1', 'U0ZOQlN5QT0='];
-		var userpass = ['Homemadesteam58U0RCdE0yMWhaRE56ZEROaGJUVTQ=' , 'adminWTI5dWRISnZiQT09' , 'guest',  'Sean CollinsWkdGaw==', 'CollinsWTI5c2JHbHVjdz09', 'Miss QuinnYldsemMzRjFhVzV1', 'HSAK5GU0ZOQlN5QT0='];
-		if (users.includes(s.value) && passwords.includes(pas) && userpass.includes(s.value + pas)) {
+		var users = ['Homemadesteam58', 'admin', 'guest',];
+		var passwords = ['21232f297a57a5a743894a0e4a801fc3','fc5364bf9dbfa34954526becad136d4b','d41d8cd98f00b204e9800998ecf8427e'];
+		var userpass = ['Homemadesteam5821232f297a57a5a743894a0e4a801fc3' , 'adminfc5364bf9dbfa34954526becad136d4b' , 'guestd41d8cd98f00b204e9800998ecf8427e',];
+		if (users.includes(s.value) && passwords.includes(encryptpass) && userpass.includes(s.value + encryptpass)) {
 				localStorage.setItem("username", s.value);
 				if (openintab.checked == true) {
 					location= 'pages/portal.html' + '?open=newtab';
@@ -227,5 +225,10 @@
 		if (warn == 'true') {
 			document.getElementById("loginwarning").innerHTML = "Please login before accessing the Links Portal";
 			localStorage.setItem("warn" , null);}
+	}
+
+	function hashCode(str) {
+  		return str.split('').reduce((prevHash, currVal) =>
+   	 	(((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
 	}
 </script>
