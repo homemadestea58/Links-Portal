@@ -3,6 +3,9 @@
 	<title id=title>Links Portal</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="../open-sans/stylesheet.css" rel="stylesheet">
+	<script src="../scripts/jquery.min.js"></script>
+	<link rel="stylesheet" href="../styles/bootstrap.min.css" >
+	<script src="../scripts/bootstrap.min.js"></script>
 	<style>
 		.button {
 		background-color: #1e68d8;
@@ -74,9 +77,13 @@
 		color: yellow;
 		padding: 2px 5px;
 		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+
+		.restrict-right {
+		margin-right: 20px;
+		}
 		
 		p {
-		font-size: 22px;
+		font-size: 8px;
 		text-shadow: 3px 3px 3px #aaa;
 		text-align: left;
 		color: yellow;
@@ -87,7 +94,9 @@
 		animation-name: polychrome;
 		animation-duration: 7s;
 		animation-iteration-count: infinite;
-		animation-timing-function: linear;}
+		animation-timing-function: linear;
+		margin-left: 20px;
+		margin-top: 20px;}
 
 		@keyframes polychrome{
 			0% {background-color: red;}
@@ -98,19 +107,31 @@
 			100% {background-color: red;}
 		}
 
+		.alert {
+		}
+
 	</style>
 
 <script>
+	function addAlert(message) {
+		$('#alerts').append(
+		'<div class="alert alert-success alert-dismissible restrict-right">' +
+			'<button type="button" class="close" data-dismiss="alert">' +
+            '&times;</button>' + message + '</div>');
+		}
+
 	function getUser(){
-		var usern = localStorage.getItem("username");
-		var usertext = document.getElementById("user");
-		if (usern == null || usern == '' || usern == 'null') {
-			localStorage.setItem("username" , null);
-			localStorage.setItem("warn" , "true");
-			location = "../index.html";
+	var usern = localStorage.getItem("username");		var usertext = document.getElementById("user");
+	if (usern == null || usern == '' || usern == 'null') {			localStorage.setItem("username" , null);
+		localStorage.setItem("warn" , "true");
+		location = "../index.html";
+	} else {usertext.innerHTML = '';
+		if (usern == 'admin') {
+		addAlert('Welcome back!,  Administrator');
+		document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
 		} else {
-			if (usern == 'admin') {usertext.innerHTML = 'Welcome back!,  Administrator';document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
-				} else { usertext.innerHTML = 'Welcome back ' + usern ;document.getElementById("title").innerHTML = usern + "\'s Links Portal";} 
+		addAlert('Welcome back!, ' + usern);
+		document.getElementById("title").innerHTML = usern + "\'s Links Portal";}
 				}
 		}
 
@@ -129,9 +150,23 @@
 
 <p id='user'>If you are seeing this for more than 5 seconds, please turn on JavaScript</p>
 
-</br>
+<div id="alerts"></div>
+
+<!--<div class="alert alert-success alert-dismissible restrict-right" id="loggedin">
+	<a style="cursor:pointer" class="close">&times;</a>		<strong>Success!</strong> You have successfully logged into the Links Portal
+	</div>
+-->
+<script>
+$(document).ready(function(){
+  $(".close").click(function(){
+    $("#loggedin").alert("close");
+  });
+});
+</script>
+
+<br><br>
 	
-<p>Smart Buttons</p>
+<h3>Smart Buttons</h3>
 	
 <button id="tools" style="display:inline-block" class=button onclick="location='lptools.html'" />
 <img src="../images/tools.png" style="float:left;margin-right:0px" height="27" width="27">
@@ -153,8 +188,8 @@
 <img src="../images/browser.png" style="float:left;margin-right:1px" height="28" width="28"> Go Wayback
 </button>
 
-
-<h2>Normal Web Links</h2>
+<br>
+<h3>Normal Web Links</h3>
 
 <button id="bitly" style="display:inline-block" class=button onclick="location='https://bit.ly'" />
 Bit.ly
@@ -173,27 +208,27 @@ Google Calendar
 </button>
 
 <button id="gdocs" style="display:inline-block" class=button onclick="location='https://docs.google.com'" />
-Google Docs
+<img src="../images/gdocs.png" style="float:left;margin-right:1px" height="28" width="28"> Google Docs
 </button>
 
 <button id="gsheets" style="display:inline-block" class=button onclick="location='https://sheets.google.com'" />
-Google Sheets
+<img src="../images/gsheets.png" style="float:left;margin-right:1px" height="28" width="28"> Google Sheets
 </button>
 
 <button id="gslides" style="display:inline-block" class=button onclick="location='https://slides.google.com'" />
-Google Slides
+<img src="../images/gslides.png" style="float:left;margin-right:1px" height="28" width="28"> Google Slides
 </button>
 
 <button id="gforms" style="display:inline-block" class=button onclick="location='https://forms.google.com'" />
-Google Forms
+<img src="../images/gforms.png" style="float:left;margin-right:1px" height="28" width="28">Google Forms
 </button>
 
 <button id="gclassroom" style="display:inline-block" class=button onclick="location='https://classroom.google.com'" />
-Google Classroom
+<img src="../images/gclassroom.png" style="float:left;margin-right:1px" height="28" width="28"> Google Classroom
 </button>
 
 <button id="gsites" style="display:inline-block" class=button onclick="location='https://sites.google.com'" />
-Google Sites
+<img src="../images/gsites.png" style="float:left;margin-right:1px" height="28" width="28"> Google Sites
 </button>
 
 <button id="ghangouts" style="display:inline-block" class=button onclick="location='https://hangouts.google.com'" />
@@ -326,7 +361,7 @@ Reading Eggs Home
 		document.getElementById("mathletics").setAttribute( "onClick", "window.open('http://au.mathletics.com', '_blank')" );
 		document.getElementById("l-eggs").setAttribute( "onClick", "window.open('https://app.readingeggs.com/login', '_blank')" );
 		document.getElementById("eggs").setAttribute( "onClick", "window.open('https://readingeggs.com', '_blank')" );
-		document.getElementById("tools").setAttribute( "onClick", "window.open('pages/lptools.html', '_blank')" );
+		document.getElementById("tools").setAttribute( "onClick", "window.open('lptools.html', '_blank')" );
 		}
 	}
 </script>

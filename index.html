@@ -3,9 +3,14 @@
 	<title>Links Portal</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="open-sans/stylesheet.css" rel="stylesheet">
+	<script src="scripts/jquery.min.js"></script>
+	<link rel="stylesheet" href="styles/bootstrap.min.css" >
+	<script src="scripts/bootstrap.min.js"></script>
 	<style>
 
-		body {}
+		body {
+		margin-left: 20px;
+		margin-top: 20px;}
 
 		.login {
 		background-color: blue;
@@ -62,15 +67,15 @@
 		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
 
 		p {
-		font-size: 14px;
+		font-size: 20px;
 		text-align: left;
 		color: yellow;
 		padding: 2px 5px;
 		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+		text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 		}
 
 		strong {
-		text-decoration: underline;
 		padding: 2px 5px;
 		}
 
@@ -91,8 +96,9 @@
 	.container {
 	  display: block;
 	  position: relative;
+	  margin-left: 0px;
 	  padding-left: 35px;
-	  margin-bottom: 12px;
+	  margin-bottom: 0px;
 	  cursor: pointer;
 	  -webkit-user-select: none;
 	  -moz-user-select: none;
@@ -114,18 +120,18 @@
 	  position: absolute;
 	  top: 0;
 	  left: 0;
-	  height: 22px;
-	  width: 22px;
+	  height: 28px;
+	  width: 28px;
 	  background-color: #1e68d8;
 	    border: solid;
-	  border-radius: 10px;
+	  border-radius: 3px;
 	}
 	
 	/* When the checkbox is checked, add a blue background */
 	.container input:checked ~ .checkmark {
 	  background-color: #1e68d8;
 	    border: solid;
-	  border-radius: 10px;
+	  border-radius: 3px;
 	}
 	
 	/* Create the checkmark/indicator (hidden when not checked) */
@@ -133,6 +139,7 @@
 	  content: "";
 	  position: absolute;
 	  display: none;
+	  margin: 0 auto;
 	}
 	
 	/* Show the checkmark when checked */
@@ -162,15 +169,28 @@
 		padding: 2px 5px;
 		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 		}
+
+	.restrict-right {
+		margin-right: 20px;
+		}
 	</style>
+
+<script>
+	function addAlert(message) {
+		$('#alerts').append(
+		'<div class="alert alert-danger alert-dismissible restrict-right">' +
+			'<button type="button" class="close" data-dismiss="alert">' +
+            '&times;</button>' + message + '</div>');
+		}
+</script>
 </head>
 <html>
   
 <body style="background-color:red" onLoad="clear();">
 
 <h2>Welcome to the Links Portal!</h2>
-<p id=loginwarning class=warning></p>
 <p><strong>For a guest login, please double click the password field or use the username 'guest'</strong></p><br>
+<div id="alerts"></div>
 
 <form>
 <legend>Username:</legend>
@@ -181,7 +201,7 @@
 				} else {
 					location= 'pages/portal.html';
 				}" class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
-<label class="container">Open Links in a new tab (may be blocked as popups)
+<label class="container"> Open Links in a new tab (may be blocked as popups)
   <input type="checkbox" id=tabopen>
   <span class="checkmark"></span>
 </label>
@@ -216,14 +236,14 @@
 				
 			} else {
 				console.log('Login incorrect');
-				window.alert('Login incorrect');}
+				addAlert('Login incorrect');}
 		}
 
 	function clear() {
 		var warn = localStorage.getItem("warn");
 		localStorage.setItem("username" , null);
 		if (warn == 'true') {
-			document.getElementById("loginwarning").innerHTML = "Please login before accessing the Links Portal";
+			addAlert('Please login before accessing the Links Portal');
 			localStorage.setItem("warn" , null);}
 	}
 
