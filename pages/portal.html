@@ -28,6 +28,10 @@
 		-moz-appearance: none; /*Fix display issues on iOS*/
 		}
 
+		.custom {
+		background-color: red;
+		color: yellow;}
+
 		.logoff {
 		background-color: yellow;
 		border: solid;
@@ -187,6 +191,8 @@
 
 <p id='user'>If you are seeing this for more than 5 seconds, please turn on JavaScript</p>
 
+<br />
+
 <div id="alerts"></div>
 
 <!--<div class="alert alert-success alert-dismissible restrict-right" id="loggedin">
@@ -241,7 +247,7 @@ Bit.ly
 </button>
 
 <button id="gcalendar" style="display:inline-block" class=button onclick="location='https://calendar.google.com'" />
-Google Calendar
+<img src="../images/calendar.png" style="float:left;margin-right:2px" height="28" width="28">Google Calendar
 </button>
 
 <button id="gdocs" style="display:inline-block" class=button onclick="location='https://docs.google.com'" />
@@ -249,7 +255,7 @@ Google Calendar
 </button>
 
 <button id="gsheets" style="display:inline-block" class=button onclick="location='https://sheets.google.com'" />
-<img src="../images/gsheets.png" style="float:left;margin-right:2px" height="28" width="28"> Google Sheets
+<img src="../images/gsheets.png" style="float:left;margin-right:2px" height="28" width="22"> Google Sheets
 </button>
 
 <button id="gslides" style="display:inline-block" class=button onclick="location='https://slides.google.com'" />
@@ -257,7 +263,7 @@ Google Calendar
 </button>
 
 <button id="gforms" style="display:inline-block" class=button onclick="location='https://forms.google.com'" />
-<img src="../images/gforms.png" style="float:left;margin-right:2px" height="28" width="28">Google Forms
+<img src="../images/gforms.png" style="float:left;margin-right:2px" height="28" width="22">Google Forms
 </button>
 
 <button id="gclassroom" style="display:inline-block" class=button onclick="location='https://classroom.google.com'" />
@@ -330,6 +336,10 @@ Reading Eggs Login
 
 <button id="eggs" style="display:inline-block" class=button onclick="location='https://readingeggs.com'" />
 Reading Eggs Home
+</button>
+
+<button id="customise" style="display:inline-block" class="button custom" onclick="location='edit.html'" />
+Customise
 </button>
 
 <script>
