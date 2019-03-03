@@ -171,13 +171,18 @@
 				}
 		}
 
-
 </script>
+
+<!--[if IE]>
+<script>
+alert("We detect you are using Internet Explorer. To get complete functionality, please use Firefox or Chrome.");
+</script>
+<![endif]-->
 
 </head>
 <html>
   
-<body style="background-color:red" onLoad="getUser();tabNew();">
+<body style="background-color:red" onLoad="getUser();tabNew();hide();">
 <div style="position:relative;min-width:960px" >
 <!--<input class=logoff type="button" value="Logout" onclick="logoff();" />-->
 </div>
@@ -342,6 +347,8 @@ Reading Eggs Home
 Customise
 </button>
 
+<script src="../scripts/edit.js">
+</script>
 <script>
 	
 //	document.getElementById("smartgoogle").onclick = function () {alert("test");}
