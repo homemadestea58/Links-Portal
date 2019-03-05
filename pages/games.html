@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<head>
+<title>Links Portal Arcade</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="../open-sans/stylesheet.css" rel="stylesheet">
+<script type="text/javascript" src="http://yandex.st/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://yandex.st/jquery-ui/1.8.2/jquery-ui.js"></script>
+<script type="text/javascript" src="../games/chess.js"></script>
+<link rel="stylesheet" type="text/css" href="../games/chess.css" />
+	<style>
+		.button {
+		background-color: #1e68d8;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 10px;
+		color: yellow;
+		padding: 15px 32px;
+		text-align: center;
+		display: inline-block;
+		font-size: 19px;
+		margin: 4px 2px;
+		cursor: pointer;
+		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
+		text-shadow: 0.1px 0.1px 0.1px #edd400;
+		transition: background-color 0.5s, color 0.5s;
+		-webkit-transition: background-color 0.5s, color 0.5s;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+		}
+
+		.logoff {
+		background-color: yellow;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 10px;
+		color: #1e68d8;
+		padding: 11px 28px;
+		text-align: center;
+		display: inline-block;
+		font-size: 19px;
+		margin: 8px 6px;
+		cursor: pointer;
+		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
+		text-shadow: 0.1px 0.1px 0.1px #edd400;
+		transition: background-color 0.5s, color 0.5s;
+		-webkit-transition: background-color 0.5s, color 0.5s;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+		position: absolute;
+		right: 30;
+		top: 20;
+		}
+
+		.button:hover {
+		background-color: yellow;
+		color:#1e68d8;
+		text-shadow: 2px 2px 2px #e0d9ff;}
+
+		.logoff:hover {
+		background-color: #1e68d8;
+		color: yellow;
+		text-shadow: 2px 2px 2px #e0d9ff;}
+
+		h2 {
+		font-size: 28px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+		
+		h3 {
+		font-size: 20px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+
+		.restrict-right {
+		margin-right: 20px;
+		margin-left: 10px;
+		}
+		
+		p {
+		font-size: 8px;
+		text-shadow: 3px 3px 3px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 7px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+
+		body {
+		animation-name: polychrome;
+		animation-duration: 7s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		margin-left: 20px;
+		margin-top: 20px;
+		border-radius: 10px;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		margin-right: 10px;
+		margin-bottom: 30px;
+		padding-left: 10px;
+		padding-top: 20px;}
+
+		@keyframes polychrome{
+			0% {background-color: red;}
+			12% {background-color: red;}
+			25% {background-color: gray;}
+			50% {background-color: orange;}
+			75% {background-color: blue;}
+			100% {background-color: red;}
+		}
+
+		.alert {
+		}
+		
+		html {
+		background: linear-gradient(90deg, rgba(46,0,255,1) 0%, rgba(218,255,0,1) 15%, rgba(255,0,0,1) 30%, rgba(46,0,255,1) 45%, rgba(218,255,0,1) 60%, rgba(255,0,0,1) 75%, rgba(46,0,255,1) 90%, rgba(218,255,0,1) 100%);
+		}
+		
+		section {
+		position: relative;
+		width: 50%;
+		border: none;
+		}
+		h1 {
+		display: inline;
+		border: none;
+		font-size: 36px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+		}
+		.logout {
+		float: right;
+		}
+
+	</style>
+<html>
+<h1>Welcome to the Links Portal Arcade</h1>
+<h2>We have lots of games for you here<h2>
+<h3>Enjoy</h3>
+<div id="board"></div>
+</html>
