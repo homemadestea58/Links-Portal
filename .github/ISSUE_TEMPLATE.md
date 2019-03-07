@@ -9,7 +9,3 @@ _Describe what actually happens_
 ### Steps to Reproduce
 
 _Explain what someone needs to do in order to see what's described in *Actual behavior* above_
-
-### Operating System and Browser
-
-_e.g. iOS 12 Chrome 67.0_
