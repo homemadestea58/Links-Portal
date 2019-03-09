@@ -19,43 +19,85 @@ function save() {
 	} else {
 		localStorage.setItem("gcalendar", "show");
 	}
-	if (document.getElementById("gdrive").checked == false) {
-		localStorage.setItem("gdrive", "hide");
+	if (document.getElementById("gdocs").checked == false) {
+		localStorage.setItem("gdocs", "hide");
 	} else {
-		localStorage.setItem("gdrive", "show");
+		localStorage.setItem("gdocs", "show");
+	}
+	if (document.getElementById("gsheets").checked == false) {
+		localStorage.setItem("gsheets", "hide");
+	} else {
+		localStorage.setItem("gsheets", "show");
+	}
+	if (document.getElementById("gforms").checked == false) {
+		localStorage.setItem("gforms", "hide");
+	} else {
+		localStorage.setItem("gforms", "show");
+	}
+	if (document.getElementById("gclassroom").checked == false) {
+		localStorage.setItem("gclassroom", "hide");
+	} else {
+		localStorage.setItem("gclassroom", "show");
+	}
+	if (document.getElementById("gsites").checked == false) {
+		localStorage.setItem("gsites", "hide");
+	} else {
+		localStorage.setItem("gsites", "show");
+	}
+	if (document.getElementById("ghangouts").checked == false) {
+		localStorage.setItem("ghangouts", "hide");
+	} else {
+		localStorage.setItem("ghangouts", "show");
+	}
+
+	if (document.getElementById("gslides").checked == false) {
+		localStorage.setItem("gslides", "hide");
+	} else {
+		localStorage.setItem("gslides", "show");
 	}
 
 
 	location = "portal.html";
 }
 
-// Removes an element by it's ID
 function re(id) {
+//	Remove element by ID
 	var element = document.getElementById(id);
 	element.parentNode.removeChild(element);
 }
 
 function hide() {
-	var bitly = localStorage.getItem("bitly");
-	var cgmail = localStorage.getItem("cgmail");
-	var gdrive = localStorage.getItem("gdrive");
-	var gcalendar = localStorage.getItem("gcalendar");
-	if (bitly == "hide") {
+	if (localStorage.getItem("bitly") == "hide") {
 		re("bitly");
 	}
-	if (cgmail == "hide") {
+	if (localStorage.getItem("cgmail") == "hide") {
 		re("newgmail");
 	}
-	if (gdrive == "hide") {
+	if (localStorage.getItem("gdrive") == "hide") {
 		re("gdrive");
 	}
-	if (gcalendar == "hide") {
+	if (localStorage.getItem("gcalendar") == "hide") {
 		re("gcalendar");
 	}
-	if (gdrive == "hide") {
-		re("gdrive");
+	if (localStorage.getItem("gdocs") == "hide") {
+		re("gdocs");
 	}
-	if (gdrive == "hide") {
-		re("gdrive");
+	if (localStorage.getItem("gsheets") == "hide") {
+		re("gsheets");
+	}
+	if (localStorage.getItem("gforms") == "hide") {
+		re("gforms");
+	}
+	if (localStorage.getItem("gclassroom") == "hide") {
+		re("gclassroom");
+	}
+	if (localStorage.getItem("gsites") == "hide") {
+		re("gsites");
+	}
+	if (localStorage.getItem("ghangouts") == "hide") {
+		re("ghangouts");
+	}
+	if (localStorage.getItem("gslides") == "hide") {
+		re("gslides");
 	}
 }

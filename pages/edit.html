@@ -1,12 +1,10 @@
 ﻿<!DOCTYPE html>
 <head>
 	<title>Links Portal - Edit</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--Allow scaling on iOS devices-->
 	<link href="../open-sans/stylesheet.css" rel="stylesheet">
-	<link rel="stylesheet" href="styles/bootstrap.min.css" >
 	<style>
 
-	/* The container */
 	.container {
 	  display: block;
 	  position: relative;
@@ -20,7 +18,6 @@
 	  user-select: none;
 	}
 
-	/* Hide the browser's default checkbox */
 	.container input {
 	  position: absolute;
 	  opacity: 0;
@@ -29,7 +26,6 @@
 	  width: 0;
 	}
 	
-	/* Create a custom checkbox */
 	.checkmark {
 	position: absolute;
 	top: 0;
@@ -224,10 +220,6 @@
 		text-shadow: 2px 2px 2px #e0d9ff;}
 	</style>
 
-<script>
-alert("Warning: This feature is in BETA and only the first few options work. Proceed at your own risk.");
-</script>
-
 </head>
 <html>
   
@@ -280,6 +272,12 @@ alert("Warning: This feature is in BETA and only the first few options work. Pro
 </label>
 <br>
 
+<label class="container"> Google Slides
+  <input type="checkbox" id=gslides  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
 <label class="container"> Google Forms
   <input type="checkbox" id=gforms  checked="checked">
   <span class="checkmark" ></span>
@@ -288,7 +286,7 @@ alert("Warning: This feature is in BETA and only the first few options work. Pro
 
 
 <label class="container"> Google Classroom
-  <input type="checkbox" id=gclass  checked="checked">
+  <input type="checkbox" id=gclassroom  checked="checked">
   <span class="checkmark" ></span>
 </label>
 <br>
