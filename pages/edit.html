@@ -223,7 +223,7 @@
 </head>
 <html>
   
-<body style="background-color:red" >
+<body style="background-color:red" onLoad="checkBoxes();">
 
 <h1>Edit the Links Portal!</h1>
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
@@ -233,6 +233,33 @@
 <br style="float: clear;">
 
 <form>
+
+<label class="container"> Links Portal Tools
+  <input type="checkbox" id=tools  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Search Google  <input type="checkbox" id=searchgoogle  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Search YouTube  <input type="checkbox" id=searchyoutube  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Search Google Images  <input type="checkbox" id=searchgimages  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Go Wayback  <input type="checkbox" id=gowayback  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
 <label class="container"> Bit.ly
   <input type="checkbox" id=bitly  checked="checked">
   <span class="checkmark" ></span>
@@ -343,6 +370,59 @@
 </label>
 <br>
 
+<label class="container"> SMH
+  <input type="checkbox" id=smh  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Snap BYOB
+  <input type="checkbox" id=snap  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> GitHub
+  <input type="checkbox" id=github  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Play Prodigy
+  <input type="checkbox" id=p-prodigy  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Prodigy 
+  <input type="checkbox" id=prodigy  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Mathletics Login
+  <input type="checkbox" id=l-mathletics  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Mathletics
+  <input type="checkbox" id=mathletics  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Reading Eggs Login
+  <input type="checkbox" id=l-eggs  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Reading Eggs
+  <input type="checkbox" id=eggs  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
 
 <input class="save" type="button" onclick="save()" value='Save'>
 </form>

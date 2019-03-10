@@ -1,61 +1,24 @@
+var linksList = ["tools", "searchgoogle", "searchyoutube", "searchgimages", "gowayback", "bitly", "cgmail", "gdrive", "gcalendar" , "gdocs", "gsheets", "gslides", "gforms", "gclassroom", "gsites", "ghangouts", "onedrive", "office365", "jotform", "yammer", "btn", "ifttt", "smh", "snap", "github", "p-prodigy", "prodigy", "l-mathletics", "mathletics", "l-eggs", "eggs"];
+
+function checkBoxes() {
+	for (var pos = 0; pos < linksList.length; pos++) {
+	checkID = linksList[pos];
+	if (localStorage.getItem(checkID) == "hide") {
+		document.getElementById(checkID).checked = false;
+	}
+	}
+}
+
 function save() {
-	if (document.getElementById("bitly").checked == false) {
-		localStorage.setItem("bitly", "hide");
-	} else {
-		localStorage.setItem("bitly", "show");
-	}
-	if (document.getElementById("cgmail").checked == false) {
-		localStorage.setItem("cgmail", "hide");
-	} else {
-		localStorage.setItem("cgmail", "show");
-	}
-	if (document.getElementById("gdrive").checked == false) {
-		localStorage.setItem("gdrive", "hide");
-	} else {
-		localStorage.setItem("gdrive", "show");
-	}
-	if (document.getElementById("gcalendar").checked == false) {
-		localStorage.setItem("gcalendar", "hide");
-	} else {
-		localStorage.setItem("gcalendar", "show");
-	}
-	if (document.getElementById("gdocs").checked == false) {
-		localStorage.setItem("gdocs", "hide");
-	} else {
-		localStorage.setItem("gdocs", "show");
-	}
-	if (document.getElementById("gsheets").checked == false) {
-		localStorage.setItem("gsheets", "hide");
-	} else {
-		localStorage.setItem("gsheets", "show");
-	}
-	if (document.getElementById("gforms").checked == false) {
-		localStorage.setItem("gforms", "hide");
-	} else {
-		localStorage.setItem("gforms", "show");
-	}
-	if (document.getElementById("gclassroom").checked == false) {
-		localStorage.setItem("gclassroom", "hide");
-	} else {
-		localStorage.setItem("gclassroom", "show");
-	}
-	if (document.getElementById("gsites").checked == false) {
-		localStorage.setItem("gsites", "hide");
-	} else {
-		localStorage.setItem("gsites", "show");
-	}
-	if (document.getElementById("ghangouts").checked == false) {
-		localStorage.setItem("ghangouts", "hide");
-	} else {
-		localStorage.setItem("ghangouts", "show");
-	}
 
-	if (document.getElementById("gslides").checked == false) {
-		localStorage.setItem("gslides", "hide");
+	for (var pos = 0; pos < linksList.length; pos++) {
+		checkedID = linksList[pos];
+		if (document.getElementById(checkedID).checked == false) {
+		localStorage.setItem(checkedID, "hide");
 	} else {
-		localStorage.setItem("gslides", "show");
+		localStorage.setItem(checkedID, "show");
 	}
-
+	}
 
 	location = "portal.html";
 }
@@ -67,37 +30,14 @@ function re(id) {
 }
 
 function hide() {
-	if (localStorage.getItem("bitly") == "hide") {
-		re("bitly");
+	for (var pos = 0; pos < linksList.length; pos++) {
+		selectedID = linksList[pos];
+		if (localStorage.getItem(selectedID) == "hide") {
+			re(selectedID);
+		}
 	}
-	if (localStorage.getItem("cgmail") == "hide") {
-		re("newgmail");
-	}
-	if (localStorage.getItem("gdrive") == "hide") {
-		re("gdrive");
-	}
-	if (localStorage.getItem("gcalendar") == "hide") {
-		re("gcalendar");
-	}
-	if (localStorage.getItem("gdocs") == "hide") {
-		re("gdocs");
-	}
-	if (localStorage.getItem("gsheets") == "hide") {
-		re("gsheets");
-	}
-	if (localStorage.getItem("gforms") == "hide") {
-		re("gforms");
-	}
-	if (localStorage.getItem("gclassroom") == "hide") {
-		re("gclassroom");
-	}
-	if (localStorage.getItem("gsites") == "hide") {
-		re("gsites");
-	}
-	if (localStorage.getItem("ghangouts") == "hide") {
-		re("ghangouts");
-	}
-	if (localStorage.getItem("gslides") == "hide") {
-		re("gslides");
+	if (localStorage.getItem("searchgoogle") == 'hide' && localStorage.getItem("searchgimages") == 'hide' && localStorage.getItem("searchyoutube") == 'hide' && localStorage.getItem("tools") == 'hide' && localStorage.getItem("gowayback") == 'hide') {
+		re("smartbuttons");
+		re("buttonBreak1");
 	}
 }
