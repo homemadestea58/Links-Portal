@@ -42,6 +42,10 @@ Button text goes here
 
 `&& localStorage.getItem("ID goes here") == 'hide'`
 
+7. You should now have your link
+
+![](images/IMG_0296.jpeg)
+
 ## Adding new Users
 
 1. Navigate to [this](https://homemadestea58.github.io/Links-Portal/pages/generate.html) page and generate the hashed password.
