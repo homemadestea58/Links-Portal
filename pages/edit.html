@@ -1,0 +1,437 @@
+﻿<!DOCTYPE html>
+<head>
+	<title>Links Portal - Edit</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--Allow scaling on iOS devices-->
+	<link href="../open-sans/stylesheet.css" rel="stylesheet">
+	<style>
+
+	.container {
+	  display: block;
+	  position: relative;
+	  padding-left: 35px;
+	  margin-bottom: 12px;
+	  cursor: pointer;
+	  font-size: 22px;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	}
+
+	.container input {
+	  position: absolute;
+	  opacity: 0;
+	  cursor: pointer;
+	  height: 0;
+	  width: 0;
+	}
+	
+	.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #1e68d8 ;
+	border: solid;
+	border-color: black;
+	border-width: thick;
+	border-radius: 5px;
+	}
+	
+	/* When the checkbox is checked, add a blue background */
+	.container input:checked ~ .checkmark {
+	  background-color: #1e68d8;
+	}
+	
+	/* Create the checkmark/indicator (hidden when not checked) */
+	.checkmark:after {
+	  content: "";
+	  position: absolute;
+	  display: none;
+	}
+	
+	/* Show the checkmark when checked */
+	.container input:checked ~ .checkmark:after {
+	  display: block;
+	}
+	
+	/* Style the checkmark/indicator */
+	.container .checkmark:after {
+	  left: 9px;
+	  top: 5px;
+	  width: 5px;
+	  height: 10px;
+	  border: solid white;
+	  border-width: 0 3px 3px 0;
+	  -webkit-transform: rotate(45deg);
+	  -ms-transform: rotate(45deg);
+	  transform: rotate(45deg);
+	}
+	.textbox {
+	background-color: #1e68d8;
+	border: solid;
+	border-color: black;
+	border-width: thick;
+	border-radius: 5px;
+	color: yellow;
+	padding: 15px 12px;
+	text-align: left;
+	display: inline-block;
+	font-size: 16px;
+	margin: 1px 1px;
+	cursor: text;
+	font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+
+		.save {
+		background-color: blue;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 10px;
+		color: yellow;
+		padding: 15px 32px;
+		text-align: center;
+		display: inline-block;
+		font-size: 22px;
+		text-shadow: 5px 5px 5px #1e68d8;
+		margin: 4px 2px;
+		cursor: pointer;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+		-webkit-font-family: 'open_sansbold', Arial, Helvetica, sans-serif; /*Fix display issues on iOS*/
+		transition: background-color 1s, color 0.5s;
+		-webkit-transition: background-color 1s, color 0.5s;
+		}
+
+		.save:hover {
+		background-color: yellow;
+		color:#1e68d8;
+		text-shadow: 2px 2px 2px #e0d9ff;}
+
+		h1 {
+		font-size: 28px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansregular', Arial, Helvetica, sans-serif;
+		float: left;
+		overflow-wrap: break-word;
+		}
+
+		p {
+		font-size: 20px;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansregular', Arial, Helvetica, sans-serif;
+		text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+		border: solid;
+		border-width: medium;
+		border-color: black;
+		overflow-wrap: break-word;
+		}
+
+		strong {
+		padding: 2px 5px;
+		}
+
+		legend {
+		font-size: 18px;
+		text-shadow: 2px 2px 2px #aaa;
+		text-align:left;
+		color: yellow;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+
+		.warning {
+		font-size: 23px;
+		color: #3300ff;
+		text-decoration: underline;}
+
+	label {
+		font-size: 18px;
+		text-align: left;
+		color: yellow;
+		padding: 2px 5px;
+		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+/*		margin-left: 12px;*/
+		}
+
+		.restrict-right {
+		margin-right: 12px;
+		}
+
+		body {
+		animation-name: polychrome;
+		animation-duration: 7s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		margin-left: 20px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+		border-radius: 10px;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		padding-left: 10px;
+		padding-top: 5px;}
+
+		@keyframes polychrome{
+			0% {background-color: red;}
+			12% {background-color: red;}
+			25% {background-color: gray;}
+			50% {background-color: orange;}
+			75% {background-color: blue;}
+			100% {background-color: red;}
+		}
+
+		html {
+		background: linear-gradient(90deg, rgba(46,0,255,1) 0%, rgba(218,255,0,1) 15%, rgba(255,0,0,1) 30%, rgba(46,0,255,1) 45%, rgba(218,255,0,1) 60%, rgba(255,0,0,1) 75%, rgba(46,0,255,1) 90%, rgba(218,255,0,1) 100%);
+		}
+
+		.logoff {
+		background-color: yellow;
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 10px;
+		color: #1e68d8;
+		padding: 11px 28px;
+		text-align: center;
+		display: inline-block;
+		font-size: 19px;
+		margin: 8px 6px;
+		cursor: pointer;
+		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
+		text-shadow: 0.1px 0.1px 0.1px #edd400;
+		transition: background-color 0.5s, color 0.5s;
+		-webkit-transition: background-color 0.5s, color 0.5s;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+		float: left;
+		}
+
+		.logoff:hover {
+		background-color: #1e68d8;
+		color: yellow;
+		text-shadow: 2px 2px 2px #e0d9ff;}
+	</style>
+
+</head>
+<html>
+  
+<body style="background-color:red" onLoad="checkBoxes();">
+
+<h1>Edit the Links Portal!</h1>
+<input class=logoff type="button" value="Logout" onclick="logoff();" />
+<br><br><br><br><br>
+<p class=restrict-right>Please deselect any items you don't want to appear. <strong style="font-size: 22px;">This will not work in Private/Incognito mode.</strong></p><br>
+
+<br style="float: clear;">
+
+<form>
+
+<label class="container"> Links Portal Tools
+  <input type="checkbox" id=tools  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Search Google  <input type="checkbox" id=searchgoogle  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Search YouTube  <input type="checkbox" id=searchyoutube  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Search Google Images  <input type="checkbox" id=searchgimages  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Go Wayback  <input type="checkbox" id=gowayback  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Bit.ly
+  <input type="checkbox" id=bitly  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+<label class="container"> Compose GMail
+  <input type="checkbox" id=cgmail  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+<label class="container"> Google Drive
+  <input type="checkbox" id=gdrive  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+
+<label class="container"> Google Calendar
+  <input type="checkbox" id=gcalendar  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+
+<label class="container"> Google Docs
+  <input type="checkbox" id=gdocs  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+
+<label class="container"> Google Sheets
+  <input type="checkbox" id=gsheets  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+<label class="container"> Google Slides
+  <input type="checkbox" id=gslides  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+<label class="container"> Google Forms
+  <input type="checkbox" id=gforms  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+
+<label class="container"> Google Classroom
+  <input type="checkbox" id=gclassroom  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+
+<label class="container"> Google Sites
+  <input type="checkbox" id=gsites  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+
+<label class="container"> Google Hangouts
+  <input type="checkbox" id=ghangouts  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> OneDrive
+  <input type="checkbox" id=onedrive  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+
+<label class="container"> Office 365
+  <input type="checkbox" id=office365  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+
+<label class="container"> JotForm
+  <input type="checkbox" id=jotform  checked="checked">
+  <span class="checkmark" ></span>
+</label>
+<br>
+
+<label class="container"> Yammer
+  <input type="checkbox" id=yammer  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> BTN
+  <input type="checkbox" id=btn  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> IFTTT
+  <input type="checkbox" id=ifttt  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> SMH
+  <input type="checkbox" id=smh  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Snap BYOB
+  <input type="checkbox" id=snap  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> GitHub
+  <input type="checkbox" id=github  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Play Prodigy
+  <input type="checkbox" id=p-prodigy  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Prodigy 
+  <input type="checkbox" id=prodigy  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Mathletics Login
+  <input type="checkbox" id=l-mathletics  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Mathletics
+  <input type="checkbox" id=mathletics  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Reading Eggs Login
+  <input type="checkbox" id=l-eggs  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<label class="container"> Reading Eggs
+  <input type="checkbox" id=eggs  checked="checked">
+  <span class="checkmark"></span>
+</label>
+<br>
+
+<input class="save" type="button" onclick="save()" value='Save'>
+</form>
+
+<script src="../scripts/edit.js">
+</script>
+<script>
+	function logoff() {
+		localStorage.setItem("username" , null);
+		location = "../index.html";
+	}
+</script>

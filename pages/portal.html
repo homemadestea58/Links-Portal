@@ -9,6 +9,7 @@
 	<style>
 		.button {
 		background-color: #1e68d8;
+		display: inline-block;
 		border: solid;
 		border-color: black;
 		border-width: thick;
@@ -27,6 +28,10 @@
 		-webkit-appearance: none; /*Fix display issues on iOS*/
 		-moz-appearance: none; /*Fix display issues on iOS*/
 		}
+
+		.custom {
+		background-color: red;
+		color: yellow;}
 
 		.logoff {
 		background-color: yellow;
@@ -167,13 +172,18 @@
 				}
 		}
 
-
 </script>
+
+<!--[if IE]>
+<script>
+alert("We detect you are using Internet Explorer. To get complete functionality, please use Firefox or Chrome.");
+</script>
+<![endif]-->
 
 </head>
 <html>
   
-<body style="background-color:red" onLoad="getUser();tabNew();">
+<body style="background-color:red" onLoad="getUser();tabNew();hide();">
 <div style="position:relative;min-width:960px" >
 <!--<input class=logoff type="button" value="Logout" onclick="logoff();" />-->
 </div>
@@ -186,6 +196,8 @@
 </section>
 
 <p id='user'>If you are seeing this for more than 5 seconds, please turn on JavaScript</p>
+
+<br />
 
 <div id="alerts"></div>
 
@@ -201,137 +213,144 @@ $(document).ready(function(){
 });
 </script>
 
-<br><br>
+<br><br id="buttonBreak1">
 	
-<h3>Smart Buttons</h3>
+<h3 id="smartbuttons" >Smart Buttons</h3>
 	
-<button id="tools" style="display:inline-block" class=button onclick="location='lptools.html'" />
+<button id="tools" class=button onclick="location='lptools.html'" />
 <img src="../images/tools.png" style="float:left;margin-right:0px" height="27" width="27">
 </button>
 
-<button id="searchgoogle" style="display:inline-block" class=button onclick="gSearch();" />
+<button id="searchgoogle" class=button onclick="gSearch();" />
 <img src="../images/search.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google
 </button>
 
-<button style="display:inline-block" class=button onclick="ySearch();" />
+<button id="searchyoutube" class=button onclick="ySearch();" />
 <img src="../images/video.png" style="float:left;margin-right:1px" height="28" width="28"> Search YouTube
 </button>
 
-<button style="display:inline-block" class=button onclick="iSearch();" />
+<button id="searchgimages" class=button onclick="iSearch();" />
 <img src="../images/image.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google Images
 </button>
 
-<button style="display:inline-block" class=button onclick="GoWayback();" />
+<button id="gowayback" class=button onclick="GoWayback();" />
 <img src="../images/browser.png" style="float:left;margin-right:1px" height="28" width="28"> Go Wayback
 </button>
 
 <br>
 <h3>Normal Web Links</h3>
 
-<button id="bitly" style="display:inline-block" class=button onclick="location='https://bit.ly'" />
+<button id="bitly" class=button onclick="location='https://bit.ly'" />
 Bit.ly
 </button>
 
-<button id="newgmail" style="display:inline-block" class=button onclick="location='https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1'" />
-Compose GMail
+<button id="cgmail" class=button onclick="location='https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1'" />
+<img src="../images/gmail.png" style="float:left;margin-right:2px" height="24" width="28">Compose GMail
 </button>
 
-<button id="gdrive" style="display:inline-block" class=button onclick="location='https://drive.google.com'" />
+<button id="gdrive" class=button onclick="location='https://drive.google.com'" />
 <img src="../images/gdrive.png" style="float:left;margin-right:2px" height="24" width="28"> Google Drive
 </button>
 
-<button id="gcalendar" style="display:inline-block" class=button onclick="location='https://calendar.google.com'" />
-Google Calendar
+<button id="gcalendar" class=button onclick="location='https://calendar.google.com'" />
+<img src="../images/calendar.png" style="float:left;margin-right:2px" height="28" width="28">Google Calendar
 </button>
 
-<button id="gdocs" style="display:inline-block" class=button onclick="location='https://docs.google.com'" />
+<button id="gdocs" class=button onclick="location='https://docs.google.com'" />
 <img src="../images/gdocs.png" style="float:left;margin-right:2px" height="28" width="28"> Google Docs
 </button>
 
-<button id="gsheets" style="display:inline-block" class=button onclick="location='https://sheets.google.com'" />
-<img src="../images/gsheets.png" style="float:left;margin-right:2px" height="28" width="28"> Google Sheets
+<button id="gsheets" class=button onclick="location='https://sheets.google.com'" />
+<img src="../images/gsheets.png" style="float:left;margin-right:2px" height="28" width="22"> Google Sheets
 </button>
 
-<button id="gslides" style="display:inline-block" class=button onclick="location='https://slides.google.com'" />
-<img src="../images/gslides.png" style="float:left;margin-right:2px" height="28" width="28"> Google Slides
+<button id="gslides" class=button onclick="location='https://slides.google.com'" />
+<img src="../images/gslides.png" style="float:left;margin-right:2px" height="28" width="28">
+Google Slides
 </button>
 
-<button id="gforms" style="display:inline-block" class=button onclick="location='https://forms.google.com'" />
-<img src="../images/gforms.png" style="float:left;margin-right:2px" height="28" width="28">Google Forms
+<button id="gforms" class=button onclick="location='https://forms.google.com'" />
+<img src="../images/gforms.png" style="float:left;margin-right:2px" height="28" width="22">Google Forms
 </button>
 
-<button id="gclassroom" style="display:inline-block" class=button onclick="location='https://classroom.google.com'" />
+<button id="gclassroom" class=button onclick="location='https://classroom.google.com'" />
 <img src="../images/gclassroom.png" style="float:left;margin-right:2px" height="28" width="28"> Google Classroom
 </button>
 
-<button id="gsites" style="display:inline-block" class=button onclick="location='https://sites.google.com'" />
+<button id="gsites" class=button onclick="location='https://sites.google.com'" />
 <img src="../images/gsites.png" style="float:left;margin-right:2px" height="28" width="28"> Google Sites
 </button>
 
-<button id="ghangouts" style="display:inline-block" class=button onclick="location='https://hangouts.google.com'" />
+<button id="ghangouts" class=button onclick="location='https://hangouts.google.com'" />
 Google Hangouts
 </button>
 
-<button id="onedrive" style="display:inline-block" class=button onclick="location='https://onedrive.com'" />
+<button id="onedrive" class=button onclick="location='https://onedrive.com'" />
 OneDrive
 </button>
 
-<button id="office365" style="display:inline-block" class=button onclick="location='home.office.com'" />
+<button id="office365" class=button onclick="location='home.office.com'" />
 Office 365
 </button>
 
-<button id="jotform" style="display:inline-block" class=button onclick="location='https://jotform.com'" />
+<button id="jotform" class=button onclick="location='https://jotform.com'" />
 JotForm
 </button>
 
-<button id="yammer" style="display:inline-block" class=button onclick="location='https://yammer.com'" />
+<button id="yammer" class=button onclick="location='https://yammer.com'" />
 Yammer
 </button>
 
-<button id="btn" style="display:inline-block" class=button onclick="location='https://abc.net.au/btn'" />
+<button id="btn" class=button onclick="location='https://abc.net.au/btn'" />
 BTN
 </button>
 
-<button id="ifttt" style="display:inline-block" class=button onclick="location='https://ift.tt'" />
+<button id="ifttt" class=button onclick="location='https://ift.tt'" />
 IFTTT
 </button>
 
-<button id="smh" style="display:inline-block" class=button onclick="location='https://smh.com.au'" />
+<button id="smh" class=button onclick="location='https://smh.com.au'" />
 SMH
 </button>
 
-<button id="snap" style="display:inline-block" class=button onclick="location='https://snap-berkeley.edu'" />
+<button id="snap" class=button onclick="location='https://snap-berkeley.edu'" />
 Snap BYOB
 </button>
 
-<button id="github" style="display:inline-block" class=button onclick="location='https://github.com'" />
+<button id="github" class=button onclick="location='https://github.com'" />
 GitHub
 </button>
 
-<button id="p-prodigy" style="display:inline-block" class=button onclick="location='https://play.prodigygame.com'" />
+<button id="p-prodigy" class=button onclick="location='https://play.prodigygame.com'" />
 Play Prodigy
 </button>
 
-<button id="prodigy" style="display:inline-block" class=button onclick="location='https://prodigygame.com'" />
+<button id="prodigy" class=button onclick="location='https://prodigygame.com'" />
 Prodigy Home
 </button>
 
-<button id="l-mathletics" style="display:inline-block" class=button onclick="location='http://student.mathletics.com/primary'" />
+<button id="l-mathletics" class=button onclick="location='http://student.mathletics.com/primary'" />
 Mathletics Login
 </button>
 
-<button id="mathletics" style="display:inline-block" class=button onclick="location='http://au.mathletics.com'" />
+<button id="mathletics" class=button onclick="location='http://au.mathletics.com'" />
 Mathletics Home
 </button>
 
-<button id="l-eggs" style="display:inline-block" class=button onclick="location='https://app.readingeggs.com/login'" />
+<button id="l-eggs" class=button onclick="location='https://app.readingeggs.com/login'" />
 Reading Eggs Login
 </button>
 
-<button id="eggs" style="display:inline-block" class=button onclick="location='https://readingeggs.com'" />
+<button id="eggs" class=button onclick="location='https://readingeggs.com'" />
 Reading Eggs Home
 </button>
 
+<button id="customise" class="button custom" onclick="location='edit.html'" />
+Customise
+</button>
+
+<script src="../scripts/edit.js">
+</script>
 <script>
 	
 //	document.getElementById("smartgoogle").onclick = function () {alert("test");}
