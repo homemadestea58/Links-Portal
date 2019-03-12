@@ -1,4 +1,4 @@
-# Links-Portal
+## The Links-Portal
 This is the Links Portal. The Place for Handy Links
 
 This is designed as a homepage for navigating to other links using HTML, CSS and JavaScript
@@ -41,3 +41,10 @@ Button text goes here
 6. If you are adding something to the Smart Buttons section, please add the following to the brackets on line 39 (at the time of writing) of scripts/edit.js to ensure the header is removed correctly. Make sure that it is before the closing bracket `)` which is just before the `{` sign.
 
 `&& localStorage.getItem("ID goes here") == 'hide'`
+
+## Adding new Users
+
+1. Navigate to [this](https://homemadestea58.github.io/Links-Portal/pages/generate.html) page and generate the hashed password.
+2. Open index.html and add the new username to the `users` array, which is defined in the `login()` function.
+3. Add the hashed passsword to the `passwords` array
+4. Combine the username and password and add the combined string to the `userpass` array.
