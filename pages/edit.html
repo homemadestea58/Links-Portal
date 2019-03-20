@@ -223,7 +223,7 @@
 </head>
 <html>
   
-<body style="background-color:red" onLoad="checkBoxes();">
+<body style="background-color:red" onLoad="checkBoxes();getUser();">
 
 <h1>Edit the Links Portal!</h1>
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
@@ -434,4 +434,20 @@
 		localStorage.setItem("username" , null);
 		location = "../index.html";
 	}
+
+function getUser(){
+	var usern = localStorage.getItem("username");		var usertext = document.getElementById("user");
+	if (usern == null || usern == '' || usern == 'null') {			localStorage.setItem("username" , null);
+		localStorage.setItem("warn" , "true");
+		location = "../index.html";
+	} else {usertext.innerHTML = '';
+		if (usern == 'admin') {
+		addAlert('Welcome back!,  Administrator');
+		document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
+		} else {
+		addAlert('Welcome back!, ' + usern);
+		document.getElementById("title").innerHTML = usern + "\'s Links Portal";}
+				}
+		}
+ 
 </script>
