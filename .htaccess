@@ -1,0 +1,24 @@
+RewriteEngine on
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.png [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.png -f
+RewriteRule ^ %{REQUEST_URI}.png [NC,L]
+
+RedirectMatch 301 ^/$ http://links-p.cf/login
+
+ErrorDocument 400 http://error.links-p.cf/400
+ErrorDocument 401 http://error.links-p.cf/401
+ErrorDocument 403 http://error.links-p.cf/403
+ErrorDocument 404 http://error.links-p.cf/404
+ErrorDocument 500 http://error.links-p.cf/500
+ErrorDocument 503 http://error.links-p.cf/503
+
+DirectoryIndex login.html
