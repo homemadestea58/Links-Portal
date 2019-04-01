@@ -241,9 +241,9 @@
 		if (users.includes(s.value) && passwords.includes(encryptpass) && userpass.includes(s.value + encryptpass)) {
 				localStorage.setItem("username", s.value);
 				if (openintab.checked == true) {
-					location= 'pages/portal.html' + '?open=newtab';
+					location= 'links-portal.cf/pages/portal.html' + '?open=newtab';
 				} else {
-					location= 'pages/portal.html';
+					location= 'links-portal.cf/pages/portal.html';
 				}
 				console.log('Logged in successfully');
 				
