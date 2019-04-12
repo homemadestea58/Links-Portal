@@ -161,7 +161,7 @@
 	var usern = localStorage.getItem("username");		var usertext = document.getElementById("user");
 	if (usern == null || usern == '' || usern == 'null') {			localStorage.setItem("username" , null);
 		localStorage.setItem("warn" , "true");
-		location = "../index.html";
+		location = "links-portal.cf";
 	} else {usertext.innerHTML = '';
 		if (usern == 'admin') {
 		addAlert('Welcome back!,  Administrator');

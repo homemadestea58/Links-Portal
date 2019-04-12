@@ -237,6 +237,10 @@ $(document).ready(function(){
 <img src="images/browser.png" style="float:left;margin-right:1px" height="28" width="28"> Go Wayback
 </button>
 
+<button id="searchinternetarchive" class=button onclick="InternetArchive();" />
+<img src="images/cloud.png" style="float:left;margin-right:1px" height="28" width="28"> Search Internet Archive
+</button>
+
 <br>
 <h3>Normal Web Links</h3>
 
@@ -387,6 +391,10 @@ Customise
 		url = prompt("Please enter a url to Go Wayback!", "");
 		if (url!=null) location = "https://web.archive.org/"+ url;
 		}
+    function InternetArchive() {
+     url = prompt("What do you want to search the Internet Archive for?", "");
+     if (url!=null) location = "https://archive.org/"+ url;
+     }
 
 	function tabNew() {
 		var newtb = getParameterByName('open');
