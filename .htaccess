@@ -6,11 +6,11 @@ RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
-RewriteCond %{THE_REQUEST} /([^.]+)\.png [NC]
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteRule ^ /%1 [NC,L,R]
 
-RewriteCond %{REQUEST_FILENAME}.png -f
-RewriteRule ^ %{REQUEST_URI}.png [NC,L]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
 
 RedirectMatch 301 ^/$ http://links-p.cf/login
 

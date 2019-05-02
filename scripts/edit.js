@@ -1,4 +1,4 @@
-var linksList = ["tools", "searchgoogle", "searchyoutube", "searchgimages", "gowayback", "bitly", "cgmail", "gdrive", "gcalendar" , "gdocs", "gsheets", "gslides", "gforms", "gclassroom", "gsites", "ghangouts", "onedrive", "office365", "jotform", "yammer", "btn", "ifttt", "smh", "snap", "github", "p-prodigy", "prodigy", "l-mathletics", "mathletics", "l-eggs", "eggs"];
+var linksList = ["tools", "searchgoogle", "searchyoutube", "searchgimages", "gowayback","searchInetArchive", "bitly", "cgmail", "gdrive", "gcalendar" , "gdocs", "gsheets", "gslides", "gforms", "gclassroom", "gsites", "ghangouts", "onedrive", "office365", "jotform", "yammer", "btn", "ifttt", "smh", "snap", "github", "p-prodigy", "prodigy", "l-mathletics", "mathletics", "l-eggs", "eggs"];
 
 function checkBoxes() {
 	for (var pos = 0; pos < linksList.length; pos++) {
@@ -36,7 +36,7 @@ function hide() {
 			re(selectedID);
 		}
 	}
-	if (localStorage.getItem("searchgoogle") == 'hide' && localStorage.getItem("searchgimages") == 'hide' && localStorage.getItem("searchyoutube") == 'hide' && localStorage.getItem("tools") == 'hide' && localStorage.getItem("gowayback") == 'hide') {
+	if (localStorage.getItem("searchgoogle") == 'hide' && localStorage.getItem("searchgimages") == 'hide' && localStorage.getItem("searchyoutube") == 'hide' && localStorage.getItem("tools") == 'hide' && localStorage.getItem("gowayback") == 'hide' && localStorage.getItem("searchInetArchive") == 'hide') {
 		re("smartbuttons");
 		re("buttonBreak1");
 	}

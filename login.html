@@ -210,9 +210,9 @@
 <input class=textbox type="text" id="username" autofocus autocomplete='off' onKeyDown="if(event.keyCode==13) login();" required><br><br>
 <legend>Password:</legend>
 <input ondblclick="var openintab = document.getElementById('tabopen');localStorage.setItem('username', 'guest');if (openintab.checked == true) {
-					location= 'portal.html' + '?open=newtab';
+					location= './pages/portal.html' + '?open=newtab';
 				} else {
-					location= 'portal.html';
+					location= './pages/portal.html';
 				}" class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
 <label class="container"> Open Links in a new tab (may be blocked as popups)
   <input type="checkbox" id=tabopen>
@@ -241,9 +241,9 @@
 		if (users.includes(s.value) && passwords.includes(encryptpass) && userpass.includes(s.value + encryptpass)) {
 				localStorage.setItem("username", s.value);
 				if (openintab.checked == true) {
-					location= 'portal.html' + '?open=newtab';
+					location= './pages/portal.html' + '?open=newtab';
 				} else {
-					location= 'portal.html';
+					location= './pages/portal.html';
 				}
 				console.log('Logged in successfully');
 				

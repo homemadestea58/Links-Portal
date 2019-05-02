@@ -237,6 +237,10 @@ $(document).ready(function(){
 <img src="../images/browser.png" style="float:left;margin-right:1px" height="28" width="28"> Go Wayback
 </button>
 
+<button id="internetachive" class=button onclick="InterNetArchive();" />
+<img src="../images/cloud.png" style="float:left;margin-right:1px" height="28" width="28"> Search Internet Archive
+</button>
+
 <br>
 <h3>Normal Web Links</h3>
 
@@ -388,6 +392,11 @@ Customise
 		if (url!=null) location = "https://web.archive.org/"+ url;
 		}
 
+	function  InterNetArchive() {
+		I = prompt("What do you want to search the InterNet Archive for?","");
+		if (I!=null) location = "https://archive.org/search.php?query="+ I;
+		}
+			
 	function tabNew() {
 		var newtb = getParameterByName('open');
 		if (newtb == 'newtab') {
