@@ -235,9 +235,9 @@
 		var openintab = document.getElementById("tabopen");
 		encryptpass = md5(pass.value);
 		var s = document.getElementById("username");
-		var users = ['Homemadesteam58', 'admin', 'guest', 'HSAK5G'];
-		var passwords = ['454a49231691b3fd73c93857b3441162','fc5364bf9dbfa34954526becad136d4b','d41d8cd98f00b204e9800998ecf8427e', '8623dc603081464819e6776ae7edb88a'];
-		var userpass = ['Homemadesteam58454a49231691b3fd73c93857b3441162' , 'adminfc5364bf9dbfa34954526becad136d4b' , 'guestd41d8cd98f00b204e9800998ecf8427e', 'HSAK5G8623dc603081464819e6776ae7edb88a'];
+		var users = ['Homemadesteam58', 'admin', 'guest', 'HSAK5G', 'PIP 2019 Links Portal Experience'];
+		var passwords = ['454a49231691b3fd73c93857b3441162','fc5364bf9dbfa34954526becad136d4b','d41d8cd98f00b204e9800998ecf8427e', '8623dc603081464819e6776ae7edb88a', '82da33acbcdce87ecd54680578dfacd2'];
+		var userpass = ['Homemadesteam58454a49231691b3fd73c93857b3441162' , 'adminfc5364bf9dbfa34954526becad136d4b' , 'guestd41d8cd98f00b204e9800998ecf8427e', 'HSAK5G8623dc603081464819e6776ae7edb88a', 'PIP 2019 Links Portal Experience 82da33acbcdce87ecd54680578dfacd2'];
 		if (users.includes(s.value) && passwords.includes(encryptpass) && userpass.includes(s.value + encryptpass)) {
 				localStorage.setItem("username", s.value);
 				if (openintab.checked == true) {
