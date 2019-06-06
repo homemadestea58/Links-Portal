@@ -235,11 +235,12 @@
 		var openintab = document.getElementById("tabopen");
 		encryptpass = md5(pass.value);
 		var s = document.getElementById("username");
+		username = s.value.toLowerCase();
 		var users = ['Homemadesteam58', 'admin', 'guest', 'HSAK5G', 'PIP 2019 Links Portal Experience'];
 		var passwords = ['454a49231691b3fd73c93857b3441162','fc5364bf9dbfa34954526becad136d4b','d41d8cd98f00b204e9800998ecf8427e', '8623dc603081464819e6776ae7edb88a', '82da33acbcdce87ecd54680578dfacd2'];
 		var userpass = ['Homemadesteam58454a49231691b3fd73c93857b3441162' , 'adminfc5364bf9dbfa34954526becad136d4b' , 'guestd41d8cd98f00b204e9800998ecf8427e', 'HSAK5G8623dc603081464819e6776ae7edb88a', 'PIP 2019 Links Portal Experience82da33acbcdce87ecd54680578dfacd2'];
-		if (users.includes(s.value) && passwords.includes(encryptpass) && userpass.includes(s.value + encryptpass)) {
-				localStorage.setItem("username", s.value);
+		if (users.includes(username) && passwords.includes(encryptpass) && userpass.includes(username + encryptpass)) {
+				localStorage.setItem("username", username);
 				if (openintab.checked == true) {
 					location= './pages/portal.html' + '?open=newtab';
 				} else {
