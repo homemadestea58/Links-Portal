@@ -13,6 +13,7 @@ function save() {
 
 	for (var pos = 0; pos < linksList.length; pos++) {
 		checkedID = linksList[pos];
+		console.log(checkedID + " - OK");
 		if (document.getElementById(checkedID).checked == false) {
 		localStorage.setItem(checkedID, "hide");
 	} else {
