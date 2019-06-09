@@ -1,4 +1,4 @@
-var linksList = ["tools", "searchgoogle", "searchyoutube", "searchgimages", "gowayback","searchInetArchive", "bitly", "cgmail", "gdrive", "gcalendar" , "gdocs", "gsheets", "gslides", "gforms", "gclassroom", "gsites", "ghangouts", "onedrive", "office365", "jotform", "yammer", "btn", "ifttt", "smh", "snap", "github", "p-prodigy", "prodigy", "l-mathletics", "mathletics", "l-eggs", "eggs"];
+var linksList = ["tools", "searchgoogle", "searchyoutube", "searchgimages", "gowayback","searchInterNetArchive", "bitly", "cgmail", "gdrive", "gcalendar" , "gdocs", "gsheets", "gslides", "gforms", "gclassroom", "gsites", "ghangouts", "onedrive", "office365", "jotform", "yammer", "btn", "ifttt", "smh", "snap", "github", "p-prodigy", "prodigy", "l-mathletics", "mathletics", "l-eggs", "eggs"];
 
 function checkBoxes() {
 	for (var pos = 0; pos < linksList.length; pos++) {
@@ -13,6 +13,7 @@ function save() {
 
 	for (var pos = 0; pos < linksList.length; pos++) {
 		checkedID = linksList[pos];
+		console.log(checkedID + " - OK");
 		if (document.getElementById(checkedID).checked == false) {
 		localStorage.setItem(checkedID, "hide");
 	} else {
