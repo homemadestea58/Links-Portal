@@ -40,7 +40,7 @@ Button text goes here
 </label>
 <br>`
 
-6. Check that you have kept the IDs consistent otherwise <b>javascript will fail.</b>
+6. Check that you have kept the IDs consistent otherwise ***javascript will fail.***
 
 7. If you are adding something to the Smart Buttons section, please add the following to the brackets on line 39 (at the time of writing) of scripts/edit.js to ensure the header is removed correctly. Make sure that it is before the closing bracket `)` which is just before the `{` sign.
 
