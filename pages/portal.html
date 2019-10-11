@@ -6,7 +6,6 @@
 	<script src="../scripts/jquery.min.js"></script>
 	<link rel="stylesheet" href="../styles/bootstrap.min.css" >
 	<script src="../scripts/bootstrap.min.js"></script>
-	<script src="https://kit.fontawesome.com/b6ce7a1746.js"></script>
 	<style>
 		.button {
 		background-color: #1e68d8;
@@ -98,7 +97,7 @@
 		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
 
 		body {
-		animation-name: polychrome;
+		/*animation-name: polychrome;*/
 		animation-duration: 7s;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
@@ -162,7 +161,7 @@
 	var usern = localStorage.getItem("username");		var usertext = document.getElementById("user");
 	if (usern == null || usern == '' || usern == 'null') {			localStorage.setItem("username" , null);
 		localStorage.setItem("warn" , "true");
-		location = "links-portal.cf";
+		location = "/login.html";
 	} else {usertext.innerHTML = '';
 		if (usern == 'admin') {
 		addAlert('Welcome back!,  Administrator');
@@ -216,9 +215,9 @@ $(document).ready(function(){
 
 <br><br id="buttonBreak1">
 	
-<h3 id="smartbuttons" >Smart Buttons</h3>
+<h3 id="smartbuttons" >Smart Buttons</h3><div id="smartbuttongroup">
 	
-<button id="tools" class=button onclick="location='lptools.html'" />
+<!--<button id="tools" class=button onclick="location='lptools.html'" />
 <img src="../images/tools.png" style="float:left;margin-right:0px" height="27" width="27">
 </button>
 
@@ -240,12 +239,13 @@ $(document).ready(function(){
 
 <button id="searchInterNetArchive" class=button onclick="InterNetArchive();" />
 <img src="../images/cloud.png" style="float:left;margin-right:1px" height="28" width="28"> Search Internet Archive
-</button>
+</button>-->
 
+</div>
 <br>
-<h3>Normal Web Links</h3>
+<h3>Normal Web Links</h3><div id="normallinksgroup">
 
-<button id="bitly" class=button onclick="location='https://bit.ly'" />
+<!--<button id="bitly" class=button onclick="location='https://bit.ly'" />
 Bit.ly
 </button>
 
@@ -348,8 +348,9 @@ Reading Eggs Login
 
 <button id="eggs" class=button onclick="location='https://readingeggs.com'" />
 Reading Eggs Home
-</button>
+</button>-->
 
+</div>
 <button id="customise" class="button custom" onclick="location='edit.html'" />
 Customise
 </button>
@@ -357,14 +358,6 @@ Customise
 <script src="../scripts/edit.js">
 </script>
 <script>
-	
-//	document.getElementById("smartgoogle").onclick = function () {alert("test");}
-	
-	function gSearch(){
-		q = prompt("Search Question? ... ", "");
-		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
-//		void 0
-}
 
 	function getParameterByName(name, url) {
 		if (!url) url = window.location.href;
@@ -376,9 +369,52 @@ Customise
 		return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
 
+	var http = new XMLHttpRequest();
+	http.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			parseLinks(this.responseText);
+		}
+	};
+	http.open("GET", "/links.json", true);
+	http.send();
+
+function parseLinks(response) {
+var links = JSON.parse(response);
+var openin = getParameterByName('open');
+var smartgroup = document.getElementById('smartbuttongroup');
+var linksgroup = document.getElementById('normallinksgroup');
+var img = "";
+for (i in links) {
+	//alert(links[i].Text);
+	selected = links[i];
+	if (selected.issmart) {
+		var script = selected.script;
+	} else if (openin = newtab) {
+		var script = `window.open('` + selected.url + `', '_blank')`;
+	} else {
+		var script = `location='` + selected.url + `'`;
+	}
+	if (selected.hasimage) {
+		img = `<img src="` + selected.imagepath + `" style="float:left;margin-right:2px" height="` + selected.imageheight + `" width="` + selected.imagewidth + `"> `;
+	code = `<button id="` + selected.id + `" class="button" onclick="` + script + `" >` + img + selected.text + ` </button>`;
+	if (selected.issmart) {
+		smartgroup.insertAdjacentHTML('beforeend', code);
+	} else {
+		linksgroup.insertAdjacentHTML('beforeend', code);
+	}
+}
+}
+}
+	
+	function gSearch(){
+		q = prompt("Search Question? ... ", "");
+		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
+//		void 0
+}
+
 	function logoff() {
 		localStorage.setItem("username" , null);
-		location = "../index.html";
+		location = "../login.html";
 	}
 	function ySearch(){
 		y = prompt("Video to Look for ...", "");

@@ -1,0 +1,57 @@
+[
+{
+	"id": "tools",
+	"text": "",
+	"url": "lptools.html",
+	"issmart": true,
+	"hasimage": true,
+	"script": "",
+	"imagepath": "/images/tools.png",
+	"imagewidth": 27,
+	"imageheight": 27
+},
+{
+	"id": "searchgoogle",
+	"text": "Search Google",
+	"url": "",
+	"issmart": true,
+	"hasimage": true,
+	"script": "gSearch();",
+	"imagepath": "/images/search.png",
+	"imagewidth": 28,
+	"imageheight": 28
+},
+{
+	"id": "searchyoutube",
+	"text": "Search YouTube",
+	"url": "",
+	"issmart": true,
+	"hasimage": true,
+	"script": "ySearch();",
+	"imagePath": "/images/video.png",
+	"imagewidth": 28,
+	"imageheight": 28
+},
+{
+	"id": "searchgimages",
+	"text": "Search Google Images",
+	"url": "",
+	"issmart": true,
+	"hasimage": true,
+	"script": "iSearch();",
+	"imagePath": "/images/image.png",
+	"imagewidth": 28,
+	"imageheight": 28
+},
+{
+	"id": "gowayback",
+	"text": "Search Google Images",
+	"url": "",
+	"issmart": true,
+	"hasimage": true,
+	"script": "iSearch();",
+	"imagePath": "/images/image.png",
+	"imagewidth": 28,
+	"imageheight": 28
+}
+]
