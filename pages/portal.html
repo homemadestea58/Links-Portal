@@ -97,7 +97,7 @@
 		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
 
 		body {
-		/*animation-name: polychrome;*/
+		animation-name: polychrome;
 		animation-duration: 7s;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
@@ -186,7 +186,7 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 </head>
 <html>
   
-<body style="background-color:red" onLoad="getUser();hide();">
+<body style="background-color:red" onLoad="getUser();">
 <div style="position:relative;min-width:960px" >
 <!--<input class=logoff type="button" value="Logout" onclick="logoff();" />-->
 </div>
@@ -225,101 +225,12 @@ $(document).ready(function(){
 
 <br>
 <h3>Normal Web Links</h3><div id="normallinksgroup">
-
-<!--
-
-<button id="gsheets" class=button onclick="location='https://sheets.google.com'" />
-<img src="../images/gsheets.png" style="float:left;margin-right:2px" height="28" width="22"> Google Sheets
-</button>
-
-<button id="gslides" class=button onclick="location='https://slides.google.com'" />
-<img src="../images/gslides.png" style="float:left;margin-right:2px" height="28" width="28">
-Google Slides
-</button>
-
-<button id="gforms" class=button onclick="location='https://forms.google.com'" />
-<img src="../images/gforms.png" style="float:left;margin-right:2px" height="28" width="22">Google Forms
-</button>
-
-<button id="gclassroom" class=button onclick="location='https://classroom.google.com'" />
-<img src="../images/gclassroom.png" style="float:left;margin-right:2px" height="28" width="28"> Google Classroom
-</button>
-
-<button id="gsites" class=button onclick="location='https://sites.google.com'" />
-<img src="../images/gsites.png" style="float:left;margin-right:2px" height="28" width="28"> Google Sites
-</button>
-
-<button id="ghangouts" class=button onclick="location='https://hangouts.google.com'" />
-Google Hangouts
-</button>
-
-<button id="onedrive" class=button onclick="location='https://onedrive.com'" />
-OneDrive
-</button>
-
-<button id="office365" class=button onclick="location='home.office.com'" />
-Office 365
-</button>
-
-<button id="jotform" class=button onclick="location='https://jotform.com'" />
-JotForm
-</button>
-
-<button id="yammer" class=button onclick="location='https://yammer.com'" />
-Yammer
-</button>
-
-<button id="btn" class=button onclick="location='https://abc.net.au/btn'" />
-BTN
-</button>
-
-<button id="ifttt" class=button onclick="location='https://ift.tt'" />
-IFTTT
-</button>
-
-<button id="smh" class=button onclick="location='https://smh.com.au'" />
-SMH
-</button>
-
-<button id="snap" class=button onclick="location='https://snap-berkeley.edu'" />
-Snap BYOB
-</button>
-
-<button id="github" class=button onclick="location='https://github.com'" />
-GitHub
-</button>
-
-<button id="p-prodigy" class=button onclick="location='https://play.prodigygame.com'" />
-Play Prodigy
-</button>
-
-<button id="prodigy" class=button onclick="location='https://prodigygame.com'" />
-Prodigy Home
-</button>
-
-<button id="l-mathletics" class=button onclick="location='http://student.mathletics.com/primary'" />
-Mathletics Login
-</button>
-
-<button id="mathletics" class=button onclick="location='http://au.mathletics.com'" />
-Mathletics Home
-</button>
-
-<button id="l-eggs" class=button onclick="location='https://app.readingeggs.com/login'" />
-Reading Eggs Login
-</button>
-
-<button id="eggs" class=button onclick="location='https://readingeggs.com'" />
-Reading Eggs Home
-</button>-->
-
 </div>
+
 <button id="customise" class="button custom" onclick="location='edit.html'" />
 Customise
 </button>
 
-<script src="../scripts/edit.js">
-</script>
 <script>
 
 function getParameterByName(name, url) {
@@ -349,6 +260,9 @@ var linksgroup = document.getElementById('normallinksgroup');
 for (i in links) {
 	var img = "";
 	selected = links[i];
+	if (localStorage.getItem(selected.id) == "hide") {
+		continue;
+	}
 	if (selected.issmart) {
 		var script = selected.script;
 	} else if (openin = "newtab") {
