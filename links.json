@@ -45,12 +45,23 @@
 },
 {
 	"id": "gowayback",
-	"text": "Search Google Images",
+	"text": "Go Wayback",
 	"url": "",
 	"issmart": true,
 	"hasimage": true,
-	"script": "iSearch();",
-	"imagePath": "/images/image.png",
+	"script": "GoWayback();",
+	"imagePath": "/images/browser.png",
+	"imagewidth": 28,
+	"imageheight": 28
+},
+{
+	"id": "searchinternetarchive",
+	"text": "Search Internet Archive",
+	"url": "",
+	"issmart": true,
+	"hasimage": true,
+	"script": "Intr();",
+	"imagePath": "/images/browser.png",
 	"imagewidth": 28,
 	"imageheight": 28
 }

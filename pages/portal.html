@@ -389,7 +389,7 @@ for (i in links) {
 	selected = links[i];
 	if (selected.issmart) {
 		var script = selected.script;
-	} else if (openin = newtab) {
+	} else if (openin = "newtab") {
 		var script = `window.open('` + selected.url + `', '_blank')`;
 	} else {
 		var script = `location='` + selected.url + `'`;
@@ -428,6 +428,56 @@ for (i in links) {
 		url = prompt("Please enter a url to Go Wayback!", "");
 		if (url!=null) location = "https://web.archive.org/"+ url;
 		}
+
+function searchWith(provider) {
+	var openin = getParameterByName('open');
+	switch(provider) {
+		case "google":
+			query = prompt("Search Question? ... ", "");
+			break;
+		case "youtube":
+			query = prompt("Video to Look for ...", "");
+			break;
+		case "googleimages":
+			query = prompt("Image to Look For...", "");
+			break;
+		case "wayback":
+			query = prompt("Please enter a url to Go Wayback!", "");
+			break;
+		case "internetarchive":
+			query = prompt("What do you want to search the InterNet Archive for?","");
+			break;
+		default:
+			console.log("Search provider not found, aborting");
+			return("Search provider not found");
+	}
+	if (query == null) {
+		return("Cancelled");
+	}
+	switch(provider) {
+		case "google":
+			url = "http://www.google.com/search?q=" + escape(query).replace(/ /g, "+") , '_blank';
+			break;
+		case "youtube":
+			url = "https://youtube.com/search?q=" + query;
+			break;
+		case "googleimages":
+			url = "https://www.google.com/search?tbm=isch&q=" + query;
+			break;
+		case "wayback":
+			url = "https://web.archive.org/web/*/"+ query;
+			break;
+		case "internetarchive":
+			url = "https://archive.org/search.php?query="+ query;
+			break;
+
+	}
+	if (openin == "newtab")
+		window.open(url , '_blank');
+	} else {
+		window.location = url;
+	}
+}
 
 	function  InterNetArchive() {
 		I = prompt("What do you want to search the InterNet Archive for?","");
