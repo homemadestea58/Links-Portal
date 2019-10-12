@@ -1,11 +1,11 @@
 [
 {
 	"id": "tools",
-	"text": "",
+	"text": "Tools",
 	"url": "lptools.html",
 	"issmart": true,
 	"hasimage": true,
-	"script": "",
+	"script": "location='lptools.html'",
 	"imagepath": "/images/tools.png",
 	"imagewidth": 27,
 	"imageheight": 27
@@ -16,7 +16,7 @@
 	"url": "",
 	"issmart": true,
 	"hasimage": true,
-	"script": "gSearch();",
+	"script": "searchWith('google');",
 	"imagepath": "/images/search.png",
 	"imagewidth": 28,
 	"imageheight": 28
@@ -27,8 +27,8 @@
 	"url": "",
 	"issmart": true,
 	"hasimage": true,
-	"script": "ySearch();",
-	"imagePath": "/images/video.png",
+	"script": "searchWith('youtube');",
+	"imagepath": "/images/video.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -38,8 +38,8 @@
 	"url": "",
 	"issmart": true,
 	"hasimage": true,
-	"script": "iSearch();",
-	"imagePath": "/images/image.png",
+	"script": "searchWith('googleimages');",
+	"imagepath": "/images/image.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -49,8 +49,8 @@
 	"url": "",
 	"issmart": true,
 	"hasimage": true,
-	"script": "GoWayback();",
-	"imagePath": "/images/browser.png",
+	"script": "searchWith('wayback');",
+	"imagepath": "/images/browser.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -60,9 +60,201 @@
 	"url": "",
 	"issmart": true,
 	"hasimage": true,
-	"script": "Intr();",
-	"imagePath": "/images/browser.png",
+	"script": "searchWith('internetarchive');",
+	"imagepath": "/images/browser.png",
 	"imagewidth": 28,
 	"imageheight": 28
+},
+{
+	"id": "bitly",
+	"text": "Bit.ly",
+	"url": "https://bit.ly",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "cgmail",
+	"text": "Compose GMail",
+	"url": "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/gmail.png",
+	"imagewidth": 28,
+	"imageheight": 24
+},
+{
+	"id": "gdrive",
+	"text": "Google Drive",
+	"url": "https://drive.google.com",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/gdrive.png",
+	"imagewidth": 28,
+	"imageheight": 24
+},
+{
+	"id": "gcalendar",
+	"text": "Google Calendar",
+	"url": "https://calendar.google.com",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/calendar.png",
+	"imagewidth": 28,
+	"imageheight": 28
+},
+{
+	"id": "gsheets",
+	"text": "Google Sheets",
+	"url": "https://sheets.google.com",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/gsheets.png",
+	"imagewidth": 22,
+	"imageheight": 28
+},
+{
+	"id": "gslides",
+	"text": "Google Slides",
+	"url": "https://slides.google.com",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/gslides.png",
+	"imagewidth": 28,
+	"imageheight": 28
+},
+{
+	"id": "gforms",
+	"text": "Google Forms",
+	"url": "https://forms.google.com",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/gforms.png",
+	"imagewidth": 22,
+	"imageheight": 28
+},
+{
+	"id": "gclassroom",
+	"text": "Google Classroom",
+	"url": "https://classroom.google.com",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/gclassroom.png",
+	"imagewidth": 28,
+	"imageheight": 28
+},
+{
+	"id": "gsites",
+	"text": "Google Sites",
+	"url": "https://sites.google.com",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/gslides.png",
+	"imagewidth": 28,
+	"imageheight": 28
+},
+{
+	"id": "ghangouts",
+	"text": "Google Hangouts",
+	"url": "https://hangouts.google.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "onedrive",
+	"text": "OneDrive",
+	"url": "https://onedrive.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "office365",
+	"text": "Office 365",
+	"url": "https://home.office.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "jotform",
+	"text": "JotForm",
+	"url": "https://jotform.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "yammer",
+	"text": "Yammer",
+	"url": "https://yammer.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "btn",
+	"text": "BTN",
+	"url": "https://abc.net.au/btn",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "ifttt",
+	"text": "IFTTT",
+	"url": "https://ift.tt",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "snap",
+	"text": "Snap BYOB",
+	"url": "https://snap.berkeley.edu",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "github",
+	"text": "GitHub",
+	"url": "htttps://github.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "p-prodigy",
+	"text": "Play Prodigy",
+	"url": "https://play.prodigygame.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "prodigy",
+	"text": "Prodigy Home",
+	"url": "https://prodigygame.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "l-mathletics",
+	"text": "Mathletics Login",
+	"url": "http://student.mathletics.com/primary",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "mathletics",
+	"text": "Mathletics Home",
+	"url": "http://au.mathletics.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "l-eggs",
+	"text": "Reading Eggs Login",
+	"url": "https://app.readingeggs.com",
+	"issmart": false,
+	"hasimage": false
+},
+{
+	"id": "eggs",
+	"text": "Reading Eggs Home",
+	"url": "https://readingeggs.com",
+	"issmart": false,
+	"hasimage": false
 }
 ]
