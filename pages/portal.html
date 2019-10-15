@@ -6,6 +6,7 @@
 	<script src="../scripts/jquery.min.js"></script>
 	<link rel="stylesheet" href="../styles/bootstrap.min.css" >
 	<script src="../scripts/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/b6ce7a1746.js"></script>
 	<style>
 		.button {
 		background-color: #1e68d8;
@@ -159,21 +160,18 @@
 
 	function getUser(){
 	var usern = localStorage.getItem("username");		var usertext = document.getElementById("user");
-	if (usern == null || usern == '' || usern == 'null') {
-		localStorage.setItem("username" , null);
+	if (usern == null || usern == '' || usern == 'null') {			localStorage.setItem("username" , null);
 		localStorage.setItem("warn" , "true");
-		location = "/login.html";
-	} else {
-		usertext.innerHTML = '';
+		location = "links-portal.cf";
+	} else {usertext.innerHTML = '';
 		if (usern == 'admin') {
-			addAlert('Welcome back!,  Administrator');
-			document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
+		addAlert('Welcome back!,  Administrator');
+		document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
 		} else {
-			addAlert('Welcome back!, ' + usern);
-			document.getElementById("title").innerHTML = usern + "\'s Links Portal";
+		addAlert('Welcome back!, ' + usern);
+		document.getElementById("title").innerHTML = usern + "\'s Links Portal";}
+				}
 		}
-	}
-	}
 
 </script>
 
@@ -186,7 +184,7 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 </head>
 <html>
   
-<body style="background-color:red" onLoad="getUser();">
+<body style="background-color:red" onLoad="getUser();tabNew();hide();">
 <div style="position:relative;min-width:960px" >
 <!--<input class=logoff type="button" value="Logout" onclick="logoff();" />-->
 </div>
@@ -219,120 +217,217 @@ $(document).ready(function(){
 <br><br id="buttonBreak1">
 	
 <h3 id="smartbuttons" >Smart Buttons</h3>
+	
+<button id="tools" class=button onclick="location='lptools.html'" />
+<img src="../images/tools.png" style="float:left;margin-right:0px" height="27" width="27">
+</button>
 
-<div id="smartbuttongroup">
-</div>
+<button id="searchgoogle" class=button onclick="gSearch();" />
+<img src="../images/search.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google
+</button>
+
+<button id="searchyoutube" class=button onclick="ySearch();" />
+<img src="../images/video.png" style="float:left;margin-right:1px" height="28" width="28"> Search YouTube
+</button>
+
+<button id="searchgimages" class=button onclick="iSearch();" />
+<img src="../images/image.png" style="float:left;margin-right:1px" height="28" width="28"> Search Google Images
+</button>
+
+<button id="gowayback" class=button onclick="GoWayback();" />
+<img src="../images/browser.png" style="float:left;margin-right:1px" height="28" width="28"> Go Wayback
+</button>
+
+<button id="searchInterNetArchive" class=button onclick="InterNetArchive();" />
+<img src="../images/cloud.png" style="float:left;margin-right:1px" height="28" width="28"> Search Internet Archive
+</button>
 
 <br>
-<h3>Normal Web Links</h3><div id="normallinksgroup">
-</div>
+<h3>Normal Web Links</h3>
+
+<button id="bitly" class=button onclick="location='https://bit.ly'" />
+Bit.ly
+</button>
+
+<button id="cgmail" class=button onclick="location='https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1'" />
+<img src="../images/gmail.png" style="float:left;margin-right:2px" height="24" width="28">Compose GMail
+</button>
+
+<button id="gdrive" class=button onclick="location='https://drive.google.com'" />
+<img src="../images/gdrive.png" style="float:left;margin-right:2px" height="24" width="28"> Google Drive
+</button>
+
+<button id="gcalendar" class=button onclick="location='https://calendar.google.com'" />
+<img src="../images/calendar.png" style="float:left;margin-right:2px" height="28" width="28">Google Calendar
+</button>
+
+<button id="gdocs" class=button onclick="location='https://docs.google.com'" />
+<img src="../images/gdocs.png" style="float:left;margin-right:2px" height="28" width="28"> Google Docs
+</button>
+
+<button id="gsheets" class=button onclick="location='https://sheets.google.com'" />
+<img src="../images/gsheets.png" style="float:left;margin-right:2px" height="28" width="22"> Google Sheets
+</button>
+
+<button id="gslides" class=button onclick="location='https://slides.google.com'" />
+<img src="../images/gslides.png" style="float:left;margin-right:2px" height="28" width="28">
+Google Slides
+</button>
+
+<button id="gforms" class=button onclick="location='https://forms.google.com'" />
+<img src="../images/gforms.png" style="float:left;margin-right:2px" height="28" width="22">Google Forms
+</button>
+
+<button id="gclassroom" class=button onclick="location='https://classroom.google.com'" />
+<img src="../images/gclassroom.png" style="float:left;margin-right:2px" height="28" width="28"> Google Classroom
+</button>
+
+<button id="gsites" class=button onclick="location='https://sites.google.com'" />
+<img src="../images/gsites.png" style="float:left;margin-right:2px" height="28" width="28"> Google Sites
+</button>
+
+<button id="ghangouts" class=button onclick="location='https://hangouts.google.com'" />
+Google Hangouts
+</button>
+
+<button id="onedrive" class=button onclick="location='https://onedrive.com'" />
+OneDrive
+</button>
+
+<button id="office365" class=button onclick="location='home.office.com'" />
+Office 365
+</button>
+
+<button id="jotform" class=button onclick="location='https://jotform.com'" />
+JotForm
+</button>
+
+<button id="yammer" class=button onclick="location='https://yammer.com'" />
+Yammer
+</button>
+
+<button id="btn" class=button onclick="location='https://abc.net.au/btn'" />
+BTN
+</button>
+
+<button id="ifttt" class=button onclick="location='https://ift.tt'" />
+IFTTT
+</button>
+
+<button id="smh" class=button onclick="location='https://smh.com.au'" />
+SMH
+</button>
+
+<button id="snap" class=button onclick="location='https://snap-berkeley.edu'" />
+Snap BYOB
+</button>
+
+<button id="github" class=button onclick="location='https://github.com'" />
+GitHub
+</button>
+
+<button id="p-prodigy" class=button onclick="location='https://play.prodigygame.com'" />
+Play Prodigy
+</button>
+
+<button id="prodigy" class=button onclick="location='https://prodigygame.com'" />
+Prodigy Home
+</button>
+
+<button id="l-mathletics" class=button onclick="location='http://student.mathletics.com/primary'" />
+Mathletics Login
+</button>
+
+<button id="mathletics" class=button onclick="location='http://au.mathletics.com'" />
+Mathletics Home
+</button>
+
+<button id="l-eggs" class=button onclick="location='https://app.readingeggs.com/login'" />
+Reading Eggs Login
+</button>
+
+<button id="eggs" class=button onclick="location='https://readingeggs.com'" />
+Reading Eggs Home
+</button>
 
 <button id="customise" class="button custom" onclick="location='edit.html'" />
 Customise
 </button>
 
+<script src="../scripts/edit.js">
+</script>
 <script>
-
-function getParameterByName(name, url) {
-	if (!url) url = window.location.href;
-	name = name.replace(/[\[\]]/g, "\\$&");
-	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-		results = regex.exec(url);
-	if (!results) return null;
-	if (!results[2]) return '';
-	return decodeURIComponent(results[2].replace(/\+/g, " "));
+	
+//	document.getElementById("smartgoogle").onclick = function () {alert("test");}
+	
+	function gSearch(){
+		q = prompt("Search Question? ... ", "");
+		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
+//		void 0
 }
 
-var http = new XMLHttpRequest();
-http.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
-			parseLinks(this.responseText);
-	}
-};
-http.open("GET", "/links.json", true);
-http.send();
-
-function parseLinks(response) {
-var links = JSON.parse(response);
-var openin = getParameterByName('open');
-var smartgroup = document.getElementById('smartbuttongroup');
-var linksgroup = document.getElementById('normallinksgroup');
-for (i in links) {
-	var img = "";
-	selected = links[i];
-	if (localStorage.getItem(selected.id) == "hide") {
-		continue;
-	}
-	if (selected.issmart) {
-		var script = selected.script;
-	} else if (openin = "newtab") {
-		var script = `window.open('` + selected.url + `', '_blank')`;
-	} else {
-		var script = `location='` + selected.url + `'`;
-	}
-	if (selected.hasimage) {
-		img = `<img src="` + selected.imagepath + `" style="float:left;margin-right:2px" height="` + selected.imageheight + `" width="` + selected.imagewidth + `"> `;
-	}
-	code = `<button id="` + selected.id + `" class="button" onclick="` + script + `" >` + img + selected.text + ` </button>`;
-	if (selected.issmart) {
-		smartgroup.insertAdjacentHTML('beforeend', code);
-	} else {
-		linksgroup.insertAdjacentHTML('beforeend', code);
-	}
-}
-}
+	function getParameterByName(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
 
 	function logoff() {
 		localStorage.setItem("username" , null);
-		location = "../login.html";
+		location = "../index.html";
 	}
+	function ySearch(){
+		y = prompt("Video to Look for ...", "");
+		if (y!=null) location = "https://youtube.com/search?q=" + y;
+		}
+	function iSearch(){
+		i = prompt("Image to Look For...", "");
+		if (i!=null) location = "https://www.google.com/search?tbm=isch&q=" + i;
+		}
+	 function GoWayback() {
+		url = prompt("Please enter a url to Go Wayback!", "");
+		if (url!=null) location = "https://web.archive.org/"+ url;
+		}
 
-function searchWith(provider) {
-	var openin = getParameterByName('open');
-	switch(provider) {
-		case "google":
-			query = prompt("Search Question? ... ", "");
-			break;
-		case "youtube":
-			query = prompt("Video to Look for ...", "");
-			break;
-		case "googleimages":
-			query = prompt("Image to Look For...", "");
-			break;
-		case "wayback":
-			query = prompt("Please enter a url to Go Wayback!", "");
-			break;
-		case "internetarchive":
-			query = prompt("What do you want to search the InterNet Archive for?","");
-			break;
-		default:
-			console.log("Search provider not found, aborting");
-			return("Search provider not found");
+	function  InterNetArchive() {
+		I = prompt("What do you want to search the InterNet Archive for?","");
+		if (I!=null) location = "https://archive.org/search.php?query="+ I;
+		}
+			
+	function tabNew() {
+		var newtb = getParameterByName('open');
+		if (newtb == 'newtab') {
+		document.getElementById("bitly").setAttribute( "onClick", "window.open('https://bitly.com', '_blank')" );
+		document.getElementById("newgmail").setAttribute( "onClick", "window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1', '_blank')" );
+		document.getElementById("gdrive").setAttribute( "onClick", "window.open('https://drive.google.com', '_blank')" );
+		document.getElementById("gcalendar").setAttribute( "onClick", "window.open('https://calendar.google.com', '_blank')" );
+		document.getElementById("gdocs").setAttribute( "onClick", "window.open('https://docs.google.com'', '_blank')" );
+		document.getElementById("gsheets").setAttribute( "onClick", "window.open('https://sheets.google.com', '_blank')" );
+		document.getElementById("gslides").setAttribute( "onClick", "window.open('https://slides.google.com', '_blank')" );
+		document.getElementById("gforms").setAttribute( "onClick", "window.open('https://forms.google.com', '_blank')" );
+		document.getElementById("gclassroom").setAttribute( "onClick", "window.open('https://classroom.google.com', '_blank')" );
+		document.getElementById("gsites").setAttribute( "onClick", "window.open('https://sites.google.com', '_blank')" );
+		document.getElementById("ghangouts").setAttribute( "onClick", "window.open('https://hangouts.google.com', '_blank')" );
+		document.getElementById("onedrive").setAttribute( "onClick", "window.open('https://onedrive.com', '_blank')" );
+		document.getElementById("office365").setAttribute( "onClick", "window.open('https://home.office.com', '_blank')" );
+		document.getElementById("jotform").setAttribute( "onClick", "window.open('https://jotform.com', '_blank')" );
+		document.getElementById("yammer").setAttribute( "onClick", "window.open('https://yammer.com', '_blank')" );
+		document.getElementById("btn").setAttribute( "onClick", "window.open('https://abc.net.au/btn', '_blank')" );
+		document.getElementById("ifttt").setAttribute( "onClick", "window.open('https://ift.tt', '_blank')" );
+		document.getElementById("smh").setAttribute( "onClick", "window.open('https://smh.com.au', '_blank')" );
+		document.getElementById("snap").setAttribute( "onClick", "window.open('https://snap-berkeley.edu', '_blank')" );
+		document.getElementById("github").setAttribute( "onClick", "window.open('https://github.com', '_blank')" );
+		document.getElementById("p-prodigy").setAttribute( "onClick", "window.open('https://play.prodigygame.com', '_blank')" );
+		document.getElementById("prodigy").setAttribute( "onClick", "window.open('https://prodigygame.com', '_blank')" );
+		document.getElementById("l-mathletics").setAttribute( "onClick", "window.open('http://student.mathletics.com/primary', '_blank')" );
+		document.getElementById("mathletics").setAttribute( "onClick", "window.open('http://au.mathletics.com', '_blank')" );
+		document.getElementById("l-eggs").setAttribute( "onClick", "window.open('https://app.readingeggs.com/login', '_blank')" );
+		document.getElementById("eggs").setAttribute( "onClick", "window.open('https://readingeggs.com', '_blank')" );
+		document.getElementById("tools").setAttribute( "onClick", "window.open('lptools.html', '_blank')" );
+		}
 	}
-	if (query == null) {
-		return("Cancelled");
-	}
-	switch(provider) {
-		case "google":
-			url = "http://www.google.com/search?q=" + escape(query).replace(/ /g, "+") , '_blank';
-			break;
-		case "youtube":
-			url = "https://youtube.com/search?q=" + query;
-			break;
-		case "googleimages":
-			url = "https://www.google.com/search?tbm=isch&q=" + query;
-			break;
-		case "wayback":
-			url = "https://web.archive.org/web/*/"+ query;
-			break;
-		case "internetarchive":
-			url = "https://archive.org/search.php?query="+ query;
-			break;
-	}
-	if (openin == "newtab") {
-		window.open(url , '_blank');
-	} else {
-		window.location = url;
-	}
-}
 </script>
