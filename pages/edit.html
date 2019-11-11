@@ -223,7 +223,7 @@
 </head>
 <html>
   
-<body style="background-color:red" onLoad="checkBoxes();getUser();">
+<body style="background-color:red" onLoad="getUser();">
 
 <h1>Edit the Links Portal!</h1>
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
@@ -234,206 +234,13 @@
 
 <form>
 
-<label class="container"> Links Portal Tools
-  <input type="checkbox" id=tools  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
+<div id="boxes">
 
-<label class="container"> Search Google  <input type="checkbox" id=searchgoogle  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
+</div>
 
-<label class="container"> Search YouTube  <input type="checkbox" id=searchyoutube  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Search Google Images  <input type="checkbox" id=searchgimages  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Go Wayback  <input type="checkbox" id=gowayback  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-<label class="container"> Search Internet Archive 
-  <input type="checkbox" id=searchInterNetArchive checked="checked"> 
-  <span class="checkmark"></span> 
-</label> 
-<br>
-
-<label class="container"> Bit.ly
-  <input type="checkbox" id=bitly  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-<label class="container"> Compose GMail
-  <input type="checkbox" id=cgmail  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-<label class="container"> Google Drive
-  <input type="checkbox" id=gdrive  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-
-<label class="container"> Google Calendar
-  <input type="checkbox" id=gcalendar  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-
-<label class="container"> Google Docs
-  <input type="checkbox" id=gdocs  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-
-<label class="container"> Google Sheets
-  <input type="checkbox" id=gsheets  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-<label class="container"> Google Slides
-  <input type="checkbox" id=gslides  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-<label class="container"> Google Forms
-  <input type="checkbox" id=gforms  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-
-<label class="container"> Google Classroom
-  <input type="checkbox" id=gclassroom  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-
-<label class="container"> Google Sites
-  <input type="checkbox" id=gsites  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-
-<label class="container"> Google Hangouts
-  <input type="checkbox" id=ghangouts  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> OneDrive
-  <input type="checkbox" id=onedrive  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-
-<label class="container"> Office 365
-  <input type="checkbox" id=office365  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-
-<label class="container"> JotForm
-  <input type="checkbox" id=jotform  checked="checked">
-  <span class="checkmark" ></span>
-</label>
-<br>
-
-<label class="container"> Yammer
-  <input type="checkbox" id=yammer  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> BTN
-  <input type="checkbox" id=btn  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> IFTTT
-  <input type="checkbox" id=ifttt  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> SMH
-  <input type="checkbox" id=smh  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Snap BYOB
-  <input type="checkbox" id=snap  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> GitHub
-  <input type="checkbox" id=github  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Play Prodigy
-  <input type="checkbox" id=p-prodigy  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Prodigy 
-  <input type="checkbox" id=prodigy  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Mathletics Login
-  <input type="checkbox" id=l-mathletics  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Mathletics
-  <input type="checkbox" id=mathletics  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Reading Eggs Login
-  <input type="checkbox" id=l-eggs  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<label class="container"> Reading Eggs
-  <input type="checkbox" id=eggs  checked="checked">
-  <span class="checkmark"></span>
-</label>
-<br>
-
-<input class="save" type="button" onclick="save()" value='Save'>
+<input class="save" type="button" onclick="saveBoxes()" value='Save'>
 </form>
 
-<script src="../scripts/edit.js">
-</script>
 <script>
 	function logoff() {
 		localStorage.setItem("username" , null);
@@ -441,18 +248,52 @@
 	}
 
 function getUser(){
-	var usern = localStorage.getItem("username");		var usertext = document.getElementById("user");
-	if (usern == null || usern == '' || usern == 'null') {			localStorage.setItem("username" , null);
-		localStorage.setItem("warn" , "true");
-		location = "../index.html";
-	} else {usertext.innerHTML = '';
-		if (usern == 'admin') {
-		addAlert('Welcome back!,  Administrator');
-		document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
-		} else {
-		addAlert('Welcome back!, ' + usern);
-		document.getElementById("title").innerHTML = usern + "\'s Links Portal";}
-				}
-		}
- 
+var usern = localStorage.getItem("username");
+var usertext = document.getElementById("user");
+if (usern == null || usern == '' || usern == 'null') {
+	localStorage.setItem("username" , null);
+	localStorage.setItem("warn" , "true");
+	location = "../index.html";
+}
+}
+
+var rsp;
+
+var http = new XMLHttpRequest();
+http.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+			rsp = (this.responseText);
+			parseLinks(this.responseText);
+	}
+};
+http.open("GET", "/links.json", true);
+http.send();
+
+function parseLinks(response) {
+var links = JSON.parse(response);
+var boxes = document.getElementById('boxes');
+for (i in links) {
+	selected = links[i];
+	var ischecked = `checked="checked"`;
+	if (localStorage.getItem(selected.id) == "hide") {
+		ischecked = "";
+	}
+	code = `<label class="container"> ` + selected.text + `<input type="checkbox" id="` + selected.id + `" ` + ischecked + `><span class="checkmark"></span></label><br>`;
+	boxes.insertAdjacentHTML('beforeend', code);
+}
+}
+
+function saveBoxes() {
+var links = JSON.parse(rsp);
+for (i in links) {
+	selected = links[i];
+	if (document.getElementById(selected.id).checked == false) {
+		localStorage.setItem(selected.id, "hide");
+	} else {
+		localStorage.setItem(selected.id, "show");
+	}
+}
+window.location = "portal.html";
+}
+
 </script>
