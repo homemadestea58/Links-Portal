@@ -266,7 +266,7 @@ http.onreadystatechange = function() {
 			parseLinks(this.responseText);
 	}
 };
-http.open("GET", "/links.json", true);
+http.open("GET", "../links.json", true);
 http.send();
 
 function parseLinks(response) {
