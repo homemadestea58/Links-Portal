@@ -6,7 +6,7 @@
 	"issmart": true,
 	"hasimage": true,
 	"script": "location='lptools.html'",
-	"imagepath": "/images/tools.png",
+	"imagepath": "../images/tools.png",
 	"imagewidth": 27,
 	"imageheight": 27
 },
@@ -17,7 +17,7 @@
 	"issmart": true,
 	"hasimage": true,
 	"script": "searchWith('google');",
-	"imagepath": "/images/search.png",
+	"imagepath": "../images/search.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -28,7 +28,7 @@
 	"issmart": true,
 	"hasimage": true,
 	"script": "searchWith('youtube');",
-	"imagepath": "/images/video.png",
+	"imagepath": "../images/video.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -39,7 +39,7 @@
 	"issmart": true,
 	"hasimage": true,
 	"script": "searchWith('googleimages');",
-	"imagepath": "/images/image.png",
+	"imagepath": "../images/image.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -50,7 +50,7 @@
 	"issmart": true,
 	"hasimage": true,
 	"script": "searchWith('wayback');",
-	"imagepath": "/images/browser.png",
+	"imagepath": "../images/browser.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -61,7 +61,7 @@
 	"issmart": true,
 	"hasimage": true,
 	"script": "searchWith('internetarchive');",
-	"imagepath": "/images/browser.png",
+	"imagepath": "../images/browser.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -78,7 +78,7 @@
 	"url": "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1",
 	"issmart": false,
 	"hasimage": true,
-	"imagepath": "/images/gmail.png",
+	"imagepath": "../images/gmail.png",
 	"imagewidth": 28,
 	"imageheight": 24
 },
@@ -88,7 +88,7 @@
 	"url": "https://drive.google.com",
 	"issmart": false,
 	"hasimage": true,
-	"imagepath": "/images/gdrive.png",
+	"imagepath": "../images/gdrive.png",
 	"imagewidth": 28,
 	"imageheight": 24
 },
@@ -98,7 +98,7 @@
 	"url": "https://calendar.google.com",
 	"issmart": false,
 	"hasimage": true,
-	"imagepath": "/images/calendar.png",
+	"imagepath": "../images/calendar.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -108,7 +108,7 @@
 	"url": "https://sheets.google.com",
 	"issmart": false,
 	"hasimage": true,
-	"imagepath": "/images/gsheets.png",
+	"imagepath": "../images/gsheets.png",
 	"imagewidth": 22,
 	"imageheight": 28
 },
@@ -118,7 +118,7 @@
 	"url": "https://slides.google.com",
 	"issmart": false,
 	"hasimage": true,
-	"imagepath": "/images/gslides.png",
+	"imagepath": "../images/gslides.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -128,7 +128,7 @@
 	"url": "https://forms.google.com",
 	"issmart": false,
 	"hasimage": true,
-	"imagepath": "/images/gforms.png",
+	"imagepath": "../images/gforms.png",
 	"imagewidth": 22,
 	"imageheight": 28
 },
@@ -138,7 +138,7 @@
 	"url": "https://classroom.google.com",
 	"issmart": false,
 	"hasimage": true,
-	"imagepath": "/images/gclassroom.png",
+	"imagepath": "../images/gclassroom.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
@@ -148,7 +148,7 @@
 	"url": "https://sites.google.com",
 	"issmart": false,
 	"hasimage": true,
-	"imagepath": "/images/gslides.png",
+	"imagepath": "../images/gslides.png",
 	"imagewidth": 28,
 	"imageheight": 28
 },
