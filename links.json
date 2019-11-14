@@ -256,5 +256,14 @@
 	"url": "https://readingeggs.com",
 	"issmart": false,
 	"hasimage": false
-}
+},
+{
+	"id": "heroku",
+	"text": "Heroku",
+	"url": "https://heroku.com",
+	"issmart": false,
+	"hasimage": true,
+	"imagepath": "/images/herokuLogo.png",
+	"imagewidth": 30,
+	"imageheight": 30
 ]
