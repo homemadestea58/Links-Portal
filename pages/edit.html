@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Links Portal - Edit</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--Allow scaling on iOS devices-->
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<link href="../open-sans/stylesheet.css" rel="stylesheet">
 	<link href="../links.css" rel="stylesheet">
 </head>
-<html>
-  
 <body style="background-color:red" onLoad="getUser();">
 
 <h1>Edit the Links Portal!</h1>
@@ -14,7 +14,7 @@
 <br><br><br><br><br>
 <p class="restrict-right box">Please deselect any items you don't want to appear. <strong style="font-size: 22px;">This will not work in Private/Incognito mode.</strong></p><br>
 
-<br style="float: clear;">
+<br>
 
 <form>
 
@@ -62,7 +62,7 @@ for (i in links) {
 	if (localStorage.getItem(selected.id) == "hide") {
 		ischecked = "";
 	}
-	code = `<label class="container"> ` + selected.text + `<input type="checkbox" id="` + selected.id + `" ` + ischecked + `><span class="checkmark"></span></label><br>`;
+	code = `<label class="checkbox-container"> ` + selected.text + `<input type="checkbox" id="` + selected.id + `" ` + ischecked + `><span class="checkmark"></span></label><br>`;
 	boxes.insertAdjacentHTML('beforeend', code);
 }
 }
@@ -81,3 +81,5 @@ window.location = "portal.html";
 }
 
 </script>
+</body>
+</html>

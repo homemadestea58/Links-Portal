@@ -2,9 +2,34 @@
 		--button-background: #1e68d8;
 		--button-border: black;
 		--button-text-color: yellow;
+		--custom-text-color: yellow;
+		--text-color: yellow;
+		--logout-color: yellow;
+		--logout-text-color: #1e68d8;
 		--button-text-shadow-color: #edd400;
 		--button-text-shadow-hover-color: #e0d9ff;
+		--custom-color: red;
 		--fonts: 'Open Sans Bold', Arial, Helvetica , sans-serif;
+		--text-shadow: #aaa;
+		--body-animation-name: polychrome;
+		--body-border-color: black;
+		--animation-color-1: red;
+		--animation-color-2: red;
+		--animation-color-3: gray;
+		--animation-color-4: orange;
+		--animation-color-5: blue;
+		--animation-color-6: red;
+		--gradient-1: rgba(46,0,255,1) 0%;
+		--gradient-2: rgba(218,255,0,1) 15%;
+		--gradient-3: rgba(255,0,0,1) 30%;
+		--gradient-4: rgba(46,0,255,1) 45%;
+		--gradient-5: rgba(218,255,0,1) 60%;
+		--gradient-6: rgba(255,0,0,1) 75%;
+		--gradient-7: rgba(46,0,255,1) 90%;
+		--gradient-8: rgba(218,255,0,1) 100%;
+		--box-shadow-color: black;
+		--box-border-color: black;
+		--checkbox-background: #1e68d8;
 	}
 
 	.button {
@@ -34,17 +59,18 @@
 		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
 	}
 
-		.custom {
-		background-color: red;
-		color: yellow;}
+	.custom {
+		background-color: var(--custom-color);
+		color: var(--button-text-color);
+	}
 
 	.logoff {
-		background-color: yellow;
+		background-color: var(--logout-color);
 		border: solid;
-		border-color: black;
+		border-color: var(--button-border);
 		border-width: thick;
 		border-radius: 10px;
-		color: #1e68d8;
+		color: var(--logout-text-color);
 		padding: 11px 28px;
 		text-align: center;
 		display: inline-block;
@@ -63,50 +89,51 @@
 	}
 
 	.button:hover {
-		background-color: yellow;
-		color:#1e68d8;
-		text-shadow: 2px 2px 2px #e0d9ff;
+		background-color: var(--button-text-color);
+		color: var(--button-background);
+		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
 	}
 
 	.logoff:hover {
-		background-color: #1e68d8;
-		color: yellow;
-		text-shadow: 2px 2px 2px #e0d9ff;
+		background-color: var(--button-background);
+		color: var(--button-text-color);
+		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
 	}
 
 	h2 {
 		font-size: 28px;
 		text-shadow: 5px 5px 5px #aaa;
 		text-align: left;
-		color: yellow;
+		color: var(--text-color);
 		padding: 2px 5px;
 		font-family: var(--fonts);
 	}
 
-		h3 {
-			font-size: 20px;
-			text-shadow: 5px 5px 5px #aaa;
-			text-align: left;
-			color: yellow;
-			padding: 2px 5px;
-			font-family: var(--fonts);
-		}
+	h3 {
+		font-size: 20px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 5px;
+		font-family: var(--fonts);
+	}
 
-		.restrict-right {
+	.restrict-right {
 		margin-right: 20px;
 		margin-left: 10px;
-		}
-		
-		p {
-		font-size: 8px;
-		text-shadow: 3px 3px 3px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 7px;
-		font-family: var(--fonts);}
+	}
 
-		body {
-		animation-name: polychrome;
+	p {
+		font-size: 8px;
+		text-shadow: 3px 3px 3px var(--text-shadow);
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 7px;
+		font-family: var(--fonts);
+	}
+
+	body {
+		animation-name: var(--body-animation-name);
 		animation-duration: 7s;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
@@ -114,24 +141,25 @@
 		margin-top: 20px;
 		border-radius: 10px;
 		border: solid;
-		border-color: black;
+		border-color: var(--body-border-color);
 		border-width: thick;
 		margin-right: 10px;
 		margin-bottom: 30px;
 		padding-left: 10px;
-		padding-top: 20px;}
+		padding-top: 20px;
+	}
 
-		@keyframes polychrome{
-			0% {background-color: red;}
-			12% {background-color: red;}
-			25% {background-color: gray;}
-			50% {background-color: orange;}
-			75% {background-color: blue;}
-			100% {background-color: red;}
-		}
-		
-		html {
-		background: linear-gradient(90deg, rgba(46,0,255,1) 0%, rgba(218,255,0,1) 15%, rgba(255,0,0,1) 30%, rgba(46,0,255,1) 45%, rgba(218,255,0,1) 60%, rgba(255,0,0,1) 75%, rgba(46,0,255,1) 90%, rgba(218,255,0,1) 100%);
+	@keyframes polychrome{
+		0% {background-color: var(--animation-color-1);}
+		12% {background-color: var(--animation-color-2);}
+		25% {background-color: var(--animation-color-3);}
+		50% {background-color: var(--animation-color-4);}
+		75% {background-color: var(--animation-color-5);}
+		100% {background-color: var(--animation-color-6);}
+	}
+
+	html {
+		background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5), var(--gradient-6), var(--gradient-7), var(--gradient-8));
 	}
 	
 	section {
@@ -145,90 +173,92 @@
 		border: none;
 		font-size: 36px;
 		text-shadow: 5px 5px 5px #aaa;
-		text-align: left;		color: yellow;
+		text-align: left;
+		color: var(--text-color);
 		padding: 2px 5px;
 		font-family: var(--fonts);
 	}
 
 	p {
-	font-size: 20px;
-	text-align: left;
-	color: yellow;
-	padding: 2px 5px;
-	font-family: var(--fonts);
+		font-size: 20px;
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 5px;
+		font-family: var(--fonts);
 	}
 
 	.box {
-		text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+		text-shadow: 2px 0 0 var(--box-shadow-color), -2px 0 0 var(--box-shadow-color), 0 2px 0 var(--box-shadow-color), 0 -2px 0 var(--box-shadow-color), 1px 1px var(--box-shadow-color), -1px -1px 0 var(--box-shadow-color), 1px -1px 0 var(--box-shadow-color), -1px 1px 0 var(--box-shadow-color);
 		border: solid;
 		border-width: medium;
-		border-color: black;
+		border-color: var(--box-border-color);
 		overflow-wrap: break-word;
 	}
 
-	.container {
-	  display: block;
-	  position: relative;
-	  padding-left: 35px;
-	  margin-bottom: 12px;
-	  cursor: pointer;
-	  font-size: 22px;
-	  -webkit-user-select: none;
-	  -moz-user-select: none;
-	  -ms-user-select: none;
-	  user-select: none;
+	.checkbox-container {
+		display: block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	}
 
-	.container input {
-	  position: absolute;
-	  opacity: 0;
-	  cursor: pointer;
-	  height: 0;
-	  width: 0;
+	.checkbox-container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
 	}
-	
+
 	.checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 25px;
-	width: 25px;
-	background-color: #1e68d8 ;
-	border: solid;
-	border-color: black;
-	border-width: thick;
-	border-radius: 5px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: var(--checkbox-background);
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 5px;
 	}
-	
-	/* When the checkbox is checked, add a blue background */
-	.container input:checked ~ .checkmark {
-	  background-color: #1e68d8;
-	}
-	
-	/* Create the checkmark/indicator (hidden when not checked) */
-	.checkmark:after {
-	  content: "";
-	  position: absolute;
-	  display: none;
-	}
-	
-	/* Show the checkmark when checked */
-	.container input:checked ~ .checkmark:after {
-	  display: block;
-	}
-	
-	/* Style the checkmark/indicator */
-	.container .checkmark:after {
-	  left: 9px;
-	  top: 5px;
-	  width: 5px;
-	  height: 10px;
-	  border: solid white;
-	  border-width: 0 3px 3px 0;
-	  -webkit-transform: rotate(45deg);
-	  -ms-transform: rotate(45deg);
-	  transform: rotate(45deg);
-	}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--checkbox-background);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 	.textbox {
 	background-color: #1e68d8;
 	border: solid;

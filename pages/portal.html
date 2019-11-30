@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title id=title>Links Portal</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<link href="../open-sans/stylesheet.css" rel="stylesheet">
 	<link rel="stylesheet" href="../styles/bootstrap.min.css" >
 	<script src="../scripts/jquery.min.js"></script>
@@ -43,8 +45,7 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 <![endif]-->
 
 </head>
-<html>
-  
+
 <body style="background-color:red" onLoad="getUser();">
 <h1>Welcome to the Links Portal</h1>
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
@@ -75,7 +76,7 @@ $(document).ready(function(){
 <h3>Normal Web Links</h3><div id="normallinksgroup">
 </div>
 
-<button id="customise" class="button custom" onclick="location='edit.html'" />
+<button id="customise" class="button custom" onclick="location='edit.html'">
 Customise
 </button>
 
@@ -184,3 +185,5 @@ function searchWith(provider) {
 	}
 }
 </script>
+</body>
+</html>

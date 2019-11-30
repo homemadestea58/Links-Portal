@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Links Portal - Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<link href="open-sans/stylesheet.css" rel="stylesheet">
 	<link rel="shortcut icon" type="image/icon" href="favicon.ico">
 	<script src="scripts/jquery.min.js"></script>
@@ -205,25 +207,19 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 <![endif]-->
 
 </head>
-<html>
-  
 <body style="background-color:red" onLoad="clear();">
 
 <h2>Welcome to the Links Portal!</h2>
-<p><strong>For a guest login, please double click the password field or use the username 'guest'</strong></p><br>
+<p><strong>For a guest login, please use the username 'guest'</strong></p><br>
 <div id="alerts"></div>
 
 <form>
 <legend>Username:</legend>
 <input class=textbox type="text" id="username" autofocus autocomplete='off' onKeyDown="if(event.keyCode==13) login();" required><br><br>
 <legend>Password:</legend>
-<input ondblclick="var openintab = document.getElementById('tabopen');localStorage.setItem('username', 'guest');if (openintab.checked == true) {
-					location= './pages/portal.html' + '?open=newtab';
-				} else {
-					location= './pages/portal.html';
-				}" class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
-<label class="container"> Open Links in a new tab (may be blocked as popups)
-  <input type="checkbox" id=tabopen>
+<input class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
+<label class="checkbox-container"> Open Links in a new tab (may be blocked as popups)
+  <input type="checkbox" id="tabopen">
   <span class="checkmark"></span>
 </label>
 <br>
@@ -269,3 +265,5 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 			localStorage.setItem("warn" , null);}
 	}
 </script>
+</body>
+</html>
