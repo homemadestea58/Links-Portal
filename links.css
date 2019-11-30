@@ -229,68 +229,66 @@
 		border-radius: 5px;
 	}
 
-/* When the checkbox is checked, add a blue background */
-.checkbox-container input:checked ~ .checkmark {
-  background-color: var(--checkbox-background);
-}
+	.checkbox-container input:checked ~ .checkmark {
+		background-color: var(--checkbox-background);
+	}
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
+	.checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
 
-/* Show the checkmark when checked */
-.checkbox-container input:checked ~ .checkmark:after {
-  display: block;
-}
+	.checkbox-container input:checked ~ .checkmark:after {
+		display: block;
+	}
 
-/* Style the checkmark/indicator */
-.checkbox-container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
+	.checkbox-container .checkmark:after {
+		left: 9px;
+		top: 5px;
+		width: 5px;
+		height: 10px;
+		border: solid white;
+		border-width: 0 3px 3px 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
 
 	.textbox {
-	background-color: #1e68d8;
-	border: solid;
-	border-color: black;
-	border-width: thick;
-	border-radius: 5px;
-	color: yellow;
-	padding: 15px 12px;
-	text-align: left;
-	display: inline-block;
-	font-size: 16px;
-	margin: 1px 1px;
-	cursor: text;
-	font-family: var(--fonts);
-}
+		background-color: var(--button-background);
+		border: solid;
+		border-color: var(--button-border);
+		border-width: thick;
+		border-radius: 5px;
+		color: yellow;
+		padding: 15px 12px;
+		text-align: left;
+		display: inline-block;
+		font-size: 16px;
+		margin: 1px 1px;
+		cursor: text;
+		font-family: var(--fonts);
+	}
 
-		legend {
+	legend {
 		font-size: 18px;
 		text-shadow: 2px 2px 2px #aaa;
 		text-align:left;
-		color: yellow;
-		font-family: var(--fonts)}
+		color: var(--text-color);;
+		font-family: var(--fonts)
+	}
 
-		.warning {
+	.warning {
 		font-size: 23px;
 		color: #3300ff;
-		text-decoration: underline;}
+		text-decoration: underline;
+	}
 
 	label {
 		font-size: 18px;
 		text-align: left;
-		color: yellow;
+		color: var(--text-color);
 		padding: 2px 5px;
 		font-family: var(--fonts)
-		}
+	}
