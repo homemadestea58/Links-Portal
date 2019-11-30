@@ -1,31 +1,44 @@
-	
+	:root {
+		--button-background: #1e68d8;
+		--button-border: black;
+		--button-text-color: yellow;
+		--button-text-shadow-color: #edd400;
+		--button-text-shadow-hover-color: #e0d9ff;
+		--fonts: 'Open Sans Bold', Arial, Helvetica , sans-serif;
+	}
 
 	.button {
-		background-color: #1e68d8;
+		background-color: var(--button-background);
 		border: solid;
-		border-color: black;
+		border-color: var(--button-border);
 		border-width: thick;
 		border-radius: 10px;
-		color: yellow;
+		color: var(--button-text-color);
 		padding: 15px 32px;
 		text-align: center;
 		display: inline-block;
 		font-size: 19px;
 		margin: 4px 2px;
 		cursor: pointer;
-		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
-		text-shadow: 0.1px 0.1px 0.1px #edd400;
+		font-family: var(--fonts);
+		text-shadow: 0.1px 0.1px 0.1px var(--button-text-shadow-color);
 		transition: background-color 0.5s, color 0.5s;
 		-webkit-transition: background-color 0.5s, color 0.5s;
 		-webkit-appearance: none; /*Fix display issues on iOS*/
 		-moz-appearance: none; /*Fix display issues on iOS*/
-		}
+	}
+
+	.button:hover {
+		background-color: yellow;
+		color: var(--button-background);
+		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
+	}
 
 		.custom {
 		background-color: red;
 		color: yellow;}
 
-		.logoff {
+	.logoff {
 		background-color: yellow;
 		border: solid;
 		border-color: black;
@@ -38,7 +51,7 @@
 		font-size: 19px;
 		margin: 8px 6px;
 		cursor: pointer;
-		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
+		font-family: var(--fonts);
 		text-shadow: 0.1px 0.1px 0.1px #edd400;
 		transition: background-color 0.5s, color 0.5s;
 		-webkit-transition: background-color 0.5s, color 0.5s;
@@ -47,33 +60,37 @@
 		position: absolute;
 		right: 30px;
 		top: 20;
-		}
+	}
 
-		.button:hover {
+	.button:hover {
 		background-color: yellow;
 		color:#1e68d8;
-		text-shadow: 2px 2px 2px #e0d9ff;}
+		text-shadow: 2px 2px 2px #e0d9ff;
+	}
 
-		.logoff:hover {
+	.logoff:hover {
 		background-color: #1e68d8;
 		color: yellow;
-		text-shadow: 2px 2px 2px #e0d9ff;}
+		text-shadow: 2px 2px 2px #e0d9ff;
+	}
 
-		h2 {
+	h2 {
 		font-size: 28px;
 		text-shadow: 5px 5px 5px #aaa;
 		text-align: left;
 		color: yellow;
 		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-		
+		font-family: var(--fonts);
+	}
+
 		h3 {
-		font-size: 20px;
-		text-shadow: 5px 5px 5px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+			font-size: 20px;
+			text-shadow: 5px 5px 5px #aaa;
+			text-align: left;
+			color: yellow;
+			padding: 2px 5px;
+			font-family: var(--fonts);
+		}
 
 		.restrict-right {
 		margin-right: 20px;
@@ -86,7 +103,7 @@
 		text-align: left;
 		color: yellow;
 		padding: 2px 7px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
+		font-family: var(--fonts);}
 
 		body {
 		animation-name: polychrome;
@@ -112,174 +129,138 @@
 			75% {background-color: blue;}
 			100% {background-color: red;}
 		}
-
-		.alert {
-		}
 		
 		html {
 		background: linear-gradient(90deg, rgba(46,0,255,1) 0%, rgba(218,255,0,1) 15%, rgba(255,0,0,1) 30%, rgba(46,0,255,1) 45%, rgba(218,255,0,1) 60%, rgba(255,0,0,1) 75%, rgba(46,0,255,1) 90%, rgba(218,255,0,1) 100%);
-		}
-		
-		section {
+	}
+	
+	section {
 		position: relative;
 		width: 50%;
 		border: none;
-		}
-		h1 {
+	}
+
+	h1 {
 		display: inline;
 		border: none;
 		font-size: 36px;
 		text-shadow: 5px 5px 5px #aaa;
-		text-align: left;
-		color: yellow;
+		text-align: left;		color: yellow;
 		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
-		}@media (prefers-c@media (prefers-color-scheme: light) {olor-scheme: light) {
-		.logout {
-		float: right;
-		}
+		font-family: var(--fonts);
+	}
 
+	p {
+	font-size: 20px;
+	text-align: left;
+	color: yellow;
+	padding: 2px 5px;
+	font-family: var(--fonts);
+	}
+
+	.box {
+		text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+		border: solid;
+		border-width: medium;
+		border-color: black;
+		overflow-wrap: break-word;
+	}
+
+	.container {
+	  display: block;
+	  position: relative;
+	  padding-left: 35px;
+	  margin-bottom: 12px;
+	  cursor: pointer;
+	  font-size: 22px;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	}
+
+	.container input {
+	  position: absolute;
+	  opacity: 0;
+	  cursor: pointer;
+	  height: 0;
+	  width: 0;
+	}
+	
+	.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #1e68d8 ;
+	border: solid;
+	border-color: black;
+	border-width: thick;
+	border-radius: 5px;
+	}
+	
+	/* When the checkbox is checked, add a blue background */
+	.container input:checked ~ .checkmark {
+	  background-color: #1e68d8;
+	}
+	
+	/* Create the checkmark/indicator (hidden when not checked) */
+	.checkmark:after {
+	  content: "";
+	  position: absolute;
+	  display: none;
+	}
+	
+	/* Show the checkmark when checked */
+	.container input:checked ~ .checkmark:after {
+	  display: block;
+	}
+	
+	/* Style the checkmark/indicator */
+	.container .checkmark:after {
+	  left: 9px;
+	  top: 5px;
+	  width: 5px;
+	  height: 10px;
+	  border: solid white;
+	  border-width: 0 3px 3px 0;
+	  -webkit-transform: rotate(45deg);
+	  -ms-transform: rotate(45deg);
+	  transform: rotate(45deg);
+	}
+	.textbox {
+	background-color: #1e68d8;
+	border: solid;
+	border-color: black;
+	border-width: thick;
+	border-radius: 5px;
+	color: yellow;
+	padding: 15px 12px;
+	text-align: left;
+	display: inline-block;
+	font-size: 16px;
+	margin: 1px 1px;
+	cursor: text;
+	font-family: var(--fonts);
 }
 
-@media (prefers-color-scheme: dark) {
-		.button {
-		background-color: #1e68d8;
-		border: solid;
-		border-color: black;
-		border-width: thick;
-		border-radius: 10px;
+		legend {
+		font-size: 18px;
+		text-shadow: 2px 2px 2px #aaa;
+		text-align:left;
 		color: yellow;
-		padding: 15px 32px;
-		text-align: center;
-		display: inline-block;
-		font-size: 19px;
-		margin: 4px 2px;
-		cursor: pointer;
-		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
-		text-shadow: 0.1px 0.1px 0.1px #edd400;
-		transition: background-color 0.5s, color 0.5s;
-		-webkit-transition: background-color 0.5s, color 0.5s;
-		-webkit-appearance: none; /*Fix display issues on iOS*/
-		-moz-appearance: none; /*Fix display issues on iOS*/
-		}
+		font-family: var(--fonts)}
 
-		.custom {
-		background-color: red;
-		color: yellow;}
+		.warning {
+		font-size: 23px;
+		color: #3300ff;
+		text-decoration: underline;}
 
-		.logoff {
-		background-color: yellow;
-		border: solid;
-		border-color: black;
-		border-width: thick;
-		border-radius: 10px;
-		color: #1e68d8;
-		padding: 11px 28px;
-		text-align: center;
-		display: inline-block;
-		font-size: 19px;
-		margin: 8px 6px;
-		cursor: pointer;
-		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
-		text-shadow: 0.1px 0.1px 0.1px #edd400;
-		transition: background-color 0.5s, color 0.5s;
-		-webkit-transition: background-color 0.5s, color 0.5s;
-		-webkit-appearance: none; /*Fix display issues on iOS*/
-		-moz-appearance: none; /*Fix display issues on iOS*/
-		position: absolute;
-		right: 30px;
-		top: 20;
-		}
-
-		.button:hover {
-		background-color: yellow;
-		color:#1e68d8;
-		text-shadow: 2px 2px 2px #e0d9ff;}
-
-		.logoff:hover {
-		background-color: #1e68d8;
-		color: yellow;
-		text-shadow: 2px 2px 2px #e0d9ff;}
-
-		h2 {
-		font-size: 28px;
-		text-shadow: 5px 5px 5px #aaa;
+	label {
+		font-size: 18px;
 		text-align: left;
 		color: yellow;
 		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-		
-		h3 {
-		font-size: 20px;
-		text-shadow: 5px 5px 5px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-
-		.restrict-right {
-		margin-right: 20px;
-		margin-left: 10px;
+		font-family: var(--fonts)
 		}
-		
-		p {
-		font-size: 8px;
-		text-shadow: 3px 3px 3px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 7px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-
-		html>body {
-		animation-name: polychrome-dark !important;
-		animation-duration: 7s;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-		margin-left: 20px;
-		margin-top: 20px;
-		border-radius: 10px;
-		border: solid;
-		border-color: black;
-		border-width: thick;
-		margin-right: 10px;
-		margin-bottom: 30px;
-		padding-left: 10px;
-		padding-top: 20px;}
-
-		@keyframes polychrome-dark {
-			0% {background-color: black;}
-			12% {background-color: black;}
-			25% {background-color: black;}
-			50% {background-color: black;}
-			75% {background-color: black;}
-			100% {background-color: black;}
-		}
-
-		.alert {
-		}
-		
-		html {
-		background: linear-gradient(90deg, rgba(46,0,255,1) 0%, rgba(218,255,0,1) 15%, rgba(255,0,0,1) 30%, rgba(46,0,255,1) 45%, rgba(218,255,0,1) 60%, rgba(255,0,0,1) 75%, rgba(46,0,255,1) 90%, rgba(218,255,0,1) 100%);
-		}
-		
-		section {
-		position: relative;
-		width: 50%;
-		border: none;
-		}
-		h1 {
-		display: inline;
-		border: none;
-		font-size: 36px;
-		text-shadow: 5px 5px 5px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
-		}@media (prefers-c@media (prefers-color-scheme: light) {olor-scheme: light) {
-		.logout {
-		float: right;
-		}
-
-}
-}                                                                                                                         

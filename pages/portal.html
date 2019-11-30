@@ -36,7 +36,7 @@
 
 </script>
 
-<!--[if IE]>
+<!--[if IE ]>
 <script>
 alert("We detect you are using Internet Explorer. To get complete functionality, please use Firefox or Chrome.");
 </script>
@@ -46,27 +46,16 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 <html>
   
 <body style="background-color:red" onLoad="getUser();">
-<div style="position:relative;min-width:960px" >
-<!--<input class=logoff type="button" value="Logout" onclick="logoff();" />-->
-</div>
-	
-<section>
-  <div class=logout>
-<input class=logoff type="button" value="Logout" onclick="logoff();" />
-  </div>
 <h1>Welcome to the Links Portal</h1>
-</section>
+<input class=logoff type="button" value="Logout" onclick="logoff();" />
 
 <p id='user'>If you are seeing this for more than 5 seconds, please turn on JavaScript</p>
 
-<br />
+<br>
 
-<div id="alerts"></div>
+<div id="alerts">
+</div>
 
-<!--<div class="alert alert-success alert-dismissible restrict-right" id="loggedin">
-	<a style="cursor:pointer" class="close">&times;</a>		<strong>Success!</strong> You have successfully logged into the Links Portal
-	</div>
--->
 <script>
 $(document).ready(function(){
   $(".close").click(function(){
