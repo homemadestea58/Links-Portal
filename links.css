@@ -44,6 +44,7 @@
 		display: inline-block;
 		font-size: 19px;
 		margin: 4px 2px;
+		font-weight: bold;
 		cursor: pointer;
 		font-family: var(--fonts);
 		text-shadow: 0.1px 0.1px 0.1px var(--button-text-shadow-color);
@@ -74,6 +75,7 @@
 		padding: 11px 28px;
 		text-align: center;
 		display: inline-block;
+		font-weight: bold;
 		font-size: 19px;
 		margin: 8px 6px;
 		cursor: pointer;
