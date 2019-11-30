@@ -85,7 +85,6 @@
 		-moz-appearance: none; /*Fix display issues on iOS*/
 		position: absolute;
 		right: 30px;
-		top: 20;
 	}
 
 	.button:hover {
@@ -227,6 +226,11 @@
 		border-color: black;
 		border-width: thick;
 		border-radius: 5px;
+	}
+
+	.checkmark.tab {
+		height: 35px;
+		width: 35px;
 	}
 
 	.checkbox-container input:checked ~ .checkmark {
