@@ -1,193 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Links Portal - Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<link href="open-sans/stylesheet.css" rel="stylesheet">
 	<link rel="shortcut icon" type="image/icon" href="favicon.ico">
 	<script src="scripts/jquery.min.js"></script>
 	<link rel="stylesheet" href="styles/bootstrap.min.css" >
+	<link rel="stylesheet" href="links.css" >
 	<script src="scripts/bootstrap.min.js"></script>
-	<style>
-
-		body {
-		background-color: red;
-		margin-left: 20px;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		margin-right: 20px;
-		border-radius: 10px;
-		border: solid;
-		border-color: black;
-		border-width: thick;
-		padding-left: 10px;
-		padding-top: 5px;}
-
-		html {
-		background: linear-gradient(90deg, rgba(46,0,255,1) 0%, rgba(218,255,0,1) 15%, rgba(255,0,0,1) 30%, rgba(46,0,255,1) 45%, rgba(218,255,0,1) 60%, rgba(255,0,0,1) 75%, rgba(46,0,255,1) 90%, rgba(218,255,0,1) 100%);
-		}
-
-		.login {
-		background-color: blue;
-		border: solid;
-		border-color: black;
-		border-width: thick;
-		border-radius: 10px;
-		color: yellow;
-		padding: 15px 32px;
-		text-align: center;
-		display: inline-block;
-		font-size: 22px;
-		text-shadow: 5px 5px 5px #1e68d8;
-		margin: 4px 2px;
-		cursor: pointer;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
-		-webkit-appearance: none; /*Fix display issues on iOS*/
-		-moz-appearance: none; /*Fix display issues on iOS*/
-		-webkit-font-family: 'open_sansbold', Arial, Helvetica, sans-serif; /*Fix display issues on iOS*/
-		transition: background-color 1s, color 0.5s;
-		-webkit-transition: background-color 1s, color 0.5s;
-		}
-
-		.textbox {
-		background-color: #1e68d8;
-		border: solid;
-		border-color: black;
-		border-width: thick;
-		border-radius: 5px;
-		color: yellow;
-		padding: 15px 12px;
-		text-align: left;
-		display: inline-block;
-		font-size: 16px;
-		margin: 1px 1px;
-		cursor: text;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-
-		.searchButton:hover {
-		background-color:black;
-		color:#33ff00;}
-
-		.login:hover {
-		background-color:aqua;
-		color:#1e68d8;
-		text-shadow: 2px 2px 2px #e0d9ff;}
-
-		h2 {
-		font-size: 28px;
-		text-shadow: 5px 5px 5px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-
-		p {
-		font-size: 20px;
-		text-align: left;
-		color: yellow;
-		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
-		text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-		}
-
-		strong {
-		padding: 2px 5px;
-		}
-
-		legend {
-		font-size: 18px;
-		text-shadow: 2px 2px 2px #aaa;
-		text-align:left;
-		color: yellow;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-
-		.warning {
-		font-size: 23px;
-		color: #3300ff;
-		text-decoration: underline;}
-
-	/*Code from W3Schools*/
-	/* The container */
-	.container {
-	  display: block;
-	  position: relative;
-	  margin-left: 0px;
-	  padding-left: 35px;
-	  margin-bottom: 0px;
-	  cursor: pointer;
-	  -webkit-user-select: none;
-	  -moz-user-select: none;
-	  -ms-user-select: none;
-	  user-select: none;
-	}
-	
-	/* Hide the browser's default checkbox */
-	.container input {
-	  position: absolute;
-	  opacity: 0;
-	  cursor: pointer;
-	  height: 0;
-	  width: 0;
-	}
-	
-	/* Create a custom checkbox */
-	.checkmark {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  height: 28px;
-	  width: 28px;
-	  background-color: #1e68d8;
-	    border: solid;
-	  border-radius: 3px;
-	}
-	
-	/* When the checkbox is checked, add a blue background */
-	.container input:checked ~ .checkmark {
-	  background-color: #1e68d8;
-	    border: solid;
-	  border-radius: 3px;
-	}
-	
-	/* Create the checkmark/indicator (hidden when not checked) */
-	.checkmark:after {
-	  content: "";
-	  position: absolute;
-	  display: none;
-	  margin: 0 auto;
-	}
-	
-	/* Show the checkmark when checked */
-	.container input:checked ~ .checkmark:after {
-	  display: block;
-	}
-	
-	/* Style the checkmark/indicator */
-	.container .checkmark:after {
-	  left: 7px;
-	  top: 4px;
-	  width: 5px;
-	  height: 10px;
-	  border: solid white;
-	  border-width: 0 3px 3px 0;
-	  -webkit-transform: rotate(45deg);
-	  -ms-transform: rotate(45deg);
-	  transform: rotate(45deg);
-	}
-
-	/*End of W3Schools Code*/
-
-	label {
-		font-size: 18px;
-		text-align: left;
-		color: yellow;
-		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
-		}
-
-	.restrict-right {
-		margin-right: 20px;
-		}
-	</style>
 
 <script>
 	function addAlert(message) {
@@ -197,30 +19,31 @@
             '&times;</button>' + message + '</div>');
 		}
 </script>
+
+<!--[if IE ]>
+<script>
+alert("We detect you are using Internet Explorer. To get complete functionality, please use Firefox or Chrome.");
+</script>
+<![endif]-->
+
 </head>
-<html>
-  
 <body style="background-color:red" onLoad="clear();">
 
 <h2>Welcome to the Links Portal!</h2>
-<p><strong>For a guest login, please double click the password field or use the username 'guest'</strong></p><br>
+<p><strong>For a guest login, please use the username 'guest'</strong></p><br>
 <div id="alerts"></div>
 
 <form>
 <legend>Username:</legend>
 <input class=textbox type="text" id="username" autofocus autocomplete='off' onKeyDown="if(event.keyCode==13) login();" required><br><br>
 <legend>Password:</legend>
-<input ondblclick="var openintab = document.getElementById('tabopen');localStorage.setItem('username', 'guest');if (openintab.checked == true) {
-					location= './pages/portal.html' + '?open=newtab';
-				} else {
-					location= './pages/portal.html';
-				}" class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
-<label class="container"> Open Links in a new tab (may be blocked as popups)
-  <input type="checkbox" id=tabopen>
-  <span class="checkmark"></span>
+<input class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
+<label class="checkbox-container"> Open Links in a new tab (may be blocked as popups)
+	<input type="checkbox" id="tabopen">
+	<span class="checkmark tab"></span>
 </label>
 <br>
-<input class="login" type="button" onclick="login();" value='Submit'>
+<input class="login button" type="button" onclick="login();" value='Submit'>
 </form>
 
 <script src="scripts/md5.js"></script>
@@ -262,3 +85,5 @@
 			localStorage.setItem("warn" , null);}
 	}
 </script>
+</body>
+</html>

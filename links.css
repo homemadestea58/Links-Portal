@@ -1,0 +1,300 @@
+	:root {
+		--button-background: #1e68d8;
+		--button-border: black;
+		--button-text-color: yellow;
+		--custom-text-color: yellow;
+		--text-color: yellow;
+		--logout-color: yellow;
+		--logout-text-color: #1e68d8;
+		--button-text-shadow-color: #edd400;
+		--button-text-shadow-hover-color: #e0d9ff;
+		--custom-color: red;
+		--fonts: 'Open Sans Bold', Arial, Helvetica , sans-serif;
+		--text-shadow: #aaa;
+		--body-animation-name: polychrome;
+		--body-border-color: black;
+		--animation-color-1: red;
+		--animation-color-2: red;
+		--animation-color-3: gray;
+		--animation-color-4: orange;
+		--animation-color-5: blue;
+		--animation-color-6: red;
+		--gradient-1: rgba(46,0,255,1) 0%;
+		--gradient-2: rgba(218,255,0,1) 15%;
+		--gradient-3: rgba(255,0,0,1) 30%;
+		--gradient-4: rgba(46,0,255,1) 45%;
+		--gradient-5: rgba(218,255,0,1) 60%;
+		--gradient-6: rgba(255,0,0,1) 75%;
+		--gradient-7: rgba(46,0,255,1) 90%;
+		--gradient-8: rgba(218,255,0,1) 100%;
+		--box-shadow-color: black;
+		--box-border-color: black;
+		--checkbox-background: #1e68d8;
+	}
+
+	.button {
+		background-color: var(--button-background);
+		border: solid;
+		border-color: var(--button-border);
+		border-width: thick;
+		border-radius: 10px;
+		color: var(--button-text-color);
+		padding: 15px 32px;
+		text-align: center;
+		display: inline-block;
+		font-size: 19px;
+		margin: 4px 2px;
+		font-weight: bold;
+		cursor: pointer;
+		font-family: var(--fonts);
+		text-shadow: 0.1px 0.1px 0.1px var(--button-text-shadow-color);
+		transition: background-color 0.5s, color 0.5s;
+		-webkit-transition: background-color 0.5s, color 0.5s;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+	}
+
+	.button:hover {
+		background-color: yellow;
+		color: var(--button-background);
+		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
+	}
+
+	.custom {
+		background-color: var(--custom-color);
+		color: var(--button-text-color);
+	}
+
+	.logoff {
+		background-color: var(--logout-color);
+		border: solid;
+		border-color: var(--button-border);
+		border-width: thick;
+		border-radius: 10px;
+		color: var(--logout-text-color);
+		padding: 11px 28px;
+		text-align: center;
+		display: inline-block;
+		font-weight: bold;
+		font-size: 19px;
+		margin: 8px 6px;
+		cursor: pointer;
+		font-family: var(--fonts);
+		text-shadow: 0.1px 0.1px 0.1px #edd400;
+		transition: background-color 0.5s, color 0.5s;
+		-webkit-transition: background-color 0.5s, color 0.5s;
+		-webkit-appearance: none; /*Fix display issues on iOS*/
+		-moz-appearance: none; /*Fix display issues on iOS*/
+		position: absolute;
+		right: 30px;
+	}
+
+	.button:hover {
+		background-color: var(--button-text-color);
+		color: var(--button-background);
+		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
+	}
+
+	.logoff:hover {
+		background-color: var(--button-background);
+		color: var(--button-text-color);
+		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
+	}
+
+	h2 {
+		font-size: 28px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 5px;
+		font-family: var(--fonts);
+	}
+
+	h3 {
+		font-size: 20px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 5px;
+		font-family: var(--fonts);
+	}
+
+	.restrict-right {
+		margin-right: 20px;
+		margin-left: 10px;
+	}
+
+	p {
+		font-size: 8px;
+		text-shadow: 3px 3px 3px var(--text-shadow);
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 7px;
+		font-family: var(--fonts);
+	}
+
+	body {
+		animation-name: var(--body-animation-name);
+		animation-duration: 7s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		margin-left: 20px;
+		margin-top: 20px;
+		border-radius: 10px;
+		border: solid;
+		border-color: var(--body-border-color);
+		border-width: thick;
+		margin-right: 10px;
+		margin-bottom: 30px;
+		padding-left: 10px;
+		padding-top: 20px;
+	}
+
+	@keyframes polychrome{
+		0% {background-color: var(--animation-color-1);}
+		12% {background-color: var(--animation-color-2);}
+		25% {background-color: var(--animation-color-3);}
+		50% {background-color: var(--animation-color-4);}
+		75% {background-color: var(--animation-color-5);}
+		100% {background-color: var(--animation-color-6);}
+	}
+
+	html {
+		background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5), var(--gradient-6), var(--gradient-7), var(--gradient-8));
+	}
+	
+	section {
+		position: relative;
+		width: 50%;
+		border: none;
+	}
+
+	h1 {
+		display: inline;
+		border: none;
+		font-size: 36px;
+		text-shadow: 5px 5px 5px #aaa;
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 5px;
+		font-family: var(--fonts);
+	}
+
+	p {
+		font-size: 20px;
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 5px;
+		font-family: var(--fonts);
+	}
+
+	.box {
+		text-shadow: 2px 0 0 var(--box-shadow-color), -2px 0 0 var(--box-shadow-color), 0 2px 0 var(--box-shadow-color), 0 -2px 0 var(--box-shadow-color), 1px 1px var(--box-shadow-color), -1px -1px 0 var(--box-shadow-color), 1px -1px 0 var(--box-shadow-color), -1px 1px 0 var(--box-shadow-color);
+		border: solid;
+		border-width: medium;
+		border-color: var(--box-border-color);
+		overflow-wrap: break-word;
+	}
+
+	.checkbox-container {
+		display: block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.checkbox-container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: var(--checkbox-background);
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 5px;
+	}
+
+	.checkmark.tab {
+		height: 35px;
+		width: 35px;
+	}
+
+	.checkbox-container input:checked ~ .checkmark {
+		background-color: var(--checkbox-background);
+	}
+
+	.checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
+
+	.checkbox-container input:checked ~ .checkmark:after {
+		display: block;
+	}
+
+	.checkbox-container .checkmark:after {
+		left: 9px;
+		top: 5px;
+		width: 5px;
+		height: 10px;
+		border: solid white;
+		border-width: 0 3px 3px 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	.textbox {
+		background-color: var(--button-background);
+		border: solid;
+		border-color: var(--button-border);
+		border-width: thick;
+		border-radius: 5px;
+		color: yellow;
+		padding: 15px 12px;
+		text-align: left;
+		display: inline-block;
+		font-size: 16px;
+		margin: 1px 1px;
+		cursor: text;
+		font-family: var(--fonts);
+	}
+
+	legend {
+		font-size: 18px;
+		text-shadow: 2px 2px 2px #aaa;
+		text-align:left;
+		color: var(--text-color);;
+		font-family: var(--fonts)
+	}
+
+	.warning {
+		font-size: 23px;
+		color: #3300ff;
+		text-decoration: underline;
+	}
+
+	label {
+		font-size: 18px;
+		text-align: left;
+		color: var(--text-color);
+		padding: 2px 5px;
+		font-family: var(--fonts)
+	}
