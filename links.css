@@ -1,4 +1,4 @@
-	:root {
+:root {
 		--button-background: #1e68d8;
 		--button-border: black;
 		--button-text-color: yellow;
@@ -35,7 +35,7 @@
 		--body-background: red;
 		--button-text-hover-color: #1e68d8;
 		--button-background-hover-color: yellow;
-	}
+}
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -79,6 +79,19 @@
 
 	.button-image {
 		filter: brightness(50%);
+	}
+
+	.alert-success {
+		background-color: transparent;
+		border-color: yellow;
+		color: yellow;
+	}
+
+	.alert-success .close {
+		color: yellow !important;
+text-shadow: none;
+box-shadow: none;
+
 	}
 }
 
