@@ -337,7 +337,7 @@ box-shadow: none;
 
 	legend {
 		font-size: 18px;
-		text-shadow: 2px 2px 2px #aaa;
+		text-shadow: 2px 2px 2px var(--text-shadow);
 		text-align:left;
 		color: var(--text-color);;
 		font-family: var(--fonts)
