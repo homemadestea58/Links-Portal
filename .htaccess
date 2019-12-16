@@ -12,7 +12,7 @@ RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [NC,L]
 
-RedirectMatch 301 ^/$ http://links-p.cf/login
+RedirectMatch 301 ^/$ /login
 
 ErrorDocument 400 http://error.links-p.cf/400
 ErrorDocument 401 http://error.links-p.cf/401
