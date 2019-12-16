@@ -38,12 +38,9 @@ html.christmas body {
 	html.christmas body {
 		--body-background: darkgreen;
 	}
-
-	html.christmas {
-		background: orange;
-	}
 }
 
 html.christmas {
-	background: gold;
+	background: url(../images/christmas.jpg) no-repeat center center fixed; /*Image found on https://wallpapersafari.com/w/Mq85ym*/
+	background-size: cover;
 }

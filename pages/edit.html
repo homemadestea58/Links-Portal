@@ -26,11 +26,11 @@
 </div>
 
 <h1>Themes</h1><br><br>
-<label class="radio-container"><span class="text">Default</span>
+<label class="radio-container" onclick="setTheme();"><span class="text">Default</span>
 	<input value="default" type="radio" checked="checked" name="theme">
 	<span class="radiomark"></span>
 </label>
-<label class="radio-container"><span class="text">Christmas</span>
+<label class="radio-container" onclick="setTheme();"><span class="text">Christmas</span>
 	<input value="christmas" type="radio" name="theme">
 	<span class="radiomark"></span>
 </label>
@@ -93,8 +93,12 @@ for (i in links) {
 		localStorage.setItem("links-" + username + "-" + selected.id, "show");
 	}
 }
-localStorage.setItem("links-theme", document.querySelector('input[name="theme"]:checked').value);
 window.location = "portal.html";
+}
+
+function setTheme() {
+	localStorage.setItem("links-theme", document.querySelector('input[name="theme"]:checked').value);
+	checkTheme();
 }
 
 </script>
