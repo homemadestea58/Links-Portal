@@ -41,6 +41,6 @@ html.christmas body {
 }
 
 html.christmas {
-	background: url(../images/christmas.jpg) no-repeat center center fixed; /*Image found on https://wallpapersafari.com/w/Mq85ym*/
+	background: #000 url(../images/christmas.jpg) no-repeat center center fixed; /*Image found on https://wallpapersafari.com/w/Mq85ym*/
 	background-size: cover;
 }
