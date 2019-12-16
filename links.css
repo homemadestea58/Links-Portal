@@ -1,4 +1,4 @@
-	:root {
+:root {
 		--button-background: #1e68d8;
 		--button-border: black;
 		--button-text-color: yellow;
@@ -9,6 +9,7 @@
 		--button-text-shadow-color: #edd400;
 		--button-text-shadow-hover-color: #e0d9ff;
 		--custom-color: red;
+		--custom-text-color: yellow !important;
 		--fonts: 'Open Sans Bold', Arial, Helvetica , sans-serif;
 		--text-shadow: #aaa;
 		--body-animation-name: polychrome;
@@ -30,7 +31,69 @@
 		--box-shadow-color: black;
 		--box-border-color: black;
 		--checkbox-background: #1e68d8;
+		--checkmark-color: yellow;
+		--body-background: red;
+		--button-text-hover-color: #1e68d8;
+		--button-background-hover-color: yellow;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--button-background: #3b3b3b !important;
+		--button-border: black !important;
+		--button-text-color: #bbbbbb !important;
+		--custom-text-color: yellow !important;
+		--text-color: yellow !important;
+		--logout-color:   #3b3b3b !important;
+		--logout-text-color: yellow !important;
+		--button-text-shadow-color: #edd400 !important;
+		--custom-color: #3b3b3b !important;
+		--custom-text-color: yellow !important;
+		--fonts: 'Open Sans Bold', Arial, Helvetica , sans-serif !important;
+		--text-shadow: #000 !important;
+		--body-animation-name: none !important;
+		--body-border-color: #101a0a !important;
+		--animation-color-1: red !important;
+		--animation-color-2: red !important;
+		--animation-color-3: gray !important;
+		--animation-color-4: orange !important;
+		--animation-color-5: blue !important;
+		--animation-color-6: red !important;
+		--gradient-1: rgb(6,0,135) 0% !important;
+		--gradient-2: rgb(118,135,0) 15% !important;
+		--gradient-3: rgb(155,0,0) 30% !important;
+		--gradient-4: rgb(6,0,95) 45% !important;
+		--gradient-5: rgb(98,95,0) 60% !important;
+		--gradient-6: rgb(145,0,0) 75% !important;
+		--gradient-7: rgb(6,0,115) 90% !important;
+		--gradient-8: rgb(6,0,135) 100% !important;
+		--box-shadow-color: black !important;
+		--box-border-color: black !important;
+		--checkbox-background: #3b3b3b !important;
+		--checkmark-color: yellow !important;
+		--body-background: #454545 !important;
+		--button-text-hover-color: yellow !important;
+		--button-background-hover-color: #3b3b3b !important;
+		--button-text-shadow-hover-color: none !important;
 	}
+
+	.button-image {
+		filter: brightness(50%);
+	}
+
+	.alert-success {
+		background-color: transparent;
+		border-color: yellow;
+		color: yellow;
+	}
+
+	.alert-success .close {
+		color: yellow !important;
+text-shadow: none;
+box-shadow: none;
+
+	}
+}
 
 	.button {
 		background-color: var(--button-background);
@@ -55,14 +118,14 @@
 	}
 
 	.button:hover {
-		background-color: yellow;
-		color: var(--button-background);
+		background-color: var(--button-background-hover-color);
+		color: var(--button-text-hover-color);
 		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
 	}
 
 	.custom {
 		background-color: var(--custom-color);
-		color: var(--button-text-color);
+		color: var(--custom-text-color);
 	}
 
 	.logoff {
@@ -89,12 +152,6 @@
 		right: 30px;
 	}
 
-	.button:hover {
-		background-color: var(--button-text-color);
-		color: var(--button-background);
-		text-shadow: 2px 2px 2px var(--button-text-shadow-hover-color);
-	}
-
 	.logoff:hover {
 		background-color: var(--button-background);
 		color: var(--button-text-color);
@@ -103,7 +160,7 @@
 
 	h2 {
 		font-size: 28px;
-		text-shadow: 5px 5px 5px #aaa;
+		text-shadow: 5px 5px 5px var(--text-shadow);
 		text-align: left;
 		color: var(--text-color);
 		padding: 2px 5px;
@@ -112,7 +169,7 @@
 
 	h3 {
 		font-size: 20px;
-		text-shadow: 5px 5px 5px #aaa;
+		text-shadow: 5px 5px 5px var(--text-shadow);
 		text-align: left;
 		color: var(--text-color);
 		padding: 2px 5px;
@@ -148,6 +205,7 @@
 		margin-bottom: 30px;
 		padding-left: 10px;
 		padding-top: 20px;
+		background-color: var(--body-background);
 	}
 
 	@keyframes polychrome{
@@ -173,7 +231,7 @@
 		display: inline;
 		border: none;
 		font-size: 36px;
-		text-shadow: 5px 5px 5px #aaa;
+		text-shadow: 5px 5px 5px var(--text-shadow);
 		text-align: left;
 		color: var(--text-color);
 		padding: 2px 5px;
@@ -254,7 +312,7 @@
 		top: 5px;
 		width: 5px;
 		height: 10px;
-		border: solid white;
+		border: solid var(--checkmark-color);
 		border-width: 0 3px 3px 0;
 		-webkit-transform: rotate(45deg);
 		-ms-transform: rotate(45deg);
@@ -279,7 +337,7 @@
 
 	legend {
 		font-size: 18px;
-		text-shadow: 2px 2px 2px #aaa;
+		text-shadow: 2px 2px 2px var(--text-shadow);
 		text-align:left;
 		color: var(--text-color);;
 		font-family: var(--fonts)

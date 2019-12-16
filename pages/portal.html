@@ -7,15 +7,13 @@
 	<link href="../open-sans/stylesheet.css" rel="stylesheet">
 	<link rel="stylesheet" href="../styles/bootstrap.min.css" >
 	<script src="../scripts/jquery.min.js"></script>
-	<link rel="stylesheet" href="../styles/bootstrap.min.css" >
 	<link rel="stylesheet" href="../links.css" >
+	<script src="../scripts/bootstrap.min.js"></script>
 
 <script>
-	function addAlert(message) {
+	function addAlert(message, id) {
 		$('#alerts').append(
-		'<div class="alert alert-success alert-dismissible restrict-right">' +
-			'<button type="button" class="close" data-dismiss="alert">' +
-            '&times;</button>' + message + '</div>');
+		'<div id="' + id + '" class="alert alert-success alert-dismissible restrict-right">' + '<button type="button" class="close" data-dismiss="alert">' + '&times;</button>' + message + '</div>');
 		}
 
 	function getUser(){
@@ -27,10 +25,10 @@
 	} else {
 		usertext.innerHTML = '';
 		if (usern == 'admin') {
-			addAlert('Welcome back!,  Administrator');
+			addAlert('Welcome back!,  Administrator', "loggedin");
 			document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
 		} else {
-			addAlert('Welcome back!, ' + usern);
+			addAlert('Welcome back!, ' + usern, "loggedin");
 			document.getElementById("title").innerHTML = usern + "\'s Links Portal";
 		}
 	}
@@ -46,7 +44,7 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 
 </head>
 
-<body style="background-color:red" onLoad="getUser();">
+<body onLoad="getUser();">
 <h1>Welcome to the Links Portal</h1>
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
 
@@ -57,13 +55,13 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 <div id="alerts">
 </div>
 
-<script>
+<!--<script>
 $(document).ready(function(){
-  $(".close").click(function(){
-    $("#loggedin").alert("close");
-  });
+	$(".close").click(function(){
+		$("#loggedin").alert("close");
+	});
 });
-</script>
+</script>-->
 
 <br><br id="buttonBreak1">
 	
@@ -120,7 +118,7 @@ for (i in links) {
 		var script = `location='` + selected.url + `'`;
 	}
 	if (selected.hasimage) {
-		img = `<img src="` + selected.imagepath + `" style="float:left;margin-right:2px" height="` + selected.imageheight + `" width="` + selected.imagewidth + `"> `;
+		img = `<img class="button-image" src="` + selected.imagepath + `" style="float:left;margin-right:2px" height="` + selected.imageheight + `" width="` + selected.imagewidth + `"> `;
 	}
 	code = `<button id="` + selected.id + `" class="button" onclick="` + script + `" >` + img + selected.text + ` </button>`;
 	if (selected.issmart) {
@@ -152,7 +150,7 @@ function searchWith(provider) {
 			query = prompt("Please enter a url to Go Wayback!", "");
 			break;
 		case "internetarchive":
-			query = prompt("What do you want to search the InterNet Archive for?","");
+			query = prompt("What do you want to search the Internet Archive for?","");
 			break;
 		default:
 			console.log("Search provider not found, aborting");
