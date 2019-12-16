@@ -38,9 +38,21 @@ html.christmas body {
 	html.christmas body {
 		--body-background: darkgreen;
 	}
+	html.christmas .textbox {
+		color: var(--text-color);
+	}
+
+	html.christmas :root {
+		--button-text-color: yellow;
+	}
+
+	html.christmas .button:not(.custom):not(.login):not(.save) {
+		color: yellow;
+	}
 }
 
 html.christmas {
 	background: #000 url(../images/christmas.jpg) no-repeat center center fixed; /*Image found on https://wallpapersafari.com/w/Mq85ym*/
 	background-size: cover;
+	-webkit-background-size: cover;
 }
