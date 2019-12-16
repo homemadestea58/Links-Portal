@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="../styles/bootstrap.min.css" >
 	<script src="../scripts/jquery.min.js"></script>
 	<link rel="stylesheet" href="../links.css" >
+	<script src="../scripts/themes.js"></script>
+	<link rel="stylesheet" href="../styles/themes.css" >
 	<script src="../scripts/bootstrap.min.js"></script>
 
 <script>
@@ -17,10 +19,11 @@
 		}
 
 	function getUser(){
-	var usern = localStorage.getItem("username");		var usertext = document.getElementById("user");
+	var usern = localStorage.getItem("links-username");
+	var usertext = document.getElementById("user");
 	if (usern == null || usern == '' || usern == 'null') {
-		localStorage.setItem("username" , null);
-		localStorage.setItem("warn" , "true");
+		localStorage.setItem("links-username" , null);
+		localStorage.setItem("links-warn" , "true");
 		location = "/login.html";
 	} else {
 		usertext.innerHTML = '';
