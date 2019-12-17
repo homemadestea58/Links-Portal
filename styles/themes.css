@@ -31,13 +31,15 @@ html.christmas .button:not(.custom):not(.login):not(.save):hover {
 
 html.christmas body {
 	--body-animation-name: none;
-	--body-background: #4e9a06;
+	--body-background: transparent;
+	border: none;
+}
+
+html.christmas .box {
+	border-color: yellow;
 }
 
 @media (prefers-color-scheme: dark) {
-	html.christmas body {
-		--body-background: darkgreen;
-	}
 	html.christmas .textbox {
 		color: var(--text-color);
 	}
