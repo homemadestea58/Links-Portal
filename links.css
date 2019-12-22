@@ -217,6 +217,7 @@
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 		margin-left: 20px;
+		margin-right: 20px;
 		margin-top: 20px;
 		border-radius: 10px;
 		border: solid;
@@ -225,6 +226,7 @@
 		margin-right: 10px;
 		margin-bottom: 30px;
 		padding-left: 10px;
+		padding-right: 10px;
 		padding-top: 20px;
 		background-color: var(--body-background);
 	}
@@ -428,4 +430,17 @@
 		color: var(--text-color);
 		padding: 2px 5px;
 		font-family: var(--fonts)
+	}
+
+	@media only screen and (max-width: 710px) {
+		.logoff {
+			position: static;
+			display: inline;
+		}
+	}
+
+	@media only screen and (max-width: 540px) {
+		.button {
+			width: 100%
+		}
 	}

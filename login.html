@@ -15,7 +15,7 @@
 <script>
 	function addAlert(message) {
 		$('#alerts').append(
-		'<div class="alert alert-danger alert-dismissible restrict-right fade show">' +
+		'<div class="alert alert-danger alert-dismissible fade show">' +
 			'<button type="button" class="close" data-dismiss="alert">' +
             '&times;</button>' + message + '</div>');
 		}
@@ -48,11 +48,7 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 </form>
 
 <script src="scripts/md5.js"></script>
-<script>
-	function gSearch(){
-		q = prompt("Search terms? ... ", "");
-		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
-}
+<script>	
 
 	function login(){
 
