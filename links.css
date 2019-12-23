@@ -35,46 +35,47 @@
 		--body-background: red;
 		--button-text-hover-color: #1e68d8;
 		--button-background-hover-color: yellow;
+		--disabled-background: #7f81a3
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--button-background: #3b3b3b !important;
-		--button-border: black !important;
-		--button-text-color: #bbbbbb !important;
-		--custom-text-color: yellow !important;
-		--text-color: yellow !important;
-		--logout-color:   #3b3b3b !important;
-		--logout-text-color: yellow !important;
-		--button-text-shadow-color: #edd400 !important;
-		--custom-color: #3b3b3b !important;
-		--custom-text-color: yellow !important;
-		--fonts: 'Open Sans Bold', Arial, Helvetica , sans-serif !important;
-		--text-shadow: #000 !important;
-		--body-animation-name: none !important;
-		--body-border-color: #101a0a !important;
-		--animation-color-1: red !important;
-		--animation-color-2: red !important;
-		--animation-color-3: gray !important;
-		--animation-color-4: orange !important;
-		--animation-color-5: blue !important;
-		--animation-color-6: red !important;
-		--gradient-1: rgb(6,0,135) 0% !important;
-		--gradient-2: rgb(118,135,0) 15% !important;
-		--gradient-3: rgb(155,0,0) 30% !important;
-		--gradient-4: rgb(6,0,95) 45% !important;
-		--gradient-5: rgb(98,95,0) 60% !important;
-		--gradient-6: rgb(145,0,0) 75% !important;
-		--gradient-7: rgb(6,0,115) 90% !important;
-		--gradient-8: rgb(6,0,135) 100% !important;
-		--box-shadow-color: black !important;
-		--box-border-color: black !important;
-		--checkbox-background: #3b3b3b !important;
-		--checkmark-color: yellow !important;
-		--body-background: #454545 !important;
-		--button-text-hover-color: yellow !important;
-		--button-background-hover-color: #3b3b3b !important;
-		--button-text-shadow-hover-color: none !important;
+		--button-background: #3b3b3b;
+		--button-border: black;
+		--button-text-color: #bbbbbb;
+		--custom-text-color: yellow;
+		--text-color: yellow;
+		--logout-color:   #3b3b3b;
+		--logout-text-color: yellow;
+		--button-text-shadow-color: #edd400;
+		--custom-color: #3b3b3b;
+		--custom-text-color: yellow;
+		--fonts: 'Open Sans Bold', Arial, Helvetica , sans-serif;
+		--text-shadow: #000;
+		--body-animation-name: none;
+		--body-border-color: #101a0a;
+		--animation-color-1: red;
+		--animation-color-2: red;
+		--animation-color-3: gray;
+		--animation-color-4: orange;
+		--animation-color-5: blue;
+		--animation-color-6: red;
+		--gradient-1: rgb(6,0,135) 0%;
+		--gradient-2: rgb(118,135,0) 15%;
+		--gradient-3: rgb(155,0,0) 30%;
+		--gradient-4: rgb(6,0,95) 45%;
+		--gradient-5: rgb(98,95,0) 60%;
+		--gradient-6: rgb(145,0,0) 75%;
+		--gradient-7: rgb(6,0,115) 90%;
+		--gradient-8: rgb(6,0,135) 100%;
+		--box-shadow-color: black;
+		--box-border-color: black;
+		--checkbox-background: #3b3b3b;
+		--checkmark-color: yellow;
+		--body-background: #454545;
+		--button-text-hover-color: yellow;
+		--button-background-hover-color: #3b3b3b;
+		--button-text-shadow-hover-color: none;
 	}
 
 	.button-image {
@@ -89,9 +90,8 @@
 
 	.alert-success .close {
 		color: yellow !important;
-text-shadow: none;
-box-shadow: none;
-
+		text-shadow: none;
+		box-shadow: none;
 	}
 }
 
@@ -115,6 +115,28 @@ box-shadow: none;
 		-webkit-transition: background-color 0.5s, color 0.5s;
 		-webkit-appearance: none; /*Fix display issues on iOS*/
 		-moz-appearance: none; /*Fix display issues on iOS*/
+	}
+
+	.textbox {
+		background-color: var(--button-background);
+		border: solid;
+		border-color: var(--button-border);
+		border-width: thick;
+		border-radius: 1px;
+		color: var(--button-text-color);
+		font-weight: bold;
+		padding: 15px 12px;
+		text-align: left;
+		display: inline-block;
+		font-size: 16px;
+		margin: 1px 1px;
+		cursor: text;
+		font-family: var(--fonts);
+	}
+
+	.textbox[disabled] {
+		background-color: var(--disabled-background);
+		cursor: not-allowed;
 	}
 
 	.button:hover {
@@ -145,7 +167,6 @@ box-shadow: none;
 		font-family: var(--fonts);
 		text-shadow: 0.1px 0.1px 0.1px #edd400;
 		transition: background-color 0.5s, color 0.5s;
-		-webkit-transition: background-color 0.5s, color 0.5s;
 		-webkit-appearance: none; /*Fix display issues on iOS*/
 		-moz-appearance: none; /*Fix display issues on iOS*/
 		position: absolute;
@@ -196,6 +217,7 @@ box-shadow: none;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 		margin-left: 20px;
+		margin-right: 20px;
 		margin-top: 20px;
 		border-radius: 10px;
 		border: solid;
@@ -204,6 +226,7 @@ box-shadow: none;
 		margin-right: 10px;
 		margin-bottom: 30px;
 		padding-left: 10px;
+		padding-right: 10px;
 		padding-top: 20px;
 		background-color: var(--body-background);
 	}
@@ -254,6 +277,8 @@ box-shadow: none;
 		overflow-wrap: break-word;
 	}
 
+
+	/*W3Schools Code*/
 	.checkbox-container {
 		display: block;
 		position: relative;
@@ -265,6 +290,11 @@ box-shadow: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
+	}
+
+	.checkbox-container .text {
+		margin-left: 5px;
+		font-weight: bold;
 	}
 
 	.checkbox-container input {
@@ -319,21 +349,66 @@ box-shadow: none;
 		transform: rotate(45deg);
 	}
 
-	.textbox {
-		background-color: var(--button-background);
-		border: solid;
-		border-color: var(--button-border);
-		border-width: thick;
-		border-radius: 5px;
-		color: yellow;
-		padding: 15px 12px;
-		text-align: left;
-		display: inline-block;
-		font-size: 16px;
-		margin: 1px 1px;
-		cursor: text;
-		font-family: var(--fonts);
+	.radio-container {
+		display: block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	}
+
+	.radio-container .text {
+		margin-left: 5px;
+		font-weight: bold;
+	}
+
+	.radio-container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	.radiomark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: var(--checkbox-background);
+		border: solid;
+		border-color: black;
+		border-width: thick;
+		border-radius: 50%;
+		margin-right: 10px;
+	}
+
+	.radio-container input:checked ~ .radiomark {
+		background-color: var(--checkbox-background);
+	}
+
+	.radiomark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
+
+	.radio-container input:checked ~ .radiomark:after {
+		display: block;
+	}
+
+	.radio-container .radiomark:after {
+		top: 9px;
+		left: 9px;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--checkmark-color);
+}
 
 	legend {
 		font-size: 18px;
@@ -355,4 +430,17 @@ box-shadow: none;
 		color: var(--text-color);
 		padding: 2px 5px;
 		font-family: var(--fonts)
+	}
+
+	@media only screen and (max-width: 710px) {
+		.logoff {
+			position: static;
+			display: inline;
+		}
+	}
+
+	@media only screen and (max-width: 540px) {
+		.button {
+			width: 100%
+		}
 	}

@@ -6,23 +6,36 @@
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<link href="../open-sans/stylesheet.css" rel="stylesheet">
 	<link href="../links.css" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/themes.css" >
+	<script src="../scripts/themes.js"></script>
+	<script src="../scripts/jquery.min.js"></script>
 </head>
 <body onLoad="getUser();">
 
 <h1>Edit the Links Portal!</h1>
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
 <br><br><br><br><br>
-<p class="restrict-right box">Please deselect any items you don't want to appear. <strong style="font-size: 22px;">This will not work in Private/Incognito mode.</strong></p><br>
+<p class="box">Please deselect any items you don't want to appear. <strong style="font-size: 22px;">This will not work in Private/Incognito mode.</strong></p><br>
 
 <br>
 
-<form>
+<form name="links-edit">
 
 <div id="boxes">
 
 </div>
 
-<input class="button save" type="button" onclick="saveBoxes()" value='Save'>
+<h1>Themes</h1><br><br>
+<label class="radio-container" onclick="setTheme();"><span class="text">Default</span>
+	<input value="default" type="radio" checked="checked" name="theme">
+	<span class="radiomark"></span>
+</label>
+<label class="radio-container" onclick="setTheme();"><span class="text">Christmas</span>
+	<input value="christmas" type="radio" name="theme">
+	<span class="radiomark"></span>
+</label>
+
+<br><input class="button save" type="button" onclick="saveBoxes()" value='Save'>
 </form>
 
 <script>
@@ -31,17 +44,18 @@
 		location = "../index.html";
 	}
 
-function getUser(){
-var usern = localStorage.getItem("username");
-var usertext = document.getElementById("user");
-if (usern == null || usern == '' || usern == 'null') {
-	localStorage.setItem("username" , null);
-	localStorage.setItem("warn" , "true");
-	location = "../index.html";
-}
-}
-
+var username;
 var rsp;
+
+function getUser(){
+	username = localStorage.getItem("links-username");
+	var usertext = document.getElementById("user");
+	if (username == null || username == '' || username == 'null') {
+		localStorage.setItem("username" , null);
+		localStorage.setItem("warn" , "true");
+		location = "../index.html";
+	}
+}
 
 var http = new XMLHttpRequest();
 http.onreadystatechange = function() {
@@ -54,17 +68,19 @@ http.open("GET", "../links.json", true);
 http.send();
 
 function parseLinks(response) {
-var links = JSON.parse(response);
-var boxes = document.getElementById('boxes');
-for (i in links) {
-	selected = links[i];
-	var ischecked = `checked="checked"`;
-	if (localStorage.getItem(selected.id) == "hide") {
-		ischecked = "";
+	var links = JSON.parse(response);
+	var boxes = document.getElementById('boxes');
+	for (i in links) {
+		selected = links[i];
+		var ischecked = `checked="checked"`;
+		if (localStorage.getItem(selected.id) == "hide") {
+			ischecked = "";
+		}
+		code = `<label class="checkbox-container"><span class="text">` + selected.text + `</span><input type="checkbox" id="` + selected.id + `" ` + ischecked + `><span class="checkmark"></span></label><br>`;
+		boxes.insertAdjacentHTML('beforeend', code);
 	}
-	code = `<label class="checkbox-container"> ` + selected.text + `<input type="checkbox" id="` + selected.id + `" ` + ischecked + `><span class="checkmark"></span></label><br>`;
-	boxes.insertAdjacentHTML('beforeend', code);
-}
+	//document.links-edit.theme.value = localStorage.getItem("links-theme");
+	$('input[name=theme][value=' + localStorage.getItem("links-theme") + ']').prop('checked', true);
 }
 
 function saveBoxes() {
@@ -72,12 +88,17 @@ var links = JSON.parse(rsp);
 for (i in links) {
 	selected = links[i];
 	if (document.getElementById(selected.id).checked == false) {
-		localStorage.setItem(selected.id, "hide");
+		localStorage.setItem("links-" + username + "-" + selected.id, "hide");
 	} else {
-		localStorage.setItem(selected.id, "show");
+		localStorage.setItem("links-" + username + "-" + selected.id, "show");
 	}
 }
 window.location = "portal.html";
+}
+
+function setTheme() {
+	localStorage.setItem("links-theme", document.querySelector('input[name="theme"]:checked').value);
+	checkTheme();
 }
 
 </script>
