@@ -9,12 +9,13 @@
 	<script src="scripts/jquery.min.js"></script>
 	<link rel="stylesheet" href="styles/bootstrap.min.css" >
 	<link rel="stylesheet" href="links.css" >
+	<link rel="stylesheet" href="../styles/themes.css" >
 	<script src="scripts/bootstrap.min.js"></script>
-
+	<script src="scripts/themes.js"></script>
 <script>
 	function addAlert(message) {
 		$('#alerts').append(
-		'<div class="alert alert-danger alert-dismissible restrict-right">' +
+		'<div class="alert alert-danger alert-dismissible fade show">' +
 			'<button type="button" class="close" data-dismiss="alert">' +
             '&times;</button>' + message + '</div>');
 		}
@@ -38,7 +39,7 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 <input class=textbox type="text" id="username" autofocus autocomplete='off' onKeyDown="if(event.keyCode==13) login();" required><br><br>
 <legend>Password:</legend>
 <input class=textbox type="password" id="password" onKeyDown="if(event.keyCode==13) login();"><br><br>
-<label class="checkbox-container"> Open Links in a new tab (may be blocked as popups)
+<label class="checkbox-container"><span class="text">Open Links in a new tab (may be blocked as popups)</span>
 	<input type="checkbox" id="tabopen">
 	<span class="checkmark tab"></span>
 </label>
@@ -47,35 +48,30 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 </form>
 
 <script src="scripts/md5.js"></script>
-<script>
-	function gSearch(){
-		q = prompt("Search terms? ... ", "");
-		if (q!=null) location="http://www.google.com/search?q=" + escape(q).replace(/ /g, "+") , '_blank';
-}
+<script>	
 
 	function login(){
 
-		var pass = document.getElementById("password");
-		var openintab = document.getElementById("tabopen");
-		encryptpass = md5(pass.value);
-		var s = document.getElementById("username");
-		username = s.value.toLowerCase();
-		var users = ['homemadesteam58', 'admin', 'guest', 'hsak5g', 'pip 2019 links portal experience', 'sourlemon0', 'nick'];
-		var passwords = ['454a49231691b3fd73c93857b3441162','fc5364bf9dbfa34954526becad136d4b','d41d8cd98f00b204e9800998ecf8427e', '8623dc603081464819e6776ae7edb88a', '82da33acbcdce87ecd54680578dfacd2', '05dc5822d6d891a37351c70e318d5f84', '8fe569676dca2e21fed65144d1c68428'];
-		var userpass = ['homemadesteam58454a49231691b3fd73c93857b3441162' , 'adminfc5364bf9dbfa34954526becad136d4b' , 'guestd41d8cd98f00b204e9800998ecf8427e', 'hsak5g8623dc603081464819e6776ae7edb88a', 'pip 2019 links portal experience82da33acbcdce87ecd54680578dfacd2', 'sourlemon005dc5822d6d891a37351c70e318d5f84', 'nick8fe569676dca2e21fed65144d1c68428'];
-		if (users.includes(username) && passwords.includes(encryptpass) && userpass.includes(username + encryptpass)) {
-				localStorage.setItem("username", username);
-				if (openintab.checked == true) {
-					location= './pages/portal.html' + '?open=newtab';
-				} else {
-					location= './pages/portal.html';
-				}
-				console.log('Logged in successfully');
-				
-			} else {
-				console.log('Login incorrect');
-				addAlert('Login incorrect');}
+	var pass = document.getElementById("password");
+	var openintab = document.getElementById("tabopen");
+	encryptpass = md5(pass.value);
+	var s = document.getElementById("username");
+	username = s.value.toLowerCase();
+	var users = ['homemadesteam58', 'admin', 'guest', 'hsak5g', 'pip 2019 links portal experience', 'sourlemon0', 'nick'];
+	var passwords = ['454a49231691b3fd73c93857b3441162','fc5364bf9dbfa34954526becad136d4b','d41d8cd98f00b204e9800998ecf8427e', '8623dc603081464819e6776ae7edb88a', '82da33acbcdce87ecd54680578dfacd2', '05dc5822d6d891a37351c70e318d5f84', '8fe569676dca2e21fed65144d1c68428'];
+	var userpass = ['homemadesteam58454a49231691b3fd73c93857b3441162' , 'adminfc5364bf9dbfa34954526becad136d4b' , 'guestd41d8cd98f00b204e9800998ecf8427e', 'hsak5g8623dc603081464819e6776ae7edb88a', 'pip 2019 links portal experience82da33acbcdce87ecd54680578dfacd2', 'sourlemon005dc5822d6d891a37351c70e318d5f84', 'nick8fe569676dca2e21fed65144d1c68428'];
+	if (users.includes(username) && passwords.includes(encryptpass) && userpass.includes(username + encryptpass)) {
+		localStorage.setItem("links-username", username);
+		if (openintab.checked == true) {
+				location= 'pages/portal.html' + '?open=newtab';
+		} else {
+				location= 'pages/portal.html';
 		}
+		console.log('Logged in successfully');
+	} else {
+		console.log('Login incorrect');
+		addAlert('Login incorrect');}
+	}
 
 	function clear() {
 		var warn = localStorage.getItem("warn");
