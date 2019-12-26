@@ -1,3 +1,12 @@
+button {
+	padding: none;
+}
+
+button::-moz-focus-inner {
+    padding: 0 !important;
+    border: 0 !important;
+}
+
 :root {
 		--button-background: #1e68d8;
 		--button-border: black;
@@ -115,6 +124,11 @@
 		-webkit-transition: background-color 0.5s, color 0.5s;
 		-webkit-appearance: none; /*Fix display issues on iOS*/
 		-moz-appearance: none; /*Fix display issues on iOS*/
+	}
+
+	.buttom-image {
+		float: left;
+		margin-right: 2px;
 	}
 
 	.textbox {
@@ -243,7 +257,7 @@
 	html {
 		background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5), var(--gradient-6), var(--gradient-7), var(--gradient-8));
 	}
-	
+
 	section {
 		position: relative;
 		width: 50%;

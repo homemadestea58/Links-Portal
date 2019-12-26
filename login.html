@@ -48,7 +48,7 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 </form>
 
 <script src="scripts/md5.js"></script>
-<script>	
+<script>
 
 	function login(){
 
@@ -62,9 +62,12 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 	var userpass = ['homemadesteam58454a49231691b3fd73c93857b3441162' , 'adminfc5364bf9dbfa34954526becad136d4b' , 'guestd41d8cd98f00b204e9800998ecf8427e', 'hsak5g8623dc603081464819e6776ae7edb88a', 'pip 2019 links portal experience82da33acbcdce87ecd54680578dfacd2', 'sourlemon005dc5822d6d891a37351c70e318d5f84', 'nick8fe569676dca2e21fed65144d1c68428'];
 	if (users.includes(username) && passwords.includes(encryptpass) && userpass.includes(username + encryptpass)) {
 		localStorage.setItem("links-username", username);
-		if (openintab.checked == true) {
+
+		if (openintab.checked) {
+				//debugger;
 				location= 'pages/portal.html' + '?open=newtab';
 		} else {
+				//debugger;
 				location= 'pages/portal.html';
 		}
 		console.log('Logged in successfully');

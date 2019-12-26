@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="../styles/themes.css" >
 	<script src="../scripts/bootstrap.min.js"></script>
 
-<script>
+	<script>
 	function addAlert(message, id) {
 		$('#alerts').append(
 		'<div id="' + id + '" class="alert alert-success alert-dismissible">' + '<button type="button" class="close" data-dismiss="alert">' + '&times;</button>' + message + '</div>');
@@ -36,15 +36,7 @@
 		}
 	}
 	}
-
-</script>
-
-<!--[if IE ]>
-<script>
-alert("We detect you are using Internet Explorer. To get complete functionality, please use Firefox or Chrome.");
-</script>
-<![endif]-->
-
+	</script>
 </head>
 
 <body onLoad="getUser();">
@@ -52,22 +44,13 @@ alert("We detect you are using Internet Explorer. To get complete functionality,
 <input class=logoff type="button" value="Logout" onclick="logoff();" />
 
 <p id='user'>If you are seeing this for more than 5 seconds, please turn on JavaScript</p>
-
 <br>
 
 <div id="alerts">
 </div>
 
-<!--<script>
-$(document).ready(function(){
-	$(".close").click(function(){
-		$("#loggedin").alert("close");
-	});
-});
-</script>-->
-
 <br><br id="buttonBreak1">
-	
+
 <h3 id="smartbuttons" >Smart Buttons</h3>
 
 <div id="smartbuttongroup">
@@ -102,6 +85,8 @@ http.onreadystatechange = function() {
 http.open("GET", "../links.json", true);
 http.send();
 
+var openin;
+
 function parseLinks(response) {
 var links = JSON.parse(response);
 var openin = getParameterByName('open');
@@ -115,13 +100,14 @@ for (i in links) {
 	}
 	if (selected.issmart) {
 		var script = selected.script;
-	} else if (openin = "newtab") {
+	} else if (openin === "newtab") {
 		var script = `window.open('` + selected.url + `', '_blank')`;
+		console.log("openin: " + openin);
 	} else {
 		var script = `location='` + selected.url + `'`;
 	}
 	if (selected.hasimage) {
-		img = `<img class="button-image" src="` + selected.imagepath + `" style="float:left;margin-right:2px" height="` + selected.imageheight + `" width="` + selected.imagewidth + `"> `;
+		img = `<img class="button-image" src="` + selected.imagepath + `" style="" height="` + selected.imageheight + `" width="` + selected.imagewidth + `"> `;
 	}
 	code = `<button id="` + selected.id + `" class="button" onclick="` + script + `" >` + img + selected.text + ` </button>`;
 	if (selected.issmart) {
