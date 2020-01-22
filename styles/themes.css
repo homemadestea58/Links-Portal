@@ -1,7 +1,4 @@
-html.christmas .button:not(.custom):not(.login):not(.save):
-
-/*not(.corner-buttons .button)*/
-        {
+html.christmas .button:not(.custom):not(.login):not(.save):not(.corner) {
         background: linear-gradient(to right,
                         rgb(0, 128, 0) 0%,
                         rgb(0, 128, 0) 25%,
@@ -25,7 +22,7 @@ html.christmas .button:not(.custom):not(.login):not(.save):
 	height: 30px;
 	content:"";
 }*/
-html.christmas .button:not(.custom):not(.login):not(.save):not(.corner-buttons .button):hover {
+html.christmas .button:not(.custom):not(.login):not(.save):not(.corner):hover {
         background: linear-gradient(to right,
                         rgb(0, 78, 0) 0%,
                         rgb(0, 78, 0) 25%,
