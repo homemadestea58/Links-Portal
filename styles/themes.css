@@ -1,16 +1,17 @@
-html.christmas .button:not(.custom):not(.login):not(.save) {
-	background: linear-gradient(
-		to right,
-		rgb(0,128,0) 0%,
-		rgb(0,128,0) 25%,
-		rgb(255,0,0) 25%,
-		rgb(255,0,0) 50%,
-		rgb(0,128,0) 50%,
-		rgb(0,128,0) 75%,
-		rgb(255,0,0) 75%,
-		rgb(255,0,0) 100%
-	);
-	transition: background-color 0.5s;
+html.christmas .button:not(.custom):not(.login):not(.save):
+
+/*not(.corner-buttons .button)*/
+        {
+        background: linear-gradient(to right,
+                        rgb(0, 128, 0) 0%,
+                        rgb(0, 128, 0) 25%,
+                        rgb(255, 0, 0) 25%,
+                        rgb(255, 0, 0) 50%,
+                        rgb(0, 128, 0) 50%,
+                        rgb(0, 128, 0) 75%,
+                        rgb(255, 0, 0) 75%,
+                        rgb(255, 0, 0) 100%) !important;
+        transition: background-color 0.5s !important;
 }
 
 /*html.christmas .button:not(.custom):not(.login):not(.save):after {
@@ -24,60 +25,57 @@ html.christmas .button:not(.custom):not(.login):not(.save) {
 	height: 30px;
 	content:"";
 }*/
-
-html.christmas .button:not(.custom):not(.login):not(.save):hover {
-	background: linear-gradient(
-		to right,
-		rgb(0,78,0) 0%,
-		rgb(0,78,0) 25%,
-		rgb(205,0,0) 25%,
-		rgb(205,0,0) 50%,
-		rgb(0,78,0) 50%,
-		rgb(0,78,0) 75%,
-		rgb(205,0,0) 75%,
-		rgb(205,0,0) 100%
-	);
-	color: var(--button-text-color);
-	text-shadow: none !important;
+html.christmas .button:not(.custom):not(.login):not(.save):not(.corner-buttons .button):hover {
+        background: linear-gradient(to right,
+                        rgb(0, 78, 0) 0%,
+                        rgb(0, 78, 0) 25%,
+                        rgb(205, 0, 0) 25%,
+                        rgb(205, 0, 0) 50%,
+                        rgb(0, 78, 0) 50%,
+                        rgb(0, 78, 0) 75%,
+                        rgb(205, 0, 0) 75%,
+                        rgb(205, 0, 0) 100%) !important;
+        color: var(--button-text-color) !important;
+        text-shadow: none !important;
 }
 
 .themed-button-image {
-		float: right;
-		margin-right: 2px;
+        float: right !important;
+        margin-right: 2px !important;
 }
 
 html.christmas body {
-	--body-animation-name: none;
-	--body-background: transparent;
-	border: none;
+        --body-animation-name: none !important;
+        --body-background: transparent !important;
+        border: none !important;
 }
 
 html.christmas .box {
-	border-color: yellow;
+        border-color: yellow !important;
 }
 
 @media (prefers-color-scheme: dark) {
-	html.christmas .textbox {
-		color: var(--text-color);
-	}
+        html.christmas .textbox {
+                color: var(--text-color) !important;
+        }
 
-	html.christmas :root {
-		--button-text-color: yellow;
-	}
+        html.christmas :root {
+                --button-text-color: yellow !important;
+        }
 
-	html.christmas .button:not(.custom):not(.login):not(.save) {
-		color: yellow;
-	}
+        html.christmas .button:not(.custom):not(.login):not(.save) {
+                color: yellow !important;
+        }
 }
 
 html.christmas {
-	background-color: #000000;
-	background-image: url(../images/christmas.jpg);
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-origin: border-box;
-	/*background: #000 url(../images/christmas.jpg) no-repeat center center fixed; /*Image found on https://wallpapersafari.com/w/Mq85ym*/
-	-webkit-background-size: cover;
+        background-color: inherit#000000;
+        background-image: url(../images/christmas.jpg) !important;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-origin: border-box;
+        /*background: #000 url(../images/christmas.jpg) no-repeat center center fixed; /*Image found on https://wallpapersafari.com/w/Mq85ym*/
+        -webkit-background-size: cover;
 }
