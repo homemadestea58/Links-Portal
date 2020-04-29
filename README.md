@@ -54,6 +54,6 @@ As links are defined in multiple files, it is important to follow these instruct
 ## Adding new Users
 
 1. Navigate to [this page](https://homemadestea58.github.io/Links-Portal/pages/generate.html) and generate the hashed password.
-2. Open `index.html` and add the new username to the `users` array, which is defined in the `login()` function.
+2. Open `users.js` and add the new username to the `users` array, which is defined in the `login()` function.
 3. Add the hashed passsword to the `passwords` array.
 4. Combine the username and hashed password and add the combined string to the `userpass` array.

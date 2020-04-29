@@ -1,106 +1,118 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Links Portal - Edit</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--Allow scaling on iOS devices-->
-	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-	<link href="../open-sans/stylesheet.css" rel="stylesheet">
-	<link href="../links.css" rel="stylesheet">
-	<link rel="stylesheet" href="../styles/themes.css" >
-	<script src="../scripts/themes.js"></script>
-	<script src="../scripts/jquery.min.js"></script>
-</head>
-<body onLoad="getUser();">
+	<head>
+		<title>Links Portal - Edit</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--Allow scaling on iOS devices-->
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<link href="../open-sans/stylesheet.css" rel="stylesheet">
+		<link href="../links.css" rel="stylesheet">
+		<link rel="stylesheet" href="../styles/themes.css">
+		<script src="../scripts/jquery.min.js"></script>
+		<script src="../scripts/users.js"></script>
+		<script src="../scripts/themes.js"></script>
+	</head>
+	<body onLoad="getUser();">
+		<h1>Edit the Links Portal!</h1>
+		<div class="corner-buttons">
+			<input class="corner button" type="button" value="Logout" onclick="logoff();" />
+			<input class="corner button" type="button" value="Back to the Links Portal" onclick="window.location='portal.html';" />
+		</div>
+		<br><br><br><br><br>
+		<h1>Themes</h1><br><br>
+		<label class="radio-container" onclick="setTheme();"><span class="text">Default</span>
+			<input value="default" type="radio" checked="checked" name="theme">
+			<span class="radiomark"></span>
+		</label>
+		<label class="radio-container" onclick="setTheme();"><span class="text">Christmas</span>
+			<input value="christmas" type="radio" name="theme">
+			<span class="radiomark"></span>
+		</label>
+		<!--<label class="radio-container" onclick="setTheme();"><span class="text">Custom</span>
+			<input value="custom" type="radio" name="theme">
+			<span class="radiomark"></span>
+		</label>-->
+		<div id="custom-chooser" class="hide">
+			<form id="themes" onchange="customSet();">
+				<input type="color" id="custom-background" />
+				<label class="checkbox-container">
+					<span class="text">Enable Background animation</span>
+					<input type="checkbox" id="tools" checked="checked">
+					<span class="checkmark"></span>
+				</label>
+			</form>
+		</div>
+		</div>
+		<br>
+		<p class="box">Please deselect any items you don't want to appear. <strong style="font-size: 22px;">This will not work in Private/Incognito mode.</strong></p><br>
+		<br>
+		<form name="links-edit">
+			<h1>Buttons</h1><br><br>
+			<div id="boxes">
+			</div>
+			<br><input class="button save" type="button" onclick="saveBoxes()" value='Save'>
+		</form>
+		<script>
+			var http = new XMLHttpRequest();
+			http.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					rsp = (this.responseText);
+					parseLinks(this.responseText);
+				}
+			};
+			http.open("GET", "../links.json", true);
+			http.send();
 
-<h1>Edit the Links Portal!</h1>
-<input class=logoff type="button" value="Logout" onclick="logoff();" />
-<br><br><br><br><br>
-<p class="box">Please deselect any items you don't want to appear. <strong style="font-size: 22px;">This will not work in Private/Incognito mode.</strong></p><br>
+			function parseLinks(response) {
+				var links = JSON.parse(response);
+				var boxes = document.getElementById('boxes');
+				for (i in links) {
+					selected = links[i];
+					var ischecked = `checked="checked"`;
+					if (localStorage.getItem(selected.id) == "hide") {
+						ischecked = "";
+					}
+					code = `<label class="checkbox-container"><span class="text">` + selected.text + `</span><input type="checkbox" id="` + selected.id + `" ` + ischecked + `><span class="checkmark"></span></label><br>`;
+					boxes.insertAdjacentHTML('beforeend', code);
+				}
+				//document.links-edit.theme.value = localStorage.getItem("links-theme");
+				$('input[name=theme][value=' + localStorage.getItem("links-theme") + ']').prop('checked', true);
+			}
 
-<br>
+			function saveBoxes() {
+				var links = JSON.parse(rsp);
+				for (i in links) {
+					selected = links[i];
+					if (document.getElementById(selected.id).checked == false) {
+						localStorage.setItem("links-" + username + "-" + selected.id, "hide");
+					} else {
+						localStorage.setItem("links-" + username + "-" + selected.id, "show");
+					}
+				}
+				window.location = "portal.html";
+			}
+			/*function checkCustom() {
+				v	ar theme1 = localStorage.getItem("links-theme");
+				if (localStorage.getItem("links-theme") == "custom") {
+					document.getElementById("custom-chooser").classList.remove("hide");
+				} else if (localStorage.getItem("links-theme") !== "custom") {
+					document.getElementById("custom-chooser").classList.add("hide");
+				}
+			}
 
-<form name="links-edit">
-
-<div id="boxes">
-
-</div>
-
-<h1>Themes</h1><br><br>
-<label class="radio-container" onclick="setTheme();"><span class="text">Default</span>
-	<input value="default" type="radio" checked="checked" name="theme">
-	<span class="radiomark"></span>
-</label>
-<label class="radio-container" onclick="setTheme();"><span class="text">Christmas</span>
-	<input value="christmas" type="radio" name="theme">
-	<span class="radiomark"></span>
-</label>
-
-<br><input class="button save" type="button" onclick="saveBoxes()" value='Save'>
-</form>
-
-<script>
-	function logoff() {
-		localStorage.setItem("username" , null);
-		location = "../index.html";
-	}
-
-var username;
-var rsp;
-
-function getUser(){
-	username = localStorage.getItem("links-username");
-	var usertext = document.getElementById("user");
-	if (username == null || username == '' || username == 'null') {
-		localStorage.setItem("username" , null);
-		localStorage.setItem("warn" , "true");
-		location = "../index.html";
-	}
-}
-
-var http = new XMLHttpRequest();
-http.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
-			rsp = (this.responseText);
-			parseLinks(this.responseText);
-	}
-};
-http.open("GET", "../links.json", true);
-http.send();
-
-function parseLinks(response) {
-	var links = JSON.parse(response);
-	var boxes = document.getElementById('boxes');
-	for (i in links) {
-		selected = links[i];
-		var ischecked = `checked="checked"`;
-		if (localStorage.getItem(selected.id) == "hide") {
-			ischecked = "";
-		}
-		code = `<label class="checkbox-container"><span class="text">` + selected.text + `</span><input type="checkbox" id="` + selected.id + `" ` + ischecked + `><span class="checkmark"></span></label><br>`;
-		boxes.insertAdjacentHTML('beforeend', code);
-	}
-	//document.links-edit.theme.value = localStorage.getItem("links-theme");
-	$('input[name=theme][value=' + localStorage.getItem("links-theme") + ']').prop('checked', true);
-}
-
-function saveBoxes() {
-var links = JSON.parse(rsp);
-for (i in links) {
-	selected = links[i];
-	if (document.getElementById(selected.id).checked == false) {
-		localStorage.setItem("links-" + username + "-" + selected.id, "hide");
-	} else {
-		localStorage.setItem("links-" + username + "-" + selected.id, "show");
-	}
-}
-window.location = "portal.html";
-}
-
-function setTheme() {
-	localStorage.setItem("links-theme", document.querySelector('input[name="theme"]:checked').value);
-	checkTheme();
-}
-
-</script>
-</body>
+			function customSet() {
+				var htmlBG = $('#custom-background').val();
+				localStorage.setItem("links-theme-custom-html-colour", htmlBG);
+				$('html')[0].style.background = htmlBG;
+			}
+			checkCustom();*/
+			function setTheme() {
+				theme = document.querySelector('input[name="theme"]:checked').value;
+				localStorage.setItem("links-theme", theme);
+				//checkCustom();
+				checkTheme();
+			}
+		</script>
+	</body>
 </html>

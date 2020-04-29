@@ -1,190 +1,141 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<title id=title>Links Portal</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-	<link href="../open-sans/stylesheet.css" rel="stylesheet">
-	<link rel="stylesheet" href="../styles/bootstrap.min.css" >
-	<script src="../scripts/jquery.min.js"></script>
-	<link rel="stylesheet" href="../links.css" >
-	<script src="../scripts/themes.js"></script>
-	<link rel="stylesheet" href="../styles/themes.css" >
-	<script src="../scripts/bootstrap.min.js"></script>
+	<head>
+		<title id=title-p>Links Portal</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<link href="../open-sans/stylesheet.css" rel="stylesheet">
+		<script src="../scripts/jquery.min.js"></script>
+		<script src="../scripts/users.js"></script>
+		<link rel="stylesheet" href="../styles/bootstrap.min.css">
+		<link rel="stylesheet" href="../links.css">
+		<script src="../scripts/themes.js"></script>
+		<link rel="stylesheet" href="../styles/themes.css">
+		<script src="../scripts/bootstrap.min.js"></script>
+		<script>
+			function addAlert(message, id) {
+				$('#alerts').append('<div id="' + id + '" class="alert alert-success alert-dismissible">' + '<button type="button" class="close" data-dismiss="alert">' + '&times;</button>' + message + '</div>');
+			}
+		</script>
+	</head>
+	<body onLoad="">
+		<h1>Welcome to the Links Portal</h1>
+		<div class="corner-buttons">
+			<input class="corner button" type="button" value="Logout" onclick="logoff();" />
+		</div>
+		<p id='user'>If you are seeing this for more than 5 seconds, please turn on JavaScript</p>
+		<br>
+		<div id="alerts">
+		</div>
+		<br><br id="buttonBreak1">
+		<h3 id="smartbuttons">Smart Buttons</h3>
+		<div id="smartbuttongroup">
+		</div>
+		<br>
+		<h3>Normal Web Links</h3>
+		<div id="normallinksgroup">
+		</div>
+		<button id="customise" class="button custom" onclick="location='edit.html'"> Customise </button>
+		<script>
+			function getParameterByName(name, url) {
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, "\\$&");
+				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+					results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+			var http = new XMLHttpRequest();
+			http.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					parseLinks(this.responseText);
+				}
+			};
+			http.open("GET", "../links.json", true);
+			http.send();
+			var openin;
 
-<script>
-	function addAlert(message, id) {
-		$('#alerts').append(
-		'<div id="' + id + '" class="alert alert-success alert-dismissible">' + '<button type="button" class="close" data-dismiss="alert">' + '&times;</button>' + message + '</div>');
-		}
+			function parseLinks(response) {
+				var links = JSON.parse(response);
+				var openin = getParameterByName('open');
+				var smartgroup = document.getElementById('smartbuttongroup');
+				var linksgroup = document.getElementById('normallinksgroup');
+				for (i in links) {
+					var img = "";
+					selected = links[i];
+					if (localStorage.getItem(selected.id) == "hide") {
+						continue;
+					}
+					if (selected.issmart) {
+						var script = selected.script;
+					} else if (openin === "newtab") {
+						var script = `window.open('` + selected.url + `', '_blank')`;
+						console.log("openin: " + openin);
+					} else {
+						var script = `location='` + selected.url + `'`;
+					}
+					if (selected.hasimage) {
+						img = `<img class="button-image" src="` + selected.imagepath + `" style="" height="` + selected.imageheight + `" width="` + selected.imagewidth + `"> `;
+					}
+					code = `<button id="` + selected.id + `" class="button" onclick="` + script + `" >` + img + selected.text + ` </button>`;
+					if (selected.issmart) {
+						smartgroup.insertAdjacentHTML('beforeend', code);
+					} else {
+						linksgroup.insertAdjacentHTML('beforeend', code);
+					}
+				}
+			}
 
-	function getUser(){
-	var usern = localStorage.getItem("links-username");
-	var usertext = document.getElementById("user");
-	if (usern == null || usern == '' || usern == 'null') {
-		localStorage.setItem("links-username" , null);
-		localStorage.setItem("links-warn" , "true");
-		location = "/login.html";
-	} else {
-		usertext.innerHTML = '';
-		if (usern == 'admin') {
-			addAlert('Welcome back!,  Administrator', "loggedin");
-			document.getElementById("title").innerHTML = "Administrator\'s Links Portal";
-		} else {
-			addAlert('Welcome back!, ' + usern, "loggedin");
-			document.getElementById("title").innerHTML = usern + "\'s Links Portal";
-		}
-	}
-	}
-
-</script>
-
-<!--[if IE ]>
-<script>
-alert("We detect you are using Internet Explorer. To get complete functionality, please use Firefox or Chrome.");
-</script>
-<![endif]-->
-
-</head>
-
-<body onLoad="getUser();">
-<h1>Welcome to the Links Portal</h1>
-<input class=logoff type="button" value="Logout" onclick="logoff();" />
-
-<p id='user'>If you are seeing this for more than 5 seconds, please turn on JavaScript</p>
-
-<br>
-
-<div id="alerts">
-</div>
-
-<!--<script>
-$(document).ready(function(){
-	$(".close").click(function(){
-		$("#loggedin").alert("close");
-	});
-});
-</script>-->
-
-<br><br id="buttonBreak1">
-	
-<h3 id="smartbuttons" >Smart Buttons</h3>
-
-<div id="smartbuttongroup">
-</div>
-
-<br>
-<h3>Normal Web Links</h3><div id="normallinksgroup">
-</div>
-
-<button id="customise" class="button custom" onclick="location='edit.html'">
-Customise
-</button>
-
-<script>
-
-function getParameterByName(name, url) {
-	if (!url) url = window.location.href;
-	name = name.replace(/[\[\]]/g, "\\$&");
-	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-		results = regex.exec(url);
-	if (!results) return null;
-	if (!results[2]) return '';
-	return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-var http = new XMLHttpRequest();
-http.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
-			parseLinks(this.responseText);
-	}
-};
-http.open("GET", "../links.json", true);
-http.send();
-
-function parseLinks(response) {
-var links = JSON.parse(response);
-var openin = getParameterByName('open');
-var smartgroup = document.getElementById('smartbuttongroup');
-var linksgroup = document.getElementById('normallinksgroup');
-for (i in links) {
-	var img = "";
-	selected = links[i];
-	if (localStorage.getItem(selected.id) == "hide") {
-		continue;
-	}
-	if (selected.issmart) {
-		var script = selected.script;
-	} else if (openin = "newtab") {
-		var script = `window.open('` + selected.url + `', '_blank')`;
-	} else {
-		var script = `location='` + selected.url + `'`;
-	}
-	if (selected.hasimage) {
-		img = `<img class="button-image" src="` + selected.imagepath + `" style="float:left;margin-right:2px" height="` + selected.imageheight + `" width="` + selected.imagewidth + `"> `;
-	}
-	code = `<button id="` + selected.id + `" class="button" onclick="` + script + `" >` + img + selected.text + ` </button>`;
-	if (selected.issmart) {
-		smartgroup.insertAdjacentHTML('beforeend', code);
-	} else {
-		linksgroup.insertAdjacentHTML('beforeend', code);
-	}
-}
-}
-
-	function logoff() {
-		localStorage.setItem("username" , null);
-		location = "../login.html";
-	}
-
-function searchWith(provider) {
-	var openin = getParameterByName('open');
-	switch(provider) {
-		case "google":
-			query = prompt("Search Question? ... ", "");
-			break;
-		case "youtube":
-			query = prompt("Video to Look for ...", "");
-			break;
-		case "googleimages":
-			query = prompt("Image to Look For...", "");
-			break;
-		case "wayback":
-			query = prompt("Please enter a url to Go Wayback!", "");
-			break;
-		case "internetarchive":
-			query = prompt("What do you want to search the Internet Archive for?","");
-			break;
-		default:
-			console.log("Search provider not found, aborting");
-			return("Search provider not found");
-	}
-	if (query == null) {
-		return("Cancelled");
-	}
-	switch(provider) {
-		case "google":
-			url = "http://www.google.com/search?q=" + escape(query).replace(/ /g, "+") , '_blank';
-			break;
-		case "youtube":
-			url = "https://youtube.com/search?q=" + query;
-			break;
-		case "googleimages":
-			url = "https://www.google.com/search?tbm=isch&q=" + query;
-			break;
-		case "wayback":
-			url = "https://web.archive.org/web/*/"+ query;
-			break;
-		case "internetarchive":
-			url = "https://archive.org/search.php?query="+ query;
-			break;
-	}
-	if (openin == "newtab") {
-		window.open(url , '_blank');
-	} else {
-		window.location = url;
-	}
-}
-</script>
-</body>
+			function searchWith(provider) {
+				var openin = getParameterByName('open');
+				switch (provider) {
+					case "google":
+						query = prompt("Search Question? ... ", "");
+						break;
+					case "youtube":
+						query = prompt("Video to Look for ...", "");
+						break;
+					case "googleimages":
+						query = prompt("Image to Look For...", "");
+						break;
+					case "wayback":
+						query = prompt("Please enter a url to Go Wayback!", "");
+						break;
+					case "internetarchive":
+						query = prompt("What do you want to search the Internet Archive for?", "");
+						break;
+					default:
+						console.log("Search provider not found, aborting");
+						return ("Search provider not found");
+				}
+				if (query == null) {
+					return ("Cancelled");
+				}
+				switch (provider) {
+					case "google":
+						url = "http://www.google.com/search?q=" + escape(query).replace(/ /g, "+"), '_blank';
+						break;
+					case "youtube":
+						url = "https://youtube.com/search?q=" + query;
+						break;
+					case "googleimages":
+						url = "https://www.google.com/search?tbm=isch&q=" + query;
+						break;
+					case "wayback":
+						url = "https://web.archive.org/web/*/" + query;
+						break;
+					case "internetarchive":
+						url = "https://archive.org/search.php?query=" + query;
+						break;
+				}
+				if (openin == "newtab") {
+					window.open(url, '_blank');
+				} else {
+					window.location = url;
+				}
+			}
+		</script>
+	</body>
 </html>

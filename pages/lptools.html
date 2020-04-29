@@ -1,273 +1,299 @@
 <!DOCTYPE html>
- <head>
- <title id=title>Links Portal Tools</title>
-	<link href="../open-sans/stylesheet.css" rel="stylesheet">
-	<style>
-		.button {
-		background-color: #1e68d8;
-		border: solid;
-		border-color: black;
-		border-width: thick;
-		border-radius: 10px;
-		color: yellow;
-		padding: 15px 32px;
-		text-align: center;
-		display: inline-block;
-		font-size: 19px;
-		font-weight: bold;
-		margin: 4px 2px;
-		cursor: pointer;
-		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
-		text-shadow: 0.1px 0.1px 0.1px #edd400;
-		transition: background-color 0.5s, color 0.5s;
-		-webkit-transition: background-color 0.5s, color 0.5s;
-		-webkit-appearance: none; /*Fix display issues on iOS*/
-		-moz-appearance: none; /*Fix display issues on iOS*/
-		}
+<html lang="en">
+        <head>
+                <title id=title>Links Portal Tools</title>
+                <link href="../open-sans/stylesheet.css" rel="stylesheet">
+                <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="../scripts/jquery.min.js"></script>
+                <script src="../scripts/themes.js"></script>
+                <link rel="stylesheet" href="../styles/themes.css">
+                <script src="../scripts/users.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <style>
+                        .weatherwidget-io {
+                                border: thick solid #1e68d8;
+                        }
 
-		.logoff {
-		background-color: yellow;
-		border: solid;
-		border-color: black;
-		border-width: thick;
-		border-radius: 10px;
-		color: #1e68d8;
-		padding: 15px 32px;
-		text-align: center;
-		display: inline-block;
-		font-size: 19px;
-		font-weight: bold;
-		margin: 8px 6px;
-		cursor: pointer;
-		font-family: 'open_sansbold', Arial, Helvetica , sans-serif;
-		text-shadow: 0.1px 0.1px 0.1px #edd400;
-		transition: background-color 0.5s, color 0.5s;
-		-webkit-transition: background-color 0.5s, color 0.5s;
-		-webkit-appearance: none; /*Fix display issues on iOS*/
-		-moz-appearance: none; /*Fix display issues on iOS*/
-		position: absolute;
-		right: 0;
-		top:0;
-		}
+                        .container {
+                                padding: 10px;
+                                text-align: center;
+                        }
 
-		.button:hover {
-		background-color:aqua;
-		color:#1e68d8;
-		text-shadow: 2px 2px 2px #e0d9ff;}
+                        .timer {
+                                padding: 10px;
+                                background: linear-gradient(to top, #222, #444);
+                                overflow: hidden;
+                                display: inline-block;
+                                border: 7px solid #efefef;
+                                border-radius: 5px;
+                                position: relative;
+                                box-shadow:
+                                        inset 0 -2px 10px 1px rgba(0, 0, 0, 0.75),
+                                        0 5px 20px -10px rgba(0, 0, 0, 1);
+                        }
 
-		.logoff:hover {
-		background-color: #1e68d8;
-		color: yellow;
-		text-shadow: 2px 2px 2px #e0d9ff;}
+                        .cell {
+                                width: 0.60em;
+                                height: 40px;
+                                font-size: 50px;
+                                overflow: hidden;
+                                position: relative;
+                                float: left;
+                        }
 
-		h2 {
-		font-size: 28px;
-		text-shadow: 5px 5px 5px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-		
-		h3 {
-		font-size: 20px;
-		text-shadow: 5px 5px 5px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 5px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-		
-		p {
-		font-size: 22px;
-		text-shadow: 3px 3px 3px #aaa;
-		text-align: left;
-		color: yellow;
-		padding: 2px 7px;
-		font-family: 'open_sansbold', Arial, Helvetica, sans-serif;}
-		
-		.weatherwidget-io {
-		border: solid;
-		border-color: #1e68d8;}
+                        .numbers {
+                                width: 0.6em;
+                                line-height: 40px;
+                                font-family: digital, arial, verdana;
+                                text-align: center;
+                                color: #fff;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                /*Glow to the text*/
+                                text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+                        }
 
-</style>
-</head>
-<html>
-<script>
-alert("Welcome to the Links Portal Tools!! Here you will find tools such as speedtest, weather and clock!! Enjoy!");
-</script>
-<div style="text-align:center;padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/2147714"><span style="color:gray;">Current local time in</span><br />Sydney, Australia</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Australia%2FSydney" width="100%" height="140" frameborder="0" seamless></iframe> </div>
-<br>
-</br>
-<a class="weatherwidget-io" href="https://forecast7.com/en/n33d87151d21/sydney/" data-label_1="SYDNEY" data-label_2="WEATHER" data-font="Roboto Slab" data-icons="Climacons Animated" data-theme="original" >SYDNEY WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
-<br>
+                        /*Styles for the controls*/
+                        #timer_controls {
+                                margin-top: -5px;
+                        }
 
-</br>
+                        #timer_controls label {
+                                cursor: pointer;
+                                padding: 5px 10px;
+                                background: #efefef;
+                                color: black;
+                                font-family: arial, verdana, tahoma;
+                                font-size: 11px;
+                                border-radius: 0 0 3px 3px;
+                        }
 
+                        input[name="controls"] {
+                                display: none;
+                        }
 
-<iframe src="https://speed.geopos.io" frameborder="0"
-            style="width:100%; height:320px;">
-    </iframe>
+                        /*Control code*/
+                        #stop:checked~.timer .numbers {
+                                animation-play-state: paused;
+                        }
 
+                        #start:checked~.timer .numbers {
+                                animation-play-state: running;
+                        }
 
-<!-- this script got from www.htmlbestcodes.com-Coded by: Krishna Eydat -->
-<html>
-<head>
-<style>
-* {margin: 0; padding: 0;}
+                        #reset:checked~.timer .numbers {
+                                animation: none;
+                        }
 
-.container {
-	padding: 10px;
-	text-align: center;
-}
+                        .moveten {
+                                animation: moveten 1s steps(10, end) infinite;
+                                animation-play-state: paused;
+                        }
 
-.timer {
-	padding: 10px;
-	background: linear-gradient(top, #222, #444);
-	overflow: hidden;
-	display: inline-block;
-	border: 7px solid #efefef;
-	border-radius: 5px;
-	position: relative;
-	
-	box-shadow: 
-		inset 0 -2px 10px 1px rgba(0, 0, 0, 0.75), 
-		0 5px 20px -10px rgba(0, 0, 0, 1);
-}
+                        .movesix {
+                                animation: movesix 1s steps(6, end) infinite;
+                                animation-play-state: paused;
+                        }
 
-.cell {
-	/*Should only display 1 digit. Hence height = line height of .numbers
-	and width = width of .numbers*/
-	width: 0.60em;
-	height: 40px;
-	font-size: 50px;
-	overflow: hidden;
-	position: relative;
-	float: left;
-}
+                        /*Now we need to sync the animation speed with time speed*/
+                        /*One second per digit. 10 digits. Hence 10s*/
+                        .second {
+                                animation-duration: 10s;
+                        }
 
-.numbers {
-	width: 0.6em;
-	line-height: 40px;
-	font-family: digital, arial, verdana;
-	text-align: center;
-	color: #fff;
-	
-	position: absolute;
-	top: 0;
-	left: 0;
-	
-	/*Glow to the text*/
-	text-shadow: 0 0 5px rgba(255, 255, 255, 1);
-}
+                        .tensecond {
+                                animation-duration: 60s;
+                        }
 
-/*Styles for the controls*/
-#timer_controls {
-	margin-top: -5px;
-}
-#timer_controls label {
-	cursor: pointer;
-	padding: 5px 10px;
-	background: #efefef;
-	font-family: arial, verdana, tahoma;
-	font-size: 11px;
-	border-radius: 0 0 3px 3px;
-}
-input[name="controls"] {display: none;}
+                        /*60 times .second*/
+                        .milisecond {
+                                animation-duration: 1s;
+                        }
 
-/*Control code*/
-#stop:checked~.timer .numbers {animation-play-state: paused;}
-#start:checked~.timer .numbers {animation-play-state: running;}
-#reset:checked~.timer .numbers {animation: none;}
+                        /*1/10th of .second*/
+                        .tenmilisecond {
+                                animation-duration: 0.1s;
+                        }
 
-.moveten {
-	/*The digits move but dont look good. We will use steps now
-	10 digits = 10 steps. You can now see the digits swapping instead of 
-	moving pixel-by-pixel*/
-	animation: moveten 1s steps(10, end) infinite;
-	/*By default animation should be paused*/
-	animation-play-state: paused;
-}
-.movesix {
-	animation: movesix 1s steps(6, end) infinite;
-	animation-play-state: paused;
-}
+                        .hundredmilisecond {
+                                animation-duration: 0.01s;
+                        }
 
-/*Now we need to sync the animation speed with time speed*/
-/*One second per digit. 10 digits. Hence 10s*/
-.second {animation-duration: 10s;}
-.tensecond {animation-duration: 60s;} /*60 times .second*/
+                        .minute {
+                                animation-duration: 600s;
+                        }
 
-.milisecond {animation-duration: 1s;} /*1/10th of .second*/
-.tenmilisecond {animation-duration: 0.1s;}
-.hundredmilisecond {animation-duration: 0.01s;}
+                        /*60 times .second*/
+                        .tenminute {
+                                animation-duration: 3600s;
+                        }
 
-.minute {animation-duration: 600s;} /*60 times .second*/
-.tenminute {animation-duration: 3600s;} /*60 times .minute*/
+                        /*60 times .minute*/
+                        .hour {
+                                animation-duration: 36000s;
+                        }
 
-.hour {animation-duration: 36000s;} /*60 times .minute*/
-.tenhour {animation-duration: 360000s;} /*10 times .hour*/
+                        /*60 times .minute*/
+                        .tenhour {
+                                animation-duration: 360000s;
+                        }
 
-@keyframes moveten {
-	0% {top: 0;}
-	100% {top: -400px;} 
-	/*height = 40. digits = 10. hence -400 to move it completely to the top*/
-}
+                        /*10 times .hour*/
+                        @keyframes moveten {
+                                0% {
+                                        top: 0;
+                                }
 
-@keyframes movesix {
-	0% {top: 0;}
-	100% {top: -240px;} 
-	/*height = 40. digits = 6. hence -240 to move it completely to the top*/
-}
+                                100% {
+                                        top: -400px;
+                                }
 
-</style>
-</head>
-<body style="background-color:#000">
-<div class="container">
-	<!-- time to add the controls -->
-	<input id="start" name="controls" type="radio" />
-	<input id="stop" name="controls" type="radio" />
-	<input id="reset" name="controls" type="radio" />
-	<div class="timer">
-		<div class="cell">
-			<div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell">
-			<div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell divider"><div class="numbers">:</div></div>
-		<div class="cell">
-			<div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
-		</div>
-		<div class="cell">
-			<div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell divider"><div class="numbers">:</div></div>
-		<div class="cell">
-			<div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
-		</div>
-		<div class="cell">
-			<div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell divider"><div class="numbers">:</div></div>
-		<div class="cell">
-			<div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell">
-			<div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell">
-			<div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-	</div>
-	<!-- Lables for the controls -->
-	<div id="timer_controls">
-		<label for="start">Start</label>
-		<label for="stop">Stop</label>
-		<label for="reset">Reset</label>
-	</div>
-</div>
-<div><a target="_blank" href="http://www.htmlbestcodes.com/"><span style="font-size: 8pt; text-decoration: none">HTML Best Codes</span></a></div>
-</body>
+                                /*height = 40. digits = 10. hence -400 to move it completely to the top*/
+                        }
+
+                        @keyframes movesix {
+                                0% {
+                                        top: 0;
+                                }
+
+                                100% {
+                                        top: -240px;
+                                }
+
+                                /*height = 40. digits = 6. hence -240 to move it completely to the top*/
+                        }
+
+                        .frame {
+                                border: 2px solid yellow;
+                                text-align: center !important;
+                                padding: 0;
+                                color: yellow;
+                        }
+
+                        .frame::before {
+                                content: attr(data-title);
+                                display: block;
+                                word-wrap: break-word;
+                                border: 39px solid #3a93d0;
+                                border-width: 18px;
+                                background-color: #1e68d8;
+                                border-color: #3a93d0 yellow #3a93d0 yellow;
+                                font-family: "Open Sans Bold";
+                        }
+
+                        /*.modal.fade.show:not(.in) {
+                                z-index: 0
+                        }*/
+                </style>
+                <link rel="stylesheet" href="../links.css">
+        </head>
+        <body>
+                <script>
+                        $(function() {
+                                $('#myModal').modal('show');
+                        });
+                </script>
+                <div class="modal fade show" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Welcome to the Links Portal Tools!!</h4>
+                                        </div>
+                                        <div class="modal-body">Here you will find tools such as speedtest, weather and clock!! Enjoy!</div>
+                                        <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" onclick="$('#myModal').modal('hide');document.getElementById('myModal').parentElement.removeChild(document.getElementById('myModal'));">Close</button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <h1>Welcome to the Links Portal</h1>
+                <div class="corner-buttons">
+                        <input class="corner button" type="button" value="Logout" onclick="logoff();" />
+                        <input class="corner button" type="button" value="Back to the Links Portal" onclick="window.location='portal.html';" />
+                </div>
+                <br><br><br>
+                <div data-title="Clock Widget" class="frame">
+                        <h2 style="display: inline-block">
+                                <span style="color: #cbec0d">Current local time in</span>
+                                <br> Sydney, Australia: </h2>
+                        <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Australia%2FSydney" style="width: 100%; height: 140px;"></iframe>
+                </div>
+                <br>
+                <div data-title="Weather Widget" class="frame">
+                        <a class="weatherwidget-io" href="https://forecast7.com/en/n33d87151d21/sydney/" data-label_1="SYDNEY" data-label_2="WEATHER" data-font="Roboto Slab" data-icons="Climacons Animated" data-theme="original">SYDNEY WEATHER</a>
+                        <script>
+                                ! function(d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (!d.getElementById(id)) {
+                                                js = d.createElement(s);
+                                                js.id = id;
+                                                js.src = 'https://weatherwidget.io/js/widget.min.js';
+                                                fjs.parentNode.insertBefore(js, fjs);
+                                        }
+                                }(document, 'script', 'weatherwidget-io-js');
+                        </script>
+                </div>
+                <br>
+                <!--<iframe src="https://speed.geopos.io" style="width:100%; height:320px;">
+        </iframe>-->
+                <!-- ******************************
+        Remove geopos widget as it times out (as of Jan 2020)
+        ******************************  -->
+                <div data-title="Stopwatch Widget" class="frame">
+                        <div class="container">
+                                <!-- time to add the controls -->
+                                <input id="start" name="controls" type="radio" />
+                                <input id="stop" name="controls" type="radio" />
+                                <input id="reset" name="controls" type="radio" />
+                                <div class="timer">
+                                        <div class="cell">
+                                                <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
+                                        </div>
+                                        <div class="cell">
+                                                <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+                                        </div>
+                                        <div class="cell divider">
+                                                <div class="numbers">:</div>
+                                        </div>
+                                        <div class="cell">
+                                                <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+                                        </div>
+                                        <div class="cell">
+                                                <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+                                        </div>
+                                        <div class="cell divider">
+                                                <div class="numbers">:</div>
+                                        </div>
+                                        <div class="cell">
+                                                <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+                                        </div>
+                                        <div class="cell">
+                                                <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+                                        </div>
+                                        <div class="cell divider">
+                                                <div class="numbers">:</div>
+                                        </div>
+                                        <div class="cell">
+                                                <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+                                        </div>
+                                        <div class="cell">
+                                                <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+                                        </div>
+                                        <div class="cell">
+                                                <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+                                        </div>
+                                </div>
+                                <div id="timer_controls">
+                                        <label for="start">Start</label>
+                                        <label for="stop">Stop</label>
+                                        <label for="reset">Reset</label>
+                                </div>
+                        </div><br>
+                </div>
+                <br>
+                <br>
+        </body>
 </html>
